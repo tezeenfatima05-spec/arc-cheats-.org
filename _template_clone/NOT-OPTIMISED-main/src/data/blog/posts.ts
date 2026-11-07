@@ -1,8 +1,11 @@
 import type { BlogPostFull } from './types';
 import { PRODUCT_BASE } from '../../config/site';
-import { ARCANE_ARC_BLOG_IMAGES } from './arcane-arc-images';
-
 const hub = PRODUCT_BASE;
+
+/** On-site responsive covers (see scripts/mirror-blog-images.mjs). */
+function blogCover(slug: string): string {
+  return `/images/blog/${slug}`;
+}
 
 export const blogPosts: BlogPostFull[] = [
   {
@@ -10,8 +13,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Setup',
     title: 'How to set up ARC Raiders cheats on PC (portal first)',
     slug: 'arc-raiders-setup-and-first-launch',
-    image:
-      'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/arc-raiders/a0f5bd09-1a27-4419-abd8-b568665f8a40/1794008121990-ksd4fl-arctic-cheats-how-to-setup-arc-raiders-cheats-full-tutorial-ajh5udvmfaa-873x491-.webp',
+    image: blogCover('arc-raiders-setup-and-first-launch'),
     desc: 'Walk through portal access, first launch, and a safe order for enabling overlays on Steam.',
     date: 'Nov 6, 2025',
     readTime: '8 min read',
@@ -52,8 +54,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Features',
     title: 'ARC Raiders aimbot: FOV, smooth, and filters explained',
     slug: 'arc-raiders-aimbot-and-fov-settings',
-    image:
-      'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/arc-raiders/c7f7b806-cb3e-4eea-8fa1-eca85c479073/1793197687507-jc9xf6-arcraidersimage1.webp',
+    image: blogCover('arc-raiders-aimbot-and-fov-settings'),
     desc: 'What each aim slider does, when to tighten FOV, and how visible check and bones interact.',
     date: 'Nov 5, 2025',
     readTime: '7 min read',
@@ -89,8 +90,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Guides',
     title: 'Player ESP layout that stays readable in ARC Raiders',
     slug: 'arc-raiders-player-esp-layout',
-    image:
-      'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/arc-raiders/a0f5bd09-1a27-4419-abd8-b568665f8a40/1794007894051-jedo40-jiiago-this-arc-raiders-cheat-lets-you-give-teammates-your-esp-uo0gu7hqeva-873x4.webp',
+    image: blogCover('arc-raiders-player-esp-layout'),
     desc: 'Boxes, skeletons, squad tags, and distance caps — pick a minimal stack before you add more.',
     date: 'Nov 4, 2025',
     readTime: '6 min read',
@@ -116,8 +116,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Guides',
     title: 'Loot and world ESP filters for ARC Raiders',
     slug: 'arc-raiders-loot-and-world-esp-filters',
-    image:
-      'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/arc-raiders/d668cf71-915f-4d4e-84bc-5ec0cbed3619/1793194358691-6dss8c-ancient-arc-s2.webp',
+    image: blogCover('arc-raiders-loot-and-world-esp-filters'),
     desc: 'Rarity and type filters, container selection, and ARC markers without cluttering the hud.',
     date: 'Nov 3, 2025',
     readTime: '6 min read',
@@ -143,8 +142,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Features',
     title: 'Extraction overlays and combat mode',
     slug: 'arc-raiders-extraction-and-threat-overlays',
-    image:
-      'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/arc-raiders/c7f7b806-cb3e-4eea-8fa1-eca85c479073/1793620131347-c29bi0-zadeyo-arcraiders-3-misc.webp',
+    image: blogCover('arc-raiders-extraction-and-threat-overlays'),
     desc: 'Using extraction icons with distance caps and switching combat mode for quieter world ESP.',
     date: 'Nov 2, 2025',
     readTime: '5 min read',
@@ -170,8 +168,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Setup',
     title: 'Misc options: FOV, crosshair, and flashlight tweaks',
     slug: 'arc-raiders-misc-camera-and-crosshair',
-    image:
-      'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/arc-raiders/c7f7b806-cb3e-4eea-8fa1-eca85c479073/1793619413119-xqbd8w-levo-arcraiders-3-misc.webp',
+    image: blogCover('arc-raiders-misc-camera-and-crosshair'),
     desc: 'Camera zoom, crosshair, full bright, and flashlight settings that pair with combat mode.',
     date: 'Nov 1, 2025',
     readTime: '5 min read',
@@ -197,7 +194,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Guides',
     title: 'Raid atmosphere: reading ARC zones with world ESP',
     slug: 'arc-raiders-raid-atmosphere-and-arc-zones',
-    image: ARCANE_ARC_BLOG_IMAGES.s2,
+    image: blogCover('arc-raiders-raid-atmosphere-and-arc-zones'),
     desc: 'How distance caps and ARC icons help you skim a zone before you commit to a fight.',
     date: 'Nov 7, 2025',
     readTime: '5 min read',
@@ -228,7 +225,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Features',
     title: 'ARC threat overlays when units are on your route',
     slug: 'arc-raiders-arc-threat-overlays',
-    image: ARCANE_ARC_BLOG_IMAGES.s3,
+    image: blogCover('arc-raiders-arc-threat-overlays'),
     desc: 'Threat markers, corpses, and distance context so you know when to break contact.',
     date: 'Nov 7, 2025',
     readTime: '5 min read',
@@ -254,7 +251,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Guides',
     title: 'Fight hard, extract clean: overlay routing under pressure',
     slug: 'arc-raiders-combat-routing-to-extract',
-    image: ARCANE_ARC_BLOG_IMAGES.s4,
+    image: blogCover('arc-raiders-combat-routing-to-extract'),
     desc: 'Balance combat overlays with extraction icons so you exit without guessing the path.',
     date: 'Nov 7, 2025',
     readTime: '6 min read',

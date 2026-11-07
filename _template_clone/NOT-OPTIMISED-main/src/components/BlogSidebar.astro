@@ -142,6 +142,7 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
 </aside>
 
 <script>
+  const runToc = () => {
   const tocRoot = document.querySelector('[data-blog-toc]');
   if (tocRoot) {
     const links = [...tocRoot.querySelectorAll<HTMLButtonElement>('[data-toc-target]')];
@@ -156,5 +157,11 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
         h.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+  }
+  };
+  if (typeof requestIdleCallback === 'function') {
+    requestIdleCallback(runToc, { timeout: 2000 });
+  } else {
+    setTimeout(runToc, 1);
   }
 </script>

@@ -25,6 +25,7 @@ import { Prose } from '@/components/starwind/prose';
 import BlogPostCta from '../../components/BlogPostCta.astro';
 import { normalizeInternalPath, ROUTES } from '../../utils/path';
 import { SITE_DOMAIN } from '../../config/site';
+import { isAbsoluteImageUrl, webpSrc, CARD_IMAGE_WIDTHS } from '../../utils/responsiveImage';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -77,6 +78,9 @@ const shareUrl = canonicalUrl(postPath);
 const shareQuery = encodeURIComponent(shareUrl);
 const shareTitle = encodeURIComponent(seo.title);
 const playerEspArticle = post.slug === 'arc-raiders-player-esp-layout';
+const articleLcp = isAbsoluteImageUrl(post.image)
+  ? post.image
+  : webpSrc(post.image, CARD_IMAGE_WIDTHS[0]);
 ---
 
 <BaseLayout
@@ -99,6 +103,7 @@ const playerEspArticle = post.slug === 'arc-raiders-player-esp-layout';
     breadcrumbSchema(breadcrumbs),
   ]}
 >
+  <link slot="head" rel="preload" as="image" href={articleLcp} type="image/webp" fetchpriority="high" />
   <article class="py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />

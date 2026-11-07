@@ -55,6 +55,8 @@ body::after {
   inset: -12%;
   z-index: -1;
   pointer-events: none;
+  contain: paint;
+  transform: translateZ(0);
   background:
     radial-gradient(ellipse 52% 46% at 8% 6%, color-mix(in oklch, var(--primary) 62%, #000) 0%, transparent 58%),
     radial-gradient(ellipse 48% 42% at 94% 14%, color-mix(in oklch, var(--primary-accent) 58%, #000) 0%, transparent 54%),
