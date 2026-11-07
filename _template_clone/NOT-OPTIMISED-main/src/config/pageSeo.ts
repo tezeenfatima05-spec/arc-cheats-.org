@@ -18,9 +18,9 @@ const KW = {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Arc Raiders Cheats – extraction markers |',
+    title: 'Arc Raiders Cheats – and extraction markers with setup',
     description:
-      'Arc cheats hub for Steam PC: Arc Raiders aimbot, player ESP, loot overlays, and extraction markers with setup guides and secure checkout.',
+      'Arc Raiders Cheats: Arc cheats hub for Steam PC: Arc Raiders aimbot, player ESP, loot overlays, and extraction markers with setup guides and secure.',
     keywords: KW.core,
   },
   '/products/': {
@@ -62,7 +62,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/faq/': {
     title: 'FAQ – ARC Raiders cheats, access, guides & Steam PC',
     description:
-      'FAQ for ARC Raiders cheats: Steam PC compatibility, ban risk, Cloud DMA, checkout, loader setup, and support.',
+      'FAQ for ARC Raiders cheats: Steam PC compatibility, ban risk, Cloud DMA, checkout, loader setup, and support. Help center FAQ for ARC Raiders cheats.',
     keywords: KW.core,
   },
   '/terms/': {
@@ -78,7 +78,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: 'arc cheats privacy policy',
   },
   '/about/': {
-    title: 'About Arc Cheats – ARC Cheats publishes ARC Raiders PC',
+    title: 'About Arc Cheats – publishes Raiders PC',
     description:
       'About arc cheats — software overviews, honest limitations, setup guides, and patch status notes for Arc Raiders on Steam PC.',
     keywords: 'about arc cheats, arc raiders cheats site',

@@ -37,19 +37,19 @@ const shareQuery = encodeURIComponent(shareUrl);
 const shareTitle = encodeURIComponent(seo.title);
 
 const BLOG_INDEX_READ_LABELS: Record<string, string> = {
-  'arc-raiders-setup-and-first-launch': 'Open setup and first-launch guide',
-  'arc-raiders-aimbot-and-fov-settings': 'Open aimbot and FOV settings guide',
-  'arc-raiders-player-esp-layout': 'Open player ESP layout guide',
-  'arc-raiders-extraction-and-threat-overlays': 'Open extraction and threat overlays guide',
-  'arc-raiders-arc-threat-overlays': 'Open ARC threat overlays guide',
-  'arc-raiders-combat-routing-to-extract': 'Open combat routing to extract guide',
-  'arc-raiders-loot-and-world-esp-filters': 'Open loot and world ESP filters guide',
-  'arc-raiders-misc-camera-and-crosshair': 'Open misc camera and crosshair guide',
-  'arc-raiders-raid-atmosphere-and-arc-zones': 'Open raid atmosphere and ARC zones guide',
+  'arc-raiders-setup-and-first-launch': 'Setup and first-launch guide card',
+  'arc-raiders-aimbot-and-fov-settings': 'Aimbot and FOV settings card',
+  'arc-raiders-player-esp-layout': 'Player ESP layout card',
+  'arc-raiders-extraction-and-threat-overlays': 'Extraction and threat overlays card',
+  'arc-raiders-arc-threat-overlays': 'ARC threat overlays card',
+  'arc-raiders-combat-routing-to-extract': 'Combat routing to extract card',
+  'arc-raiders-loot-and-world-esp-filters': 'Loot and world ESP filters card',
+  'arc-raiders-misc-camera-and-crosshair': 'Misc camera and crosshair card',
+  'arc-raiders-raid-atmosphere-and-arc-zones': 'Raid atmosphere and ARC zones card',
 };
 
 function blogCardReadLabel(slug: string): string {
-  return BLOG_INDEX_READ_LABELS[slug] ?? `Open ${slug.replace(/^arc-raiders-/, '').replace(/-/g, ' ')} article`;
+  return BLOG_INDEX_READ_LABELS[slug] ?? `Read ${slug.replace(/^arc-raiders-/, '').replace(/-/g, ' ')} on index`;
 }
 ---
 

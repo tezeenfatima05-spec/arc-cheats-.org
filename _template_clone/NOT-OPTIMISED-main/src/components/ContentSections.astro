@@ -7,7 +7,7 @@ import BlogCard from './BlogCard.astro';
 import Icon from './icons/Icon.astro';
 import { ROUTES } from '../utils/path';
 import SiteFaqSection from './SiteFaqSection.astro';
-import { getLandingFaqs } from '../data/faq';
+import { getHomeLandingFaqs } from '../config/homeLandingFaqSeo';
 import { Button } from '@/components/starwind/button';
 
 import { homeBlogReadLabel } from '../config/homePageSeo';
@@ -19,7 +19,7 @@ interface Props {
 
 const { uniqueAnchors = false, faqQuestionHeadingTag } = Astro.props;
 
-const homeFaqs = getLandingFaqs();
+const homeFaqs = getHomeLandingFaqs();
 const featuredPosts = getFeaturedBlogPosts(3);
 
 ---

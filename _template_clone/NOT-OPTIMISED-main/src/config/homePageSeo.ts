@@ -10,20 +10,20 @@ export function homeProductBuyLabel(slug: string): string {
 }
 
 export function homeProductViewLabel(slug: string): string {
-  if (slug === 'arc-raiders') return 'ARC Raiders product overview';
-  if (slug === 'cloud-dma') return 'Cloud DMA product details';
-  if (slug === 'ugc') return 'UGC tool product details';
-  return `View product — ${slug}`;
+  if (slug === 'arc-raiders') return 'Elite tier feature map';
+  if (slug === 'cloud-dma') return 'Hardware compatibility listing';
+  if (slug === 'ugc') return 'Utility tool specifications';
+  return `Catalog entry — ${slug}`;
 }
 
 export function homeBlogReadLabel(slug: string): string {
   const labels: Record<string, string> = {
-    'arc-raiders-setup-and-first-launch': 'Setup and first-launch walkthrough',
-    'arc-raiders-aimbot-and-fov-settings': 'Aimbot FOV tuning walkthrough',
-    'arc-raiders-player-esp-layout': 'Player ESP layout walkthrough',
-    'arc-raiders-extraction-and-threat-overlays': 'Extraction overlay walkthrough',
-    'arc-raiders-combat-routing-to-extract': 'Combat extract routing walkthrough',
-    'arc-raiders-arc-threat-overlays': 'ARC threat overlay walkthrough',
+    'arc-raiders-setup-and-first-launch': 'Portal setup and first launch',
+    'arc-raiders-aimbot-and-fov-settings': 'Aimbot FOV and smoothing',
+    'arc-raiders-player-esp-layout': 'Player ESP layout caps',
+    'arc-raiders-extraction-and-threat-overlays': 'Extraction icons and combat mode',
+    'arc-raiders-combat-routing-to-extract': 'Combat peel and exit routing',
+    'arc-raiders-arc-threat-overlays': 'ARC unit threat markers',
   };
-  return labels[slug] ?? `Guide — ${slug.replace(/^arc-raiders-/, '').replace(/-/g, ' ')}`;
+  return labels[slug] ?? `Article — ${slug.replace(/^arc-raiders-/, '').replace(/-/g, ' ')}`;
 }
