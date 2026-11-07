@@ -11,7 +11,7 @@ import { blogTagIcons } from '../data/sectionIcons';
 import type { IconName } from './icons/types';
 import { Badge } from '@/components/starwind/badge';
 import { Button } from '@/components/starwind/button';
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/starwind/card';
+import { Card, CardContent, CardFooter } from '@/components/starwind/card';
 
 interface Props {
   post: BlogPost;
@@ -22,10 +22,19 @@ interface Props {
   /** Full-width split hero on blog index — same card UI as grid cards */
   layout?: 'default' | 'featured';
   class?: string;
+  readLabel?: string;
 }
 
-const { post, index = 0, eager = false, showDate = false, layout = 'default', class: className } =
-  Astro.props;
+const {
+  post,
+  index = 0,
+  eager = false,
+  showDate = false,
+  layout = 'default',
+  class: className,
+  readLabel,
+} = Astro.props;
+const articleReadLabel = readLabel ?? t.blog.read;
 const isFeatured = layout === 'featured';
 const href = blogPostPath(post.slug);
 const timestamp = getBlogPostTimestamp(post.date);
@@ -109,14 +118,14 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
         isFeatured && 'justify-center border-t border-border p-5 sm:p-6 lg:border-t-0 lg:py-6 lg:pl-8 lg:pr-6',
       ]}
     >
-      <CardTitle class="text-base font-semibold normal-case leading-snug tracking-tight md:text-[1.0625rem]">
+      <h3 class="text-base font-semibold normal-case leading-snug tracking-tight md:text-[1.0625rem]">
         <a
           href={href}
           class="text-foreground decoration-primary/0 underline-offset-4 transition-colors hover:text-primary hover:underline"
         >
           {post.title}
         </a>
-      </CardTitle>
+      </h3>
 
       <p
         class:list={[
@@ -144,7 +153,7 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
         <span>{post.readTime}</span>
       </p>
       <Button as="a" href={href} variant="outline" size="sm" class="blog-card__read shrink-0">
-        {t.blog.read}
+        {articleReadLabel}
         <Icon name="arrowRight" size={16} />
       </Button>
     </CardFooter>

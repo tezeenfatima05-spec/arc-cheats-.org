@@ -24,6 +24,24 @@ body.site-body {
   contain-intrinsic-size: auto 720px;
 }
 
+@media (min-width: 1024px) {
+  .features-bento-scripts__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+    align-items: start;
+    column-gap: 2.5rem;
+    row-gap: 0;
+  }
+
+  .features-bento-scripts__body > p {
+    margin: 0;
+  }
+
+  .features-bento-scripts__body > ul {
+    margin: 0;
+  }
+}
+
 body::before {
   content: '';
   position: fixed;

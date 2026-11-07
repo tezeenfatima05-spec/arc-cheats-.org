@@ -18,9 +18,9 @@ const KW = {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'ARC Raiders Cheats | Aimbot & ESP PC',
+    title: 'Arc Raiders Cheats – extraction markers | ARC Cheats',
     description:
-      'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Features, guides, and secure checkout.',
+      'Arc Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, and extraction markers. Feature guides and secure checkout at ARC Cheats.',
     keywords: KW.core,
   },
   '/products/': {

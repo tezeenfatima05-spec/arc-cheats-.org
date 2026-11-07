@@ -29,6 +29,20 @@ function cardLabel(product: (typeof productPages)[number]) {
   }
   return product.category ?? 'Utility';
 }
+
+function productViewLabel(slug: string): string {
+  if (slug === 'arc-raiders') return 'ARC Raiders feature list';
+  if (slug === 'cloud-dma') return 'Cloud DMA requirements';
+  if (slug === 'ugc') return 'UGC tool overview';
+  return 'Product details';
+}
+
+function productBuyLabel(slug: string): string {
+  if (slug === 'arc-raiders') return 'Checkout ARC Raiders';
+  if (slug === 'cloud-dma') return 'Checkout Cloud DMA';
+  if (slug === 'ugc') return 'Checkout UGC access';
+  return 'Buy now';
+}
 ---
 
 <section id="products" class="py-16 md:py-24" aria-labelledby="products-title">
@@ -60,8 +74,8 @@ function cardLabel(product: (typeof productPages)[number]) {
                       icon={cardIcon(product)}
                       badge={product.badge}
                       variant={product.variant}
-                      buyLabel="Buy now"
-                      viewLabel="View details"
+                      buyLabel={productBuyLabel(product.slug)}
+                      viewLabel={productViewLabel(product.slug)}
                       maxFeatures={5}
                     />
                   </CarouselItem>
@@ -76,6 +90,10 @@ function cardLabel(product: (typeof productPages)[number]) {
 </section>
 
 <script>
-  import { setupProductsCarousel } from '../scripts/products-carousel.ts';
-  setupProductsCarousel();
+  const run = () => import('../scripts/products-carousel.ts').then((m) => m.setupProductsCarousel());
+  if (typeof requestIdleCallback === 'function') {
+    requestIdleCallback(run, { timeout: 2500 });
+  } else {
+    setTimeout(run, 1);
+  }
 </script>

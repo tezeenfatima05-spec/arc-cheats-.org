@@ -6,7 +6,7 @@ import WhySetupSection from '../components/WhySetupSection.astro';
 import ProductsSection from '../components/ProductsSection.astro';
 import ContentSections from '../components/ContentSections.astro';
 import { t } from '../i18n';
-import { resolvePageSeo } from '../config/seo';
+import { canonicalUrl, resolvePageSeo } from '../config/seo';
 import { organizationSchema, webPageSchema, websiteSchema } from '../utils/schema';
 import { heroSlides } from '../data/products';
 import { isAbsoluteImageUrl, webpSrc } from '../utils/responsiveImage';
@@ -14,6 +14,9 @@ import { isAbsoluteImageUrl, webpSrc } from '../utils/responsiveImage';
 const seo = resolvePageSeo('/');
 const firstHeroSrc = heroSlides[0]?.src ?? '/logo.svg';
 const heroLcpImage = isAbsoluteImageUrl(firstHeroSrc) ? firstHeroSrc : webpSrc(firstHeroSrc, 512);
+const sharePageUrl = canonicalUrl('/');
+const shareQuery = encodeURIComponent(sharePageUrl);
+const shareTitle = encodeURIComponent('Arc Raiders Cheats');
 ---
 
 <BaseLayout
@@ -40,4 +43,17 @@ const heroLcpImage = isAbsoluteImageUrl(firstHeroSrc) ? firstHeroSrc : webpSrc(f
   <ProductsSection />
   <WhySetupSection />
   <ContentSections />
+  <nav class="sr-only" aria-label="Share this page">
+    <ul>
+      <li>
+        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>Share on X</a>
+      </li>
+      <li>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>Share on Facebook</a>
+      </li>
+      <li>
+        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>Share on Telegram</a>
+      </li>
+    </ul>
+  </nav>
 </BaseLayout>
