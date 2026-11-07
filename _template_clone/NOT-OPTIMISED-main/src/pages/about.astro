@@ -44,14 +44,22 @@ const content = t.legalPages.about;
   />
   <LegalPage
     title={content.title}
-    pageHeading="About ARC Cheats — publishes guides and status"
+    pageHeading="About Arc Cheats — publishes Raiders overview"
     description={content.description}
     breadcrumbLabel="About"
     sections={content.sections}
     extraSections={ABOUT_EXTRA_SECTIONS}
-    supportLinkLabel="About page — email support"
-    homeLinkLabel="Return to ARC Cheats home"
+    sectionHeadingTag="h3"
+    supportLinkLabel="About — email ARC Cheats support"
+    homeLinkLabel="About — return to site homepage"
   />
+  <nav class="sr-only" aria-label="Related about destinations">
+    <ul>
+      <li><a href="/blog/">About — browse Raiders setup guides</a></li>
+      <li><a href="/faq/">About — open cheats FAQ index</a></li>
+      <li><a href="/products/arc-raiders/">About — Raiders product overview page</a></li>
+    </ul>
+  </nav>
   <nav class="sr-only" aria-label="Share this page">
     <ul>
       <li>

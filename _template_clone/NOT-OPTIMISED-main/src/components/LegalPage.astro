@@ -14,6 +14,7 @@ interface Props {
   supportLinkLabel?: string;
   homeLinkLabel?: string;
   pageHeading?: string;
+  sectionHeadingTag?: 'h2' | 'h3';
 }
 
 const {
@@ -25,9 +26,11 @@ const {
   supportLinkLabel = 'Contact support',
   homeLinkLabel = 'Back to home',
   pageHeading,
+  sectionHeadingTag = 'h2',
 } = Astro.props;
 
 const heading = pageHeading ?? title;
+const SectionHeading = sectionHeadingTag;
 ---
 
 <article class="py-8 md:py-12">
@@ -49,7 +52,7 @@ const heading = pageHeading ?? title;
     <Prose class="mt-10 max-w-none text-left">
       {sections.map((section) => (
         <section class="mt-8">
-          <h2>{section.heading}</h2>
+          <SectionHeading>{section.heading}</SectionHeading>
           {section.paragraphs.map((paragraph) => (
             <p>{paragraph}</p>
           ))}
@@ -57,7 +60,7 @@ const heading = pageHeading ?? title;
       ))}
       {extraSections.map((section) => (
         <section class="mt-8">
-          <h2>{section.heading}</h2>
+          <SectionHeading>{section.heading}</SectionHeading>
           {section.paragraphs.map((paragraph) => (
             <p>{paragraph}</p>
           ))}
