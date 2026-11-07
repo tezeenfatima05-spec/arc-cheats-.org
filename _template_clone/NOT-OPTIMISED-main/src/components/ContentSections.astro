@@ -23,10 +23,14 @@ const featuredPosts = getFeaturedBlogPosts(3);
 
 ---
 
-<WorkflowSection
-  ctaPrimaryLabel={uniqueAnchors ? 'Start checkout workflow from homepage' : undefined}
-  ctaSecondaryLabel={uniqueAnchors ? 'Read deployment steps on support' : undefined}
-/>
+<WorkflowSection />
+{uniqueAnchors && (
+  <nav class="sr-only" aria-label="Workflow section destinations">
+    <a href="/go/arc-raiders/">Start checkout workflow from homepage</a>
+    <a href="/support/">Read deployment steps on support</a>
+    <a href="/faq/">Open workflow FAQ from homepage</a>
+  </nav>
+)}
 
 <section id="blog" class="border-y border-border bg-muted/20 py-16 md:py-24" aria-labelledby="blog-title">
   <div class="mx-auto max-w-6xl px-5">
