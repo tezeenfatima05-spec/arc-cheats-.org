@@ -25,8 +25,8 @@ export const en: Translations = {
     eyebrow: 'Private build · Steam',
     titleAccessible:
       'ARC Raiders cheats for Steam PC with aimbot, player ESP, loot overlays, and extraction tools.',
-    titleLine1: 'ARC Raiders',
-    titleLine2: 'Cheats',
+    titleLine1: 'ARC Raiders Cheats',
+    titleLine2: 'Steam PC',
     subtitle:
       'ARC Raiders cheats for Steam PC: aimbot, ESP, and raid overlays with clean menus and patch-aware updates.',
     ctaPrimary: 'View product',
@@ -42,7 +42,7 @@ export const en: Translations = {
   },
   features: {
     eyebrow: 'Features',
-    title: 'Everything you need for ARC Raiders',
+    title: 'ARC Raiders cheats — feature overview',
     subtitle:
       'Aimbot, player and world ESP, loot filters, extraction markers, and misc tools — grouped the way the software is organized.',
     items: [
@@ -254,7 +254,7 @@ export const en: Translations = {
   },
   products: {
     eyebrow: 'Products',
-    title: 'ARC Raiders software',
+    title: 'ARC Raiders cheats & products',
     subtitle:
       'ARC Raiders cheats plus Cloud DMA hardware access and the UGC tool — each listing links to its own product page and checkout.',
     viewAll: 'View product',
@@ -297,9 +297,10 @@ export const en: Translations = {
   },
   blog: {
     eyebrow: 'Blog',
-    title: 'Guides and updates',
-    subtitle: 'Setup, aimbot tuning, ESP layout, loot filters, and patch-day notes for ARC Raiders on Steam PC.',
-    latestTitle: 'Latest articles',
+    title: 'ARC Raiders cheats guides',
+    subtitle:
+      'Setup, aimbot tuning, ESP layout, and loot filters — ARC Raiders cheats guides for Steam PC.',
+    latestTitle: 'ARC Raiders cheats guides',
     latestSubtitle: 'Filter by topic or sort to find setup walkthroughs and feature explanations.',
     filterAll: 'All articles',
     sortLabel: 'Sort by',
@@ -476,7 +477,7 @@ export const en: Translations = {
   },
   support: {
     eyebrow: 'Support',
-    title: 'ARC Cheats support',
+    title: 'ARC Raiders cheats support',
     subtitle: 'Tell us what blocked you.',
     channels: [
       {

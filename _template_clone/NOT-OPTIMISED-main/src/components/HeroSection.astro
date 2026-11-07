@@ -35,9 +35,8 @@ const hasHeroVideo = Boolean(HERO_VIDEO_SRC?.trim());
         <Badge variant="secondary" class="uppercase tracking-wider">{h.eyebrow}</Badge>
 
         <h1 id="hero-title" class="text-4xl font-bold uppercase leading-tight md:text-5xl">
-          <span class="sr-only">{h.titleAccessible}</span>
-          <span class="block text-foreground" aria-hidden="true">{h.titleLine1}</span>
-          <span class="block text-primary" aria-hidden="true">{h.titleLine2}</span>
+          <span class="block text-foreground">{h.titleLine1}</span>
+          <span class="block text-primary">{h.titleLine2}</span>
         </h1>
 
         <p class="max-w-xl text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-base">

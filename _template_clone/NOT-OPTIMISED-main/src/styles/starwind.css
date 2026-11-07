@@ -74,8 +74,8 @@
 }
 
 :root {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --background: var(--color-white);
   --foreground: var(--color-neutral-950);
   --card: var(--color-white);

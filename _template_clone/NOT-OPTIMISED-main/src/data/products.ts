@@ -150,25 +150,25 @@ const galleryRaw = {
     captionDesc: 'Portal and loader steps covered in the setup guide.',
   },
   gpTeammate: {
-    src: IMG.teammateEsp,
+    src: '/images/hero/gp-teammate',
     alt: 'ARC Raiders ESP overlay highlighting squad and world information',
     caption: 'ESP overview',
     captionDesc: 'Player and squad readouts with distance and threat context.',
   },
   gpMisc: {
-    src: IMG.miscHud,
+    src: '/images/hero/gp-misc',
     alt: 'ARC Raiders misc options including FOV and quality-of-life settings',
     caption: 'Misc & camera',
     captionDesc: 'FOV changer, zoom, crosshair, and related toggles.',
   },
   gpShowcase: {
-    src: IMG.showcase1,
+    src: '/images/hero/gp-showcase',
     alt: 'ARC Raiders gameplay with overlay features visible',
     caption: 'In-raid readability',
     captionDesc: 'Balanced layout for combat and loot routing.',
   },
   gpWorld: {
-    src: IMG.environment,
+    src: '/images/hero/gp-world',
     alt: 'ARC Raiders world visuals with markers and distance cues',
     caption: 'World & ARC markers',
     captionDesc: 'ARC icons, containers, and distance caps in the world loop.',
@@ -186,7 +186,7 @@ const galleryRaw = {
     captionDesc: 'Full bright, flashlight tweaks, and combat mode options.',
   },
   gpArcaneS2: {
-    src: IMG.arcaneArcS2,
+    src: '/images/hero/gp-arcane-s2',
     alt: 'ARC Raiders in-world scene with ARC threat and overlay context',
     caption: 'Raid atmosphere',
     captionDesc: 'In-raid world read with ARC-focused overlays.',

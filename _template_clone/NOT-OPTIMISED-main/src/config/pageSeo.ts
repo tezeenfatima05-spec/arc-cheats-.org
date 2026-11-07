@@ -24,7 +24,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: KW.core,
   },
   '/products/': {
-    title: 'ARC Raiders Products & Checkout',
+    title: 'ARC Raiders Cheats | Products Hub',
     description:
       'ARC Raiders cheats, Cloud DMA access, and UGC tool listings with feature summaries, setup notes, and secure checkout for Steam PC.',
     keywords: KW.products,

@@ -19,6 +19,11 @@ body.site-body {
   background-color: transparent;
 }
 
+#main-content > section:not(#hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -42,8 +47,18 @@ body::after {
     radial-gradient(ellipse 48% 42% at 94% 14%, color-mix(in oklch, var(--primary-accent) 58%, #000) 0%, transparent 54%),
     radial-gradient(ellipse 62% 48% at 50% 88%, color-mix(in oklch, var(--primary) 48%, #000) 0%, transparent 62%),
     radial-gradient(ellipse 100% 80% at 50% 50%, transparent 35%, #000000e6 100%);
-  filter: blur(64px);
-  opacity: 1;
+  filter: blur(20px);
+  opacity: 0.92;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    filter: none;
+  }
+
+  .hero-status-marquee-track {
+    animation: none !important;
+  }
 }
 
 html.dark body::before {

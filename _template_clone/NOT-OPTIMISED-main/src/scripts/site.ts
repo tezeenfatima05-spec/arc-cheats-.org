@@ -1,19 +1,7 @@
 import { initBlogIndexFilters } from './blog-index';
 
 function initFonts() {
-  const root = document.documentElement;
-
-  const markReady = () => {
-    root.classList.remove('fonts-pending');
-    root.classList.add('fonts-ready');
-  };
-
-  if (!document.fonts?.ready) {
-    markReady();
-    return;
-  }
-
-  document.fonts.ready.then(markReady).catch(markReady);
+  /* System font stack — no webfont load on critical path. */
 }
 
 function initNavHighlight() {
