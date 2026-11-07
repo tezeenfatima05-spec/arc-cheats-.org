@@ -87,6 +87,7 @@ function blogCardReadLabel(slug: string): string {
   <section class="py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
+      <h1 class="sr-only">{blogIndexH1}</h1>
       <p class="sr-only">Featured ARC Raiders guide</p>
       {featured && (
         <BlogCard
@@ -106,7 +107,7 @@ function blogCardReadLabel(slug: string): string {
     <div class="mx-auto max-w-6xl px-5">
       <header class="section-header max-w-2xl">
         <p class="section-header__eyebrow">{t.blog.eyebrow}</p>
-        <h1 id="blog-latest-title" class="section-header__title">{blogIndexH1}</h1>
+        <h2 id="blog-latest-title" class="section-header__title">{blogIndexH1}</h2>
         <p class="section-header__subtitle">{t.blog.latestSubtitle}</p>
       </header>
       <h2 class="sr-only">Filtered ARC Raiders guide articles</h2>
@@ -179,7 +180,8 @@ function blogCardReadLabel(slug: string): string {
       <li><a href="/products/arc-raiders/">Elite software listing</a></li>
       <li><a href="/products/">Multi-product catalog hub</a></li>
       <li><a href="/privacy/">Cookie privacy reference</a></li>
-      <li><a href="/sitemap.xml">Guides XML sitemap file</a></li>
+      <li><a href="/go/arc-raiders/">Raiders checkout hop from guides</a></li>
+      <li><a href="/sitemap.xml">Machine-readable URL manifest</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">

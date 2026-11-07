@@ -19,6 +19,10 @@ export interface BlogSeoOverride {
   sidebarEliteLabel?: string;
   sidebarHubLabel?: string;
   toolbarBackLabel?: string;
+  /** Distinct aria-labels for duplicate checkout URLs (sidebar vs action bar). */
+  checkoutSidebarAria?: string;
+  checkoutNavAria?: string;
+  faqSectionHeading?: string;
   srOnlyAnchors?: { href: string; label: string }[];
 }
 
@@ -36,8 +40,11 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navProductsLabel: 'Player ESP tier listing',
     navBlogLabel: 'Sibling layout articles',
     ctaButtonLabel: 'Open feature map (ESP layout)',
-    sidebarEliteLabel: 'Elite hub (ESP layout)',
-    sidebarHubLabel: 'Whole catalog (ESP layout)',
+    sidebarEliteLabel: 'Raiders SKU feature sheet',
+    sidebarHubLabel: 'Every software SKU index',
+    checkoutSidebarAria: 'Checkout after ESP layout sidebar',
+    checkoutNavAria: 'Checkout after ESP layout actions',
+    faqSectionHeading: 'Questions after ESP layout caps',
     srOnlyAnchors: [
       { href: '/support/', label: 'Loader tickets beside ESP layout' },
       { href: '/faq/', label: 'Portal policies for layout readers' },
@@ -58,8 +65,11 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navProductsLabel: 'Aim group product listing',
     navBlogLabel: 'Siblings on aim and ESP',
     ctaButtonLabel: 'Open aim feature map (FOV)',
-    sidebarEliteLabel: 'Elite hub (FOV article)',
-    sidebarHubLabel: 'Software catalog (FOV article)',
+    sidebarEliteLabel: 'Aimbot tier breakdown',
+    sidebarHubLabel: 'SKU-wide software inventory',
+    checkoutSidebarAria: 'Checkout after FOV tuning sidebar',
+    checkoutNavAria: 'Checkout after FOV tuning actions',
+    faqSectionHeading: 'Questions after aimbot FOV tuning',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-setup-and-first-launch/', label: 'Portal enable order before FOV' },
       { href: '/privacy/', label: 'Analytics privacy for FOV readers' },
@@ -79,8 +89,11 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navProductsLabel: 'Software hub (setup article)',
     navBlogLabel: 'More overlay setup pieces',
     ctaButtonLabel: 'Raiders map (setup article)',
-    sidebarEliteLabel: 'Elite hub (setup article)',
-    sidebarHubLabel: 'Catalog link (setup article)',
+    sidebarEliteLabel: 'Portal tier breakdown',
+    sidebarHubLabel: 'Operator catalog listing',
+    checkoutSidebarAria: 'Checkout after setup launch sidebar',
+    checkoutNavAria: 'Checkout after setup launch actions',
+    faqSectionHeading: 'Questions after portal-first setup',
     srOnlyAnchors: [
       { href: '/support/', label: 'Install tickets after setup steps' },
       { href: '/terms/', label: 'License wording for setup readers' },
@@ -100,8 +113,11 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navProductsLabel: 'Threat marker listing',
     navBlogLabel: 'Threat/ESP companion reads',
     ctaButtonLabel: 'Threat overlay map link',
-    sidebarEliteLabel: 'Elite hub (threat article)',
-    sidebarHubLabel: 'Catalog entry (threat article)',
+    sidebarEliteLabel: 'Threat marker SKU sheet',
+    sidebarHubLabel: 'Publisher-wide listing table',
+    checkoutSidebarAria: 'Checkout after threat overlay sidebar',
+    checkoutNavAria: 'Checkout after threat overlay actions',
+    faqSectionHeading: 'Questions after ARC threat overlays',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Exit cap pairing with threat' },
       { href: '/forum/', label: 'Forum thread samples (threat)' },
@@ -121,8 +137,11 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navProductsLabel: 'Extraction overlay listing',
     navBlogLabel: 'Extraction/ESP siblings',
     ctaButtonLabel: 'Overlay map (extraction)',
-    sidebarEliteLabel: 'Elite hub (extraction)',
-    sidebarHubLabel: 'Full catalog (extraction)',
+    sidebarEliteLabel: 'Extraction overlay SKU map',
+    sidebarHubLabel: 'Inventory-wide download index',
+    checkoutSidebarAria: 'Checkout after extraction caps sidebar',
+    checkoutNavAria: 'Checkout after extraction caps actions',
+    faqSectionHeading: 'Questions after extraction distance caps',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-combat-routing-to-extract/', label: 'Peel routing sibling piece' },
       { href: '/products/cloud-dma/', label: 'DMA hardware reference page' },
@@ -142,8 +161,11 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navProductsLabel: 'Combat overlay listing',
     navBlogLabel: 'Extract/combat siblings',
     ctaButtonLabel: 'Product map (extract routing)',
-    sidebarEliteLabel: 'Elite hub (extract routing)',
-    sidebarHubLabel: 'Wider catalog (extract routing)',
+    sidebarEliteLabel: 'Combat routing SKU page',
+    sidebarHubLabel: 'Broader software roll-up',
+    checkoutSidebarAria: 'Checkout after extract routing sidebar',
+    checkoutNavAria: 'Checkout after extract routing actions',
+    faqSectionHeading: 'Questions after combat peel routing',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-misc-camera-and-crosshair/', label: 'Camera misc after extract routing' },
       { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Exit overlay sibling article' },

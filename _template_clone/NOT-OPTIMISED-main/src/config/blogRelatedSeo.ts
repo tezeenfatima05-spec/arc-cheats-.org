@@ -7,10 +7,14 @@ const CURATED: Record<string, string> = {
     'ARC unit threat overlays note',
   'arc-raiders-combat-routing-to-extract|arc-raiders-setup-and-first-launch':
     'Portal-first setup reference',
+  'arc-raiders-combat-routing-to-extract|arc-raiders-misc-camera-and-crosshair':
+    'Camera comfort misc reference',
   'arc-raiders-setup-and-first-launch|arc-raiders-aimbot-and-fov-settings':
     'Aim smoothing after setup',
   'arc-raiders-setup-and-first-launch|arc-raiders-player-esp-layout':
     'ESP layout after portal launch',
+  'arc-raiders-setup-and-first-launch|arc-raiders-misc-camera-and-crosshair':
+    'Crosshair tweaks after portal',
   'arc-raiders-extraction-and-threat-overlays|arc-raiders-combat-routing-to-extract':
     'Combat peel routing follow-up',
   'arc-raiders-extraction-and-threat-overlays|arc-raiders-arc-threat-overlays':
@@ -21,20 +25,25 @@ const CURATED: Record<string, string> = {
     'Quiet world ESP pairing',
   'arc-raiders-arc-threat-overlays|arc-raiders-combat-routing-to-extract':
     'Routing when threat spikes',
+  'arc-raiders-arc-threat-overlays|arc-raiders-setup-and-first-launch':
+    'Enable order before threat markers',
   'arc-raiders-player-esp-layout|arc-raiders-aimbot-and-fov-settings':
     'Aim cone after ESP caps',
   'arc-raiders-player-esp-layout|arc-raiders-loot-and-world-esp-filters':
     'Loot filters after player boxes',
+  'arc-raiders-player-esp-layout|arc-raiders-setup-and-first-launch':
+    'Portal habits before ESP stacks',
   'arc-raiders-aimbot-and-fov-settings|arc-raiders-setup-and-first-launch':
     'Overlay enable order',
   'arc-raiders-aimbot-and-fov-settings|arc-raiders-player-esp-layout':
     'ESP clutter control',
+  'arc-raiders-aimbot-and-fov-settings|arc-raiders-combat-routing-to-extract':
+    'Peel timing after FOV caps',
 };
 
 export function getBlogRelatedLinkLabel(fromSlug: string, toSlug: string): string {
   const curated = CURATED[`${fromSlug}|${toSlug}`];
   if (curated) return curated;
-  const toShort = toSlug.replace(/^arc-raiders-/, '').replace(/-/g, ' ');
-  const fromShort = fromSlug.replace(/^arc-raiders-/, '').replace(/-/g, ' ');
-  return `From ${fromShort} → ${toShort}`;
+  const id = `${fromSlug}-${toSlug}`.replace(/^arc-raiders-/, '');
+  return `Related read ${id.replace(/-/g, ' ')}`;
 }

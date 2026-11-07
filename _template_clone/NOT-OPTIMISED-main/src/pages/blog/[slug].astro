@@ -120,6 +120,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
           class="order-2 lg:order-1"
           sidebarHeadingsAsParagraphs={blogUi?.sidebarHeadingsAsParagraphs}
           checkoutLinkLabel={blogUi?.checkoutLinkLabel}
+          checkoutAriaLabel={blogUi?.checkoutSidebarAria}
           sidebarEliteLabel={blogUi?.sidebarEliteLabel}
           sidebarHubLabel={blogUi?.sidebarHubLabel}
           relatedLinkLabel={(relatedSlug) => getBlogRelatedLinkLabel(post.slug, relatedSlug)}
@@ -211,7 +212,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
           </Prose>
 
           <nav class="blog-article__actions" aria-label="Continue reading">
-            <Button as="a" href={checkoutPath()} variant="primary" aria-label={t.ui.checkoutAria}>
+            <Button as="a" href={checkoutPath()} variant="primary" aria-label={blogUi?.checkoutNavAria ?? t.ui.checkoutAria}>
               {blogUi?.navCheckoutLabel ?? 'Get access'}
               <Icon name="arrowRight" size={17} />
             </Button>
@@ -240,11 +241,13 @@ const articleLcp = isAbsoluteImageUrl(post.image)
       </li>
     </ul>
   </nav>
-  <h2 class="sr-only">Questions about this guide</h2>
+  <h2 id={`blog-faq-${post.slug}`} class="sr-only">
+    {blogUi?.faqSectionHeading ?? 'Questions about this guide'}
+  </h2>
   <SiteFaqSection
     items={getBlogArticleFaqs(post.tag, post.slug)}
     titleId={`blog-faq-${post.slug}`}
-    titleTag="h2"
+    showHeader={false}
     questionHeadingTag="h3"
     class="border-t border-border bg-muted/20"
   />

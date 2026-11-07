@@ -1,27 +1,72 @@
 import { getBlogFaqs, type SiteFaqItem } from '../data/faq';
-import { normalizeInternalPath, productPath } from '../utils/path';
+import { normalizeInternalPath, productPath, ROUTES } from '../utils/path';
 
-function replaceProductAnchor(html: string, label: string): string {
-  const href = normalizeInternalPath(productPath('arc-raiders'));
-  const needle = `<a href="${href}">ARC Raiders product</a>`;
+function replaceAnchor(html: string, href: string, fromText: string, toText: string): string {
+  const needle = `<a href="${normalizeInternalPath(href)}">${fromText}</a>`;
   if (!html.includes(needle)) return html;
-  return html.replace(needle, `<a href="${href}">${label}</a>`);
+  return html.replace(needle, `<a href="${normalizeInternalPath(href)}">${toText}</a>`);
 }
 
-const productLabelByFaqId: Record<string, string> = {
-  'blog-slug-esp': 'Distance caps on Raiders product hub',
-  'blog-default-1': 'Authoritative listing before checkout',
+const productHref = normalizeInternalPath(productPath('arc-raiders'));
+const productsHref = normalizeInternalPath(ROUTES.products);
+const blogHref = normalizeInternalPath(ROUTES.blog);
+
+const DEFAULT_PRODUCT = 'ARC Raiders product';
+const DEFAULT_PRODUCTS = 'Products';
+const DEFAULT_BLOG = 'blog guides';
+
+/** Per-slug anchors in the bottom FAQ block (unique within each article). */
+const slugProductLabel: Record<string, string> = {
+  'arc-raiders-player-esp-layout': 'Distance caps on Raiders listing',
+  'arc-raiders-aimbot-and-fov-settings': 'FOV groups on Raiders listing',
+  'arc-raiders-setup-and-first-launch': 'Enable order on Raiders listing',
+  'arc-raiders-arc-threat-overlays': 'Threat markers on Raiders listing',
+  'arc-raiders-extraction-and-threat-overlays': 'Exit icons on Raiders listing',
+  'arc-raiders-combat-routing-to-extract': 'Combat overlays on Raiders listing',
 };
 
-/** Contextual FAQ block at the bottom of blog posts — unique product anchors only. */
+const slugProductsLabel: Record<string, string> = {
+  'arc-raiders-player-esp-layout': 'Multi-SKU hub for layout readers',
+  'arc-raiders-aimbot-and-fov-settings': 'Multi-SKU hub for FOV readers',
+  'arc-raiders-setup-and-first-launch': 'Multi-SKU hub for setup readers',
+  'arc-raiders-arc-threat-overlays': 'Multi-SKU hub for threat readers',
+  'arc-raiders-extraction-and-threat-overlays': 'Multi-SKU hub for extraction readers',
+  'arc-raiders-combat-routing-to-extract': 'Multi-SKU hub for routing readers',
+};
+
+const slugBlogLabel: Record<string, string> = {
+  'arc-raiders-player-esp-layout': 'ESP layout articles index',
+  'arc-raiders-aimbot-and-fov-settings': 'Aim tuning articles index',
+  'arc-raiders-setup-and-first-launch': 'Setup walkthroughs index',
+  'arc-raiders-arc-threat-overlays': 'Threat overlay articles index',
+  'arc-raiders-extraction-and-threat-overlays': 'Extraction articles index',
+  'arc-raiders-combat-routing-to-extract': 'Routing articles index',
+};
+
+/** Contextual FAQ block at the bottom of blog posts — unique internal anchors only. */
 export function getBlogArticleFaqs(tag: string, slug: string): SiteFaqItem[] {
+  const productLabel = slugProductLabel[slug];
+  const productsLabel = slugProductsLabel[slug];
+  const blogLabel = slugBlogLabel[slug];
+
   return getBlogFaqs(tag, slug).map((item) => {
-    const label = productLabelByFaqId[item.id];
-    if (!label) return item;
-    return {
-      ...item,
-      a: replaceProductAnchor(item.a, label),
-      aHtml: item.aHtml ? replaceProductAnchor(item.aHtml, label) : undefined,
-    };
+    let a = item.a;
+    let aHtml = item.aHtml;
+
+    if (productLabel) {
+      a = replaceAnchor(a, productHref, DEFAULT_PRODUCT, productLabel);
+      if (aHtml) aHtml = replaceAnchor(aHtml, productHref, DEFAULT_PRODUCT, productLabel);
+    }
+    if (productsLabel) {
+      a = replaceAnchor(a, productsHref, DEFAULT_PRODUCTS, productsLabel);
+      if (aHtml) aHtml = replaceAnchor(aHtml, productsHref, DEFAULT_PRODUCTS, productsLabel);
+    }
+    if (blogLabel) {
+      a = replaceAnchor(a, blogHref, DEFAULT_BLOG, blogLabel);
+      if (aHtml) aHtml = replaceAnchor(aHtml, blogHref, DEFAULT_BLOG, blogLabel);
+    }
+
+    if (a === item.a && aHtml === item.aHtml) return item;
+    return { ...item, a, aHtml };
   });
 }
