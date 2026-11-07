@@ -156,9 +156,18 @@ export const blogPosts: BlogPostFull[] = [
         type: 'p',
         text: 'Combat mode hides world ESP while keeping combat overlays front and center. Toggle when you are committed to a fight and do not need salvage or container spam.',
       },
+      { type: 'h3', text: 'When to widen exit marker range' },
+      {
+        type: 'p',
+        text: 'Keep exit icons inside a band you can reach without crossing open ground. After a wipe or reset, widen caps briefly while you loot, then tighten again before the next engagement.',
+      },
+      {
+        type: 'p',
+        text: 'If secondary world layers fight your combat HUD, pause container or salvage highlights during the push and restore them only when the sector is quiet.',
+      },
       {
         type: 'cta',
-        title: 'Get access',
+        title: 'ARC Raiders extraction access',
         text: 'Checkout when you are ready for the full build.',
         href: '/go/arc-raiders/',
       },

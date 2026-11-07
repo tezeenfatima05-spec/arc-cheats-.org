@@ -44,6 +44,19 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navBlogLabel: 'More ARC Raiders guides',
     ctaButtonLabel: 'Open threat overlay product map',
   },
+  'arc-raiders-extraction-and-threat-overlays': {
+    title: 'Extraction – Cap distance so only relevant | ARC Cheats',
+    description:
+      'Using extraction icons with distance caps and switching combat mode for quieter world ESP on Steam PC—relevant exits stay visible under pressure.',
+    keywords: 'extraction, arc raiders esp, extraction overlays, arc raiders cheats',
+    h1: 'Extraction overlays and combat mode — ARC Raiders cheats',
+    sidebarHeadingsAsParagraphs: true,
+    checkoutLinkLabel: 'Extraction overlay guide checkout',
+    navCheckoutLabel: 'Checkout from extraction guide',
+    navProductsLabel: 'Browse ARC Raiders cheat products',
+    navBlogLabel: 'More extraction and ESP guides',
+    ctaButtonLabel: 'Open extraction overlay product map',
+  },
 };
 
 export function getBlogSeoOverride(slug: string): BlogSeoOverride | undefined {
