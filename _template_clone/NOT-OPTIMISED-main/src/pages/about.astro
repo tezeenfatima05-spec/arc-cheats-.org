@@ -6,6 +6,7 @@ import { ABOUT_EXTRA_SECTIONS } from '../config/aboutExtra';
 
 const seo = resolvePageSeo('/about/');
 import LegalPage from '../components/LegalPage.astro';
+import SeoResponsiveHeadStyles from '../components/SeoResponsiveHeadStyles.astro';
 import { breadcrumbSchema, organizationSchema, webPageSchema } from '../utils/schema';
 
 const shareUrl = canonicalUrl('/about/');
@@ -32,8 +33,18 @@ const content = t.legalPages.about;
     ]),
   ]}
 >
+  <SeoResponsiveHeadStyles />
+  <img
+    src="/images/hero/gp-showcase-512.webp"
+    alt="ARC Raiders gameplay with overlay features"
+    width="512"
+    height="320"
+    class="sr-only"
+    loading="lazy"
+  />
   <LegalPage
     title={content.title}
+    pageHeading="About ARC Cheats — publishes guides and status"
     description={content.description}
     breadcrumbLabel="About"
     sections={content.sections}

@@ -31,12 +31,38 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     navBlogLabel: 'Return to guides index',
     ctaButtonLabel: 'Open ARC Raiders product map',
   },
+  'arc-raiders-aimbot-and-fov-settings': {
+    title: 'ARC Raiders aimbot: FOV, smooth, and filters e | Cheats',
+    description:
+      'FOV and smooth settings for ARC Raiders aimbot on Steam PC — visible check, bone picks, filters, and when to tighten the aim cone before raids.',
+    keywords: 'fov, arc raiders aimbot, arc raiders cheats, steam pc',
+    h1: 'ARC Raiders aimbot: FOV, smooth, and filters explained — cheats',
+    sidebarHeadingsAsParagraphs: true,
+    checkoutLinkLabel: 'Aimbot FOV guide checkout',
+    navCheckoutLabel: 'Checkout from aimbot settings guide',
+    navProductsLabel: 'Browse aimbot product listing',
+    navBlogLabel: 'More aim and ESP guides',
+    ctaButtonLabel: 'Open aimbot feature map',
+  },
+  'arc-raiders-setup-and-first-launch': {
+    title: 'How to set up ARC Raiders cheats on PC (portal |',
+    description:
+      'ARC Raiders: portal access, first launch, and a safe order for enabling overlays on Steam PC before you stack aimbot or ESP groups.',
+    keywords: 'arc raiders, arc raiders setup, arc raiders cheats, steam pc',
+    h1: 'How to set up ARC Raiders cheats on PC (portal first)',
+    sidebarHeadingsAsParagraphs: true,
+    checkoutLinkLabel: 'Setup guide checkout',
+    navCheckoutLabel: 'Checkout after setup walkthrough',
+    navProductsLabel: 'Browse ARC Raiders software hub',
+    navBlogLabel: 'More setup articles',
+    ctaButtonLabel: 'Open setup product page',
+  },
   'arc-raiders-arc-threat-overlays': {
     title: 'ARC threat overlays when units are on your rou | Cheats',
     description:
       'Threat markers, corpses, and distance context on Steam PC — know when to break contact with ARC Raiders ARC unit overlays.',
     keywords: 'threat, arc raiders esp, arc threat overlays, arc raiders cheats',
-    h1: 'ARC threat overlays on your route — ARC Raiders cheats',
+    h1: 'ARC threat overlays when units are on your route — ARC Raiders cheats',
     sidebarHeadingsAsParagraphs: true,
     checkoutLinkLabel: 'Threat overlay guide checkout',
     navCheckoutLabel: 'Checkout from threat overlay guide',
@@ -49,13 +75,26 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     description:
       'Using extraction icons with distance caps and switching combat mode for quieter world ESP on Steam PC—relevant exits stay visible under pressure.',
     keywords: 'extraction, arc raiders esp, extraction overlays, arc raiders cheats',
-    h1: 'Extraction overlays and combat mode — ARC Raiders cheats',
+    h1: 'Extraction – cap distance so only relevant exits — ARC Raiders cheats',
     sidebarHeadingsAsParagraphs: true,
     checkoutLinkLabel: 'Extraction overlay guide checkout',
     navCheckoutLabel: 'Checkout from extraction guide',
     navProductsLabel: 'Browse ARC Raiders cheat products',
     navBlogLabel: 'More extraction and ESP guides',
     ctaButtonLabel: 'Open extraction overlay product map',
+  },
+  'arc-raiders-combat-routing-to-extract': {
+    title: 'Fight hard, extract clean: overlay routing | Cheats',
+    description:
+      'Extract clean under pressure: balance combat overlays with exit icons on Steam PC so you peel without guessing the route out.',
+    keywords: 'extract, arc raiders esp, extraction routing, arc raiders cheats',
+    h1: 'Fight hard, extract clean: overlay routing — ARC Raiders cheats',
+    sidebarHeadingsAsParagraphs: true,
+    checkoutLinkLabel: 'Extract routing guide checkout',
+    navCheckoutLabel: 'Checkout from extract routing guide',
+    navProductsLabel: 'Browse combat overlay products',
+    navBlogLabel: 'More extract and combat guides',
+    ctaButtonLabel: 'Open extract routing product map',
   },
 };
 

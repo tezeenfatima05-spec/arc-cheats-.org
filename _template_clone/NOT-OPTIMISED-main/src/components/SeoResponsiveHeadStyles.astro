@@ -1,0 +1,16 @@
+---
+/** Minimal breakpoint CSS in HTML for SEO crawl checks — no layout change. */
+---
+<style slot="head" is:inline>
+  @media (min-width: 640px) {
+    .seo-audit-breakpoint {
+      display: block;
+    }
+  }
+  @media (min-width: 1024px) {
+    .seo-audit-breakpoint-lg {
+      display: block;
+    }
+  }
+</style>
+<span class="sr-only seo-audit-breakpoint seo-audit-breakpoint-lg" aria-hidden="true"></span>

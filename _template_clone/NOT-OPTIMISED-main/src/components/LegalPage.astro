@@ -13,6 +13,7 @@ interface Props {
   extraSections?: { heading: string; paragraphs: string[] }[];
   supportLinkLabel?: string;
   homeLinkLabel?: string;
+  pageHeading?: string;
 }
 
 const {
@@ -23,7 +24,10 @@ const {
   extraSections = [],
   supportLinkLabel = 'Contact support',
   homeLinkLabel = 'Back to home',
+  pageHeading,
 } = Astro.props;
+
+const heading = pageHeading ?? title;
 ---
 
 <article class="py-8 md:py-12">
@@ -37,7 +41,8 @@ const {
     />
     </div>
     <header class="mt-4 space-y-4 text-center">
-      <h1 class="text-3xl font-bold normal-case md:text-4xl">{title}</h1>
+      <h1 class="text-3xl font-bold normal-case md:text-4xl">{heading}</h1>
+      <h2 class="sr-only">About page sections</h2>
       <p class="text-lg leading-relaxed text-muted-foreground">{description}</p>
     </header>
 

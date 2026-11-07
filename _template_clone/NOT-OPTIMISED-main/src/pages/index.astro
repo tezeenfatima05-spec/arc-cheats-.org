@@ -11,6 +11,7 @@ import { organizationSchema, webPageSchema, websiteSchema } from '../utils/schem
 import { heroSlides } from '../data/products';
 import { isAbsoluteImageUrl, webpSrc } from '../utils/responsiveImage';
 import { HOME_H1_SEO_SUFFIX } from '../config/homePageSeo';
+import SeoResponsiveHeadStyles from '../components/SeoResponsiveHeadStyles.astro';
 
 const seo = resolvePageSeo('/');
 const firstHeroSrc = heroSlides[0]?.src ?? '/logo.svg';
@@ -39,6 +40,7 @@ const shareTitle = encodeURIComponent('Arc Raiders Cheats');
     media="(min-width: 1024px)"
     fetchpriority="high"
   />
+  <SeoResponsiveHeadStyles />
   <HeroSection h1SeoSuffix={HOME_H1_SEO_SUFFIX} showOutlineH2 />
   <FeaturesSection showOutlineH2 />
   <ProductsSection uniqueAnchors />

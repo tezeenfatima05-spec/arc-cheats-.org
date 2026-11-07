@@ -44,7 +44,7 @@ export const blogPosts: BlogPostFull[] = [
       },
       {
         type: 'cta',
-        title: 'Get access',
+        title: 'ARC Raiders setup access',
         text: 'Continue with the full feature list and secure checkout.',
         href: '/go/arc-raiders/',
       },
@@ -55,32 +55,32 @@ export const blogPosts: BlogPostFull[] = [
     title: 'ARC Raiders aimbot: FOV, smooth, and filters explained',
     slug: 'arc-raiders-aimbot-and-fov-settings',
     image: blogCover('arc-raiders-aimbot-and-fov-settings'),
-    desc: 'What each aim slider does, when to tighten FOV, and how visible check and bones interact.',
+    desc: 'What each aim slider does, when to tighten the aim cone, and how visible check and bones interact.',
     date: 'Nov 5, 2025',
     readTime: '7 min read',
     body: [
       {
         type: 'p',
-        text: 'Aim assistance is the fastest way to make mistakes if you max every knob. This article explains **FOV**, **smooth**, **stickiness**, **speed**, **filters**, **bone selection**, and **visible check** as they are used in ARC Raiders tooling—not generic FPS jargon.',
+        text: 'Aim assistance is the fastest way to make mistakes if you max every knob. This article explains the **aim cone**, **smooth**, **stickiness**, **speed**, **filters**, **bone selection**, and **visible check** as they are used in ARC Raiders tooling—not generic FPS jargon.',
       },
-      { type: 'h2', text: 'FOV and smoothing' },
+      { type: 'h2', text: 'Aim cone and smoothing' },
       {
         type: 'p',
-        text: 'FOV decides how wide the aim window searches. Narrow FOV looks more intentional; wide FOV compensates for fast strafes but snaps more often. Smooth adds inertia so reticle movement matches human motion. Raise smooth before you widen FOV.',
+        text: 'The aim cone decides how wide the search window is. A narrow cone looks more intentional; a wide cone compensates for fast strafes but snaps more often. Smooth adds inertia so reticle movement matches human motion. Raise smooth before you widen the cone.',
       },
       { type: 'h2', text: 'Filters and bones' },
       {
         type: 'p',
         text: 'Filters keep aimbot from picking the wrong target category. Bone selection chooses head vs torso trade-offs. Visible check stops engagement through solid cover when enabled—pair with how you use wallhack-style ESP.',
       },
-      { type: 'h2', text: 'Draw FOV and target line' },
+      { type: 'h3', text: 'Debug visuals after tuning' },
       {
         type: 'p',
-        text: 'Debug visuals help you see what the module thinks active targets are. Turn them off for minimal HUD clutter once tuned. Combat mode (see misc article) can hide world ESP while retaining combat overlays.',
+        text: 'Target lines and cone outlines help you see what the module considers active. Turn them off for minimal HUD clutter once profiles feel stable. Combat mode (see misc article) can hide world ESP while retaining combat overlays.',
       },
       {
         type: 'cta',
-        title: 'Get access',
+        title: 'ARC Raiders aimbot access',
         text: 'Open the ARC Raiders product page for the full menu map.',
         href: '/go/arc-raiders/',
       },
@@ -164,6 +164,10 @@ export const blogPosts: BlogPostFull[] = [
       {
         type: 'p',
         text: 'If secondary world layers fight your combat HUD, pause container or salvage highlights during the push and restore them only when the sector is quiet.',
+      },
+      {
+        type: 'p',
+        text: 'Review portal patch notes when combat mode behavior changes—distance caps that worked last build may need one click, not a full profile rebuild.',
       },
       {
         type: 'cta',
@@ -258,6 +262,10 @@ export const blogPosts: BlogPostFull[] = [
         text: 'When pressure spikes, toggle combat mode so player and squad layers stay primary while secondary world icons pause. That habit keeps contact decisions fast without deleting your tuned profile.',
       },
       {
+        type: 'p',
+        text: 'Document which distance cap you used in calm lobbies so patch days do not force a full retune. Notes in the operator portal beat guessing after every build bump.',
+      },
+      {
         type: 'cta',
         title: 'ARC Raiders overlay access',
         text: 'Compare world and unit groups before checkout.',
@@ -287,13 +295,18 @@ export const blogPosts: BlogPostFull[] = [
           'Combat mode mapped to a key you can hit without looking.',
         ],
       },
+      { type: 'h3', text: 'Peel timing with exit icons' },
       {
         type: 'p',
-        text: 'For the misc tools that pair with this (FOV, crosshair, flashlight), see the [misc camera guide](/blog/arc-raiders-misc-camera-and-crosshair/).',
+        text: 'If exit markers only show when you are already boxed in, tighten combat clutter first—not the exit range you trained on. Rotate toward the nearest lit icon instead of widening every layer at once.',
+      },
+      {
+        type: 'p',
+        text: 'For the misc tools that pair with this (crosshair, flashlight, camera zoom), see the [misc camera guide](/blog/arc-raiders-misc-camera-and-crosshair/).',
       },
       {
         type: 'cta',
-        title: 'Get access',
+        title: 'ARC Raiders extract routing access',
         text: 'Extraction and combat mode live in the main build.',
         href: '/go/arc-raiders/',
       },

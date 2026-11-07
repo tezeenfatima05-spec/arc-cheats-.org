@@ -26,6 +26,7 @@ import BlogPostCta from '../../components/BlogPostCta.astro';
 import { normalizeInternalPath, ROUTES } from '../../utils/path';
 import { SITE_DOMAIN } from '../../config/site';
 import { isAbsoluteImageUrl, webpSrc, CARD_IMAGE_WIDTHS } from '../../utils/responsiveImage';
+import SeoResponsiveHeadStyles from '../../components/SeoResponsiveHeadStyles.astro';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -104,6 +105,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
   ]}
 >
   <link slot="head" rel="preload" as="image" href={articleLcp} type="image/webp" fetchpriority="high" />
+  <SeoResponsiveHeadStyles />
   <article class="py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />

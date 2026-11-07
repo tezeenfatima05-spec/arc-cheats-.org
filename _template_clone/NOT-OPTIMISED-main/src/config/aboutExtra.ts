@@ -14,4 +14,10 @@ export const ABOUT_EXTRA_SECTIONS: { heading: string; paragraphs: string[] }[] =
       'We do not operate in-game accounts, impersonate players on the forum samples, or promise undetectable outcomes. Risk and compatibility notes stay on product and legal pages where you can review them before purchase.',
     ],
   },
+  {
+    heading: 'Where to read next',
+    paragraphs: [
+      'Product feature groups, checkout links, and patch notes live on the ARC Raiders hub and blog index. Support handles portal login issues; legal pages cover refunds and privacy when you need them before purchase.',
+    ],
+  },
 ];
