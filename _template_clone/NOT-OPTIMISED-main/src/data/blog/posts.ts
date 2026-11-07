@@ -83,7 +83,7 @@ export const blogPosts: BlogPostFull[] = [
         type: 'p',
         text: 'Filters stop aimbot from loving the wrong category (downed players, friendlies, etc.—per your build). **Bone** selection trades head risk for chest reliability. **Visible check** refuses targets behind cover when enabled—pair it with how aggressively you run player ESP.',
       },
-      { type: 'h3', text: 'Debug visuals, then silence' },
+      { type: 'h2', text: 'Debug visuals, then silence' },
       {
         type: 'p',
         text: 'Drawn cone outlines and target lines earn their keep during tuning night. Turn them off once profiles settle; combat mode (see extraction guide) can hide world ESP while combat overlays stay hot.',
@@ -268,16 +268,16 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: 'Features',
-    title: 'ARC threat overlays: when to break contact in ARC Raiders',
+    title: 'Unit overlays: when to break contact on your route',
     slug: 'arc-raiders-arc-threat-overlays',
     image: blogCover('arc-raiders-arc-threat-overlays'),
-    desc: 'ARC unit markers, corpse cues, and distance bands for ARC Raiders threat ESP—know when to push or peel with cheats on Steam PC.',
+    desc: 'Unit markers, corpse cues, and distance bands—know when to push or peel with Raiders ESP on Steam PC.',
     date: 'Nov 7, 2025',
     readTime: '6 min read',
     body: [
       {
         type: 'p',
-        text: '**Threat** readouts answer one question: is it safer to push or peel? Markers should live inside a distance band you can physically react to—not across the entire map.',
+        text: 'Pressure readouts answer one question: is it safer to push or peel? Markers should live inside a distance band you can physically react to—not across the entire map.',
       },
       { type: 'h2', text: 'Do not clone PvP ESP ranges' },
       {
@@ -332,7 +332,7 @@ export const blogPosts: BlogPostFull[] = [
       { type: 'h2', text: 'Peel timing with exit icons' },
       {
         type: 'p',
-        text: 'Rotate toward the nearest lit exit instead of widening every overlay at once. When threat and exits collide on-screen, step threat distance down first. For misc tools that support peels—crosshair, zoom—see the [misc camera guide](/blog/arc-raiders-misc-camera-and-crosshair/).',
+        text: 'Rotate toward the nearest lit exit instead of widening every overlay at once. When pressure cues and exits collide on-screen, step unit-marker distance down first. For misc tools that support peels—crosshair, zoom—see the [misc camera guide](/blog/arc-raiders-misc-camera-and-crosshair/).',
       },
       {
         type: 'cta',
