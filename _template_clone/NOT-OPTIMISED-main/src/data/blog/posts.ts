@@ -68,10 +68,10 @@ export const blogPosts: BlogPostFull[] = [
         type: 'p',
         text: 'Aim assistance in **ARC Raiders cheats** is powerful and loud when every slider maxes. This article maps each control to raid behavior—strafe fights, peek trades, and mid-range pressure—so you tune with intent, not nostalgia from other titles.',
       },
-      { type: 'h2', text: 'FOV cone: width vs honesty' },
+      { type: 'h2', text: 'Aim cone: width vs honesty' },
       {
         type: 'p',
-        text: 'The aim cone is a search window, not a magic bullet. Narrow cones look deliberate in kill cams; wide cones forgive fast ARC Raiders movement but snap more often. Raise **smooth** before you widen FOV when you feel jitter.',
+        text: 'The aim cone is a search window, not a magic bullet. Narrow cones look deliberate in kill cams; wide cones forgive fast Raiders movement but snap more often. Raise **smooth** before you widen the cone when you feel jitter.',
       },
       { type: 'h2', text: 'Smooth, speed, and stickiness' },
       {
@@ -86,7 +86,7 @@ export const blogPosts: BlogPostFull[] = [
       { type: 'h3', text: 'Debug visuals, then silence' },
       {
         type: 'p',
-        text: 'Drawn FOV and target lines earn their keep during tuning night. Turn them off once profiles settle; combat mode (see extraction guide) can hide world ESP while combat overlays stay hot.',
+        text: 'Drawn cone outlines and target lines earn their keep during tuning night. Turn them off once profiles settle; combat mode (see extraction guide) can hide world ESP while combat overlays stay hot.',
       },
       {
         type: 'cta',
@@ -143,7 +143,7 @@ export const blogPosts: BlogPostFull[] = [
     body: [
       {
         type: 'p',
-        text: 'World overlays for **ARC Raiders cheats** span **ARC units**, **threat**, **corpses**, **loot**, **containers**, **salvage**, and **field crates**. Filters exist so you highlight loot you will actually path toward—not every shimmer on the map.',
+        text: 'World overlays for **Raiders cheats** span machine units, pressure cues, corpses, loot, containers, salvage, and field crates. Filters exist so you highlight loot you will actually path toward—not every shimmer on the map.',
       },
       { type: 'h2', text: 'Rarity gates and type filters' },
       {
@@ -155,10 +155,10 @@ export const blogPosts: BlogPostFull[] = [
         type: 'p',
         text: 'Custom selection lists let you whitelist container classes you care about. Keep **max distance** shorter in dense POIs; stretch it when rotates are long and sparse. If the HUD still screams, drop corpse highlights before you drop loot.',
       },
-      { type: 'h2', text: 'ARC markers without PvP blindness' },
+      { type: 'h2', text: 'Zone markers without PvP blindness' },
       {
         type: 'p',
-        text: 'ARC icons behave like navigation—not every marker deserves fight priority. Separate profiles for “ARC farm” vs “PvP push” so threat cues do not fight player ESP for attention.',
+        text: 'Unit icons behave like navigation—not every marker deserves fight priority. Separate profiles for farm routes vs PvP push so pressure cues do not fight player ESP for attention.',
       },
       {
         type: 'cta',
@@ -186,12 +186,12 @@ export const blogPosts: BlogPostFull[] = [
         type: 'p',
         text: 'Combat mode trims world clutter—salvage, containers, dense loot—while player and aim overlays stay forward. Toggle in for CQC stretches; toggle out before loot rotations or you rotate blind.',
       },
-      { type: 'h2', text: 'Threat distance before exit distance' },
+      { type: 'h2', text: 'Pressure cues before exit distance' },
       {
         type: 'p',
-        text: 'When threat icons and exits hug the same screen edge, **lower threat distance first**. Keep exit caps trained from calm lobbies. Corpses and salvage can pause during pushes and return for farm profiles.',
+        text: 'When pressure icons and exits hug the same screen edge, **lower unit-marker distance first**. Keep exit caps trained from calm lobbies. Corpses and salvage can pause during pushes and return for farm profiles.',
       },
-      { type: 'h3', text: 'After a stable extract' },
+      { type: 'h2', text: 'After a stable extract' },
       {
         type: 'p',
         text: 'Log one successful raid where combat toggles matched peel timing. Reuse that profile instead of re-tuning every queue when only minor clutter was the problem.',
@@ -277,22 +277,31 @@ export const blogPosts: BlogPostFull[] = [
     body: [
       {
         type: 'p',
-        text: '**ARC threat overlays** answer a single question: is it safer to push or peel? Markers should live inside a distance band you can physically react to—not across the entire map.',
+        text: '**Threat** readouts answer one question: is it safer to push or peel? Markers should live inside a distance band you can physically react to—not across the entire map.',
       },
       { type: 'h2', text: 'Do not clone PvP ESP ranges' },
       {
         type: 'p',
-        text: 'Player ESP often wants longer ranges; ARC cues frequently work shorter so icons cluster near your path. Maintain an “ARC-heavy map” profile if you swap zones often.',
+        text: 'Player ESP often wants longer ranges; unit cues frequently work shorter so icons cluster near your path. Maintain a heavy-zone profile if you swap maps often.',
       },
       { type: 'h2', text: 'Corpses, units, and combat mode' },
       {
         type: 'p',
-        text: 'Corpse highlights help routing; they hurt clarity mid-fight. Pair threat markers with combat mode so player ESP stays primary when contact starts. Document distance caps on calm nights so patch weeks are diffs, not guesswork.',
+        text: 'Corpse highlights help routing; they hurt clarity mid-fight. Pair pressure markers with combat mode so player ESP stays primary when contact starts.',
+      },
+      { type: 'h2', text: 'Document caps before patch week' },
+      {
+        type: 'p',
+        text: 'Screenshot distance sliders on calm nights so patch weeks are diffs, not guesswork. Reload a baseline profile, run one extract, then nudge one band at a time.',
+      },
+      {
+        type: 'p',
+        text: 'If exits and unit markers crowd the same screen edge, step unit distance down before you touch extraction caps you trained in safer lobbies.',
       },
       {
         type: 'cta',
-        title: 'ARC Raiders threat marker access',
-        text: 'Compare ARC and threat groups before checkout.',
+        title: 'ARC Raiders unit marker access',
+        text: 'Compare world and unit groups before checkout.',
         href: '/go/arc-raiders/',
       },
     ],

@@ -5,4 +5,5 @@ export const SITEMAP_ANCHOR_BY_PATH: Record<string, string> = {
   '/about/': 'Sitemap URL list — about sr-only hop',
   '/faq/': 'Sitemap URL list — FAQ sr-only hop',
   '/blog/': 'Sitemap URL list — guides index sr-only hop',
+  '/forum/': 'Sitemap URL list — forum index sr-only hop',
 };

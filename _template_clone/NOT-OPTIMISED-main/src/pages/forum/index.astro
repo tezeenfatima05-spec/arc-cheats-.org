@@ -121,6 +121,17 @@ const sourceTimestamp = (path?: string) => {
       </div>
     </div>
   </section>
+  <nav class="sr-only" aria-label="Forum index crawl destinations">
+    <ul>
+      {forumPosts.map((post) => (
+        <li>
+          <a href={`/forum/${post.slug}/`}>Forum crawl hop — {post.slug}</a>
+        </li>
+      ))}
+      <li><a href="/blog/arc-raiders-setup-and-first-launch/">Setup guide hop from forum index</a></li>
+      <li><a href="/sitemap.xml">Sitemap URL list — forum index sr-only hop</a></li>
+    </ul>
+  </nav>
   <script>
     const cards = [...document.querySelectorAll<HTMLElement>('[data-forum-card]')];
     const sortButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-forum-sort]')];

@@ -245,9 +245,9 @@ const articleLcp = isAbsoluteImageUrl(post.image)
       </li>
     </ul>
   </nav>
-  <h2 id={`blog-faq-${post.slug}`} class="sr-only">
+  <p id={`blog-faq-${post.slug}`} class="sr-only">
     {blogUi?.faqSectionHeading ?? 'Questions about this guide'}
-  </h2>
+  </p>
   <SiteFaqSection
     items={getBlogArticleFaqs(post.tag, post.slug)}
     titleId={`blog-faq-${post.slug}`}
