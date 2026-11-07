@@ -11,7 +11,7 @@ export interface PageSeoEntry {
 
 const KW = {
   core: 'arc raiders cheats, arc raiders aimbot, arc raiders esp, steam pc cheats',
-  products: 'arc raiders cheats, arc raiders software, cloud dma, ugc tool',
+  products: 'arc raiders cheats, arc raiders software, arc raiders esp, steam pc',
   blog: 'arc raiders guides, arc raiders setup, arc raiders aimbot settings',
   forum: 'arc raiders forum, arc raiders cheats help, arc raiders esp tips',
 };
@@ -26,7 +26,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/': {
     title: 'ARC Raiders Cheats | Products Hub',
     description:
-      'ARC Raiders cheats, Cloud DMA access, and UGC tool listings with feature summaries, setup notes, and secure checkout for Steam PC.',
+      'ARC Raiders cheats for Steam PC: one product hub with aimbot, player ESP, loot overlays, extraction markers, setup notes, and secure checkout.',
     keywords: KW.products,
   },
   '/products/arc-raiders/': {
@@ -35,18 +35,6 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'ARC Raiders cheats for Steam: aimbot, player ESP, world and loot overlays, extraction markers, and misc options. Full feature breakdown.',
     keywords: 'arc raiders cheats, arc raiders aimbot, arc raiders wallhack, steam pc',
   },
-  '/products/cloud-dma/': {
-    title: 'Cloud DMA Access for ARC Raiders',
-    description:
-      'Cloud DMA hardware access for supported Windows rigs. Compatibility checklist, portal notes, and checkout for ARC Raiders operators.',
-    keywords: 'cloud dma, arc raiders cheats, arc raiders hardware, steam pc',
-  },
-  '/products/ugc/': {
-    title: 'UGC Tool Access | ARC Cheats',
-    description:
-      'UGC utility tool for Windows with one-time access, portal download steps, and secure checkout through ARC Cheats.',
-    keywords: 'ugc tool, arc raiders utilities, arc cheats access',
-  },
   '/blog/': {
     title: 'Setup – and patch-day notes for Steam PC | ARC Cheats',
     description:
@@ -54,15 +42,15 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: KW.blog,
   },
   '/forum/': {
-    title: 'ARC Raiders Cheats Forum & Q&A',
+    title: 'ARC Raiders Cheats Forum | Steam PC',
     description:
-      'Sample community threads on ARC Raiders cheats setup, ESP layout, combat mode, loot filters, and Cloud DMA on Steam PC.',
+      'Community threads on ARC Raiders cheats—portal setup, aimbot tuning, player ESP layouts, loot filters, combat mode, and patch-week profiles on Steam.',
     keywords: KW.forum,
   },
   '/faq/': {
     title: 'FAQ – ARC Raiders cheats, access, guides & Steam PC',
     description:
-      'FAQ for ARC Raiders cheats: Steam PC compatibility, ban risk, Cloud DMA, checkout, loader setup, and support. Help center FAQ for ARC Raiders cheats.',
+      'FAQ for ARC Raiders cheats: Steam PC compatibility, ban risk, checkout, loader setup, patches, and support. Help center FAQ for ARC Raiders cheats.',
     keywords: KW.core,
   },
   '/terms/': {

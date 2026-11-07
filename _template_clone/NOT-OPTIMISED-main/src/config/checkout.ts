@@ -16,8 +16,8 @@ export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
 
 const CHECKOUT_BY_SLUG: Record<string, string> = {
   'arc-raiders': CHECKOUT.arcRaiders,
-  'cloud-dma': CHECKOUT.cloudDma,
-  ugc: CHECKOUT.ugc,
+  'cloud-dma': CHECKOUT.arcRaiders,
+  ugc: CHECKOUT.arcRaiders,
 };
 
 export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
@@ -54,10 +54,10 @@ export function resolveCheckoutHref(href: string): string {
 
   if (href.includes('zadeyo.com')) {
     if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-      return checkoutPath('cloudDma');
+      return checkoutPath('arcRaiders');
     }
     if (href.includes('%2Fproducts%2Fugc') || href.includes('/products/ugc')) {
-      return checkoutPath('ugc');
+      return checkoutPath('arcRaiders');
     }
     return checkoutPath('arcRaiders');
   }

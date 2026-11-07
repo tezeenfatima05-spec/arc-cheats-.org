@@ -5,7 +5,7 @@ function parseCount(value: string | null, fallback: number): number {
   return Number.isFinite(n) ? n : fallback;
 }
 
-/** Local-only demo upvotes for forum sample threads (persists in sessionStorage). */
+/** Local-only demo upvotes for forum threads (persists in sessionStorage). */
 export function initForumVotes(): void {
   if (typeof document === 'undefined') return;
 

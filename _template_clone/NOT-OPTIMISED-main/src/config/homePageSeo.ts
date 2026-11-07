@@ -4,15 +4,11 @@ export const HOME_H1_SEO_SUFFIX = ' – extraction markers with setup — Arc Ch
 
 export function homeProductBuyLabel(slug: string): string {
   if (slug === 'arc-raiders') return 'Begin Raiders software purchase';
-  if (slug === 'cloud-dma') return 'Request Cloud DMA hardware access';
-  if (slug === 'ugc') return 'Unlock UGC utility license';
   return `Purchase access — ${slug}`;
 }
 
 export function homeProductViewLabel(slug: string): string {
   if (slug === 'arc-raiders') return 'Elite tier feature map';
-  if (slug === 'cloud-dma') return 'Hardware compatibility listing';
-  if (slug === 'ugc') return 'Utility tool specifications';
   return `Catalog entry — ${slug}`;
 }
 

@@ -64,11 +64,11 @@ export const siteFaqs: SiteFaqItem[] = [
     a: a('ARC Raiders via Steam on Windows 10/11 64-bit. Other clients are not supported unless the portal lists them.'),
   },
   {
-    id: 'cloud-dma',
+    id: 'patch-discipline',
     topic: 'setup',
     icon: 'faqPlatforms',
-    q: 'What is Cloud DMA?',
-    a: a('Some configurations use Cloud DMA hardware with a compatible Windows PC. Requirements and setup steps are in the operator portal — confirm before checkout.'),
+    q: 'Should I check portal notes after an ARC Raiders patch?',
+    a: a('Yes. Client updates can change loader guidance and overlay behavior. Read portal status before you reuse the same profile.'),
   },
   {
     id: 'products-page',
@@ -148,7 +148,7 @@ export const siteFaqs: SiteFaqItem[] = [
 
 export function getLandingFaqs(): SiteFaqItem[] {
   return siteFaqs.filter((f) =>
-    ['status', 'after-buy', 'ban-risk', 'platforms', 'cloud-dma', 'products-page'].includes(f.id),
+    ['status', 'after-buy', 'ban-risk', 'platforms', 'patch-discipline', 'products-page'].includes(f.id),
   );
 }
 

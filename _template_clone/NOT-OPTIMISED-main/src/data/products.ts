@@ -1,5 +1,6 @@
 import { t } from '../i18n';
 import { checkoutForSlug } from '../config/checkout';
+import { ARC_RAIDERS_PRODUCT_SLUG } from '../config/siteScope';
 import { PRODUCT_BASE } from '../config/site';
 import type { IconName } from '../components/icons/types';
 
@@ -250,11 +251,11 @@ const tierBodies: Record<string, ProductPage['body']> = {
     },
     {
       type: 'h2',
-      text: 'Cloud DMA and compatibility',
+      text: 'Steam PC compatibility',
     },
     {
       type: 'p',
-      text: 'Some setups use Cloud DMA hardware with a compatible Windows rig. Confirm the exact requirement in your portal or with support before you buy—hardware and driver expectations can change with patches.',
+      text: 'ARC Raiders via Steam on supported 64-bit Windows builds is the only target for this listing. Confirm portal status after client patches—loader expectations can change with game updates.',
     },
   ],
 };
@@ -306,57 +307,6 @@ const productContent: Record<
       ],
     },
   },
-  'cloud-dma': {
-    images: slide('gpSetup1', 'gpSetup2', 'gpMisc'),
-    goodToKnow:
-      'Cloud DMA expectations can change with firmware, Windows builds, and game patches. Read the portal checklist and contact support before you commit to hardware.',
-    limitations: sharedLimitations,
-    systemRequirements: [
-      { icon: 'reqWindows', text: 'Supported 64-bit Windows build (see portal).' },
-      { icon: 'compareCloudBackup', text: 'Compatible Cloud DMA hardware as listed in the operator portal.' },
-      { icon: 'reqSettings', text: 'Administrator access for drivers and loader steps where required.' },
-      { icon: 'reqWifi', text: 'Stable internet for portal access, updates, and validation.' },
-    ],
-    fullFeatures: [
-      'Hardware category for supported DMA setups',
-      'Portal documentation for drivers and firmware',
-      'Windows compatibility matrix',
-      'Pairs with eligible ARC Raiders builds',
-      'Support channel for setup questions',
-    ],
-    overview: {
-      title: 'Cloud DMA access for supported Windows setups',
-      paragraphs: [
-        'Cloud DMA is a hardware-assisted path documented in the operator portal. This listing is for operators who already understand DMA requirements and want checkout tied to the Cloud DMA product on the storefront.',
-        'Before you buy, confirm chipset, firmware, and Windows versions against the latest portal notes. arccheats.org does not replace that checklist—we link you to the correct checkout and summarize what the product category covers.',
-      ],
-    },
-  },
-  ugc: {
-    images: slide('gpMisc', 'gpMisc2', 'gpSetup2'),
-    goodToKnow:
-      'UGC tool scope and license terms are defined in the portal after purchase. Keep your order email handy for activation.',
-    limitations: sharedLimitations,
-    systemRequirements: [
-      { icon: 'reqWindows', text: '64-bit Windows 10 or 11.' },
-      { icon: 'reqSettings', text: 'Administrator access where the tool installer requires it.' },
-      { icon: 'reqWifi', text: 'Internet for checkout, portal login, and updates.' },
-    ],
-    fullFeatures: [
-      'UGC-focused utility build',
-      'Portal download after checkout',
-      'One-time access plan available',
-      'Windows workflow',
-      'Discord support for access issues',
-    ],
-    overview: {
-      title: 'UGC tool — standalone utility access',
-      paragraphs: [
-        'The UGC tool is a separate utility product from the main ARC Raiders cheat build. Use this page to review what is included at a high level, then complete checkout to unlock portal instructions.',
-        'Pricing may differ from cheat subscriptions—see the plan selector on this page when available. For activation problems, use the support page or Discord.',
-      ],
-    },
-  },
 };
 
 function buildTierPages(): ProductPage[] {
@@ -390,38 +340,9 @@ function buildTierPages(): ProductPage[] {
   });
 }
 
-function buildUtilityPages(): ProductPage[] {
-  return t.products.items
-    .filter((p) => p.href !== productBase)
-    .map((product) => {
-      const slug = slugFromHref(product.href);
-      const content = productContent[slug];
-      return {
-        slug,
-        kind: 'utility',
-        badge: product.badge,
-        category: product.category,
-        name: product.title,
-        title: product.title,
-        subtitle: product.subtitle,
-        desc: product.desc,
-        features: product.features,
-        more: product.more,
-        buyUrl: checkoutForSlug(slug),
-        images: content.images,
-        overview: content.overview,
-        acquisition: acquisitionFor(product.title),
-        goodToKnow: content.goodToKnow,
-        limitations: content.limitations,
-        fullFeatures: content.fullFeatures,
-        systemRequirements: content.systemRequirements,
-        body: [],
-        relatedBlogSlugs: productRelatedBlogSlugs[slug] ?? [],
-      };
-    });
-}
-
-export const productPages: ProductPage[] = [...buildTierPages(), ...buildUtilityPages()];
+export const productPages: ProductPage[] = buildTierPages().filter(
+  (p) => p.slug === ARC_RAIDERS_PRODUCT_SLUG,
+);
 
 export const cheatPages = productPages.filter((p) => p.kind === 'tier');
 
@@ -455,6 +376,6 @@ export const productHub = {
   title: t.products.title,
   subtitle: t.products.subtitle,
   description:
-    'ARC Raiders cheats for PC on Steam, plus Cloud DMA hardware access and the UGC tool — overview pages and secure checkout for each product.',
+    'ARC Raiders cheats for PC on Steam — feature overview, secure checkout, and setup guides on arccheats.org.',
   buyUrl: checkoutForSlug('arc-raiders'),
 };

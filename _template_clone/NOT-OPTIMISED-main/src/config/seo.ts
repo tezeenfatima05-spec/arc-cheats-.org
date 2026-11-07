@@ -3,6 +3,7 @@ import { DEFAULT_OG_IMAGE_PATH, SITE_DOMAIN as INDEXNOW_HOST_NAME, SITE_URL } fr
 import { getBlogPost } from '../data/blog';
 import { getForumPost } from '../data/forum';
 import { getBlogSeoOverride } from './blogSeo';
+import { getForumSeoOverride } from './forumSeo';
 import { getPageSeoEntry, getPageKeywords, normalizeSeoPath } from './pageSeo';
 
 export { getPageKeywords };
@@ -76,10 +77,18 @@ export function resolvePageSeo(pathname: string): {
   if (forumMatch) {
     const post = getForumPost(forumMatch[1]);
     if (post) {
+      const override = getForumSeoOverride(post.slug);
+      if (override) {
+        return {
+          title: pageTitle(override.title),
+          description: override.description,
+          keywords: override.keywords,
+        };
+      }
       return {
         title: pageTitle(post.title),
         description: post.excerpt,
-        keywords: 'arc raiders cheats, arc raiders forum, arc cheat, steam pc',
+        keywords: 'arc raiders cheats, arc raiders forum, arc raiders esp, steam pc',
       };
     }
   }

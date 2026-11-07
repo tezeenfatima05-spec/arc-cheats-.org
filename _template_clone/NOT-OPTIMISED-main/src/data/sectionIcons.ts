@@ -106,6 +106,4 @@ export const cheatTierIcons: Record<string, IconName> = {
 
 export const productCategoryIcons: Record<string, IconName> = {
   'Core product': 'coreProduct',
-  'Cloud DMA': 'compareCloudBackup',
-  'UGC tool': 'package',
 };

@@ -32,7 +32,7 @@ export const en: Translations = {
     ctaPrimary: 'View product',
     ctaDiscord: 'Get access',
     modesLabel: 'Platform',
-    modes: ['Steam', 'Windows 10/11', 'Cloud DMA', 'Operator portal'],
+    modes: ['Steam', 'Windows 10/11', 'ARC Raiders', 'Operator portal'],
     metrics: [
       { label: 'Patch focus', strong: 'Active' },
       { label: 'Setup help', strong: '24/7' },
@@ -104,12 +104,12 @@ export const en: Translations = {
         bento: 'sm:col-span-2 lg:col-span-8 lg:row-span-2 lg:col-start-1 lg:row-start-4',
       },
       {
-        title: 'Hardware note',
-        subtitle: 'Cloud DMA',
+        title: 'Steam PC checks',
+        subtitle: 'Before you raid',
         desc:
-          'Many operators run Cloud DMA on a supported Windows setup. Confirm exact requirements in your portal or with support before purchase — expectations can shift after patches.',
-        bullets: ['Check compatibility before checkout', 'Follow portal steps for hardware pairing', 'Pause if status shows maintenance'],
-        tags: ['Cloud DMA', 'compatibility', 'Steam PC'],
+          'Confirm Windows build, Steam ARC Raiders install, and portal status before you enable overlays — expectations can shift after patches.',
+        bullets: ['Verify Steam ARC Raiders launches', 'Read portal status notes', 'Pause if maintenance is posted'],
+        tags: ['ARC Raiders', 'Steam PC', 'portal'],
         bento: 'sm:col-span-2 lg:col-span-4 lg:row-span-2 lg:col-start-9 lg:row-start-4',
       },
       {
@@ -136,13 +136,13 @@ export const en: Translations = {
     eyebrow: 'Why us',
     title: 'Patch-aware tooling for ARC Raiders on Steam',
     subtitle:
-      'We keep arccheats.org focused on one game build, clear feature lists, and honest limitations — not generic FPS promises.',
+      'We keep arccheats.org focused on ARC Raiders for Steam PC, clear feature lists, and honest limitations.',
     usLabel: 'ARC Cheats',
     otherLabel: 'Typical listing sites',
     rows: [
       {
-        title: 'Game-specific pages',
-        desc: 'ARC Raiders has its own product copy, FAQs, and guides — not recycled shooter bullet lists.',
+        title: 'ARC Raiders pages',
+        desc: 'ARC Raiders has its own product copy, FAQs, and guides — written for this Steam PC build only.',
       },
       {
         title: 'Grouped features',
@@ -162,7 +162,7 @@ export const en: Translations = {
       },
       {
         title: 'No fake forums',
-        desc: 'Forum threads are labeled samples for setup and feature Q&A — not impersonated customers.',
+        desc: 'Forum threads collect setup lessons and ESP tuning habits from ARC Raiders cheats operators on Steam PC.',
       },
     ],
     metrics: [
@@ -179,7 +179,7 @@ export const en: Translations = {
       {
         value: 'Steam',
         title: 'Platform',
-        desc: 'Windows 10/11 with ARC Raiders from Steam — verify Cloud DMA notes in portal.',
+        desc: 'Windows 10/11 with ARC Raiders from Steam — confirm portal status before you queue.',
       },
     ],
   },
@@ -202,7 +202,7 @@ export const en: Translations = {
       {
         step: 'Step 2',
         title: 'Install and verify',
-        desc: 'Download the current loader build for Windows, confirm Steam and any Cloud DMA requirements, then launch once with overlays off.',
+        desc: 'Download the current loader build for Windows, confirm Steam launches ARC Raiders, then start once with overlays off.',
       },
       {
         step: 'Step 3',
@@ -214,7 +214,7 @@ export const en: Translations = {
   compatibility: {
     eyebrow: 'Platform support',
     title: 'Built for Steam PC.',
-    subtitle: 'Confirm Cloud DMA and driver notes in your portal before you rely on hardware-assisted setups.',
+    subtitle: 'Built for Steam ARC Raiders on Windows 10 and 11 — read portal notes after each client patch.',
     items: [
       'Windows 10 & 11',
       'Steam · ARC Raiders',
@@ -254,46 +254,13 @@ export const en: Translations = {
   },
   products: {
     eyebrow: 'Products',
-    title: 'ARC Raiders software',
+    title: 'ARC Raiders Cheats',
     subtitle:
-      'ARC Raiders cheats plus Cloud DMA hardware access and the UGC tool — each listing links to its own product page and checkout.',
+      'ARC Raiders cheats for Steam PC — feature overview, secure checkout, and patch-day guides on arccheats.org.',
     viewAll: 'View product',
     get: 'Get',
     explore: 'Explore',
-    items: [
-      {
-        badge: 'Hardware',
-        category: 'Cloud DMA',
-        title: 'Cloud DMA',
-        subtitle: 'Hardware-assisted setups on supported Windows rigs',
-        desc:
-          'Portal-backed Cloud DMA access for operators who pair compatible hardware with a supported Windows build. Confirm driver and firmware notes before checkout.',
-        features: [
-          'Compatible Windows PC required',
-          'Portal setup and driver notes',
-          'Pairs with ARC Raiders builds',
-          'Verify requirements before purchase',
-        ],
-        more: 0,
-        href: `${productBase}cloud-dma/`,
-      },
-      {
-        badge: 'Utility',
-        category: 'UGC tool',
-        title: 'UGC Tool',
-        subtitle: 'User-generated content workflows and access',
-        desc:
-          'Standalone UGC tool access through secure checkout — review scope and licensing in the portal after purchase.',
-        features: [
-          'One-time access option',
-          'Portal download after checkout',
-          'Windows-focused workflow',
-          'Support via Discord when needed',
-        ],
-        more: 0,
-        href: `${productBase}ugc/`,
-      },
-    ],
+    items: [],
   },
   blog: {
     eyebrow: 'Blog',
@@ -431,7 +398,7 @@ export const en: Translations = {
         num: '01',
         phase: 'Before purchase',
         title: 'Read compatibility',
-        desc: 'Confirm Steam PC, Windows build, and any Cloud DMA requirement noted in the portal.',
+        desc: 'Confirm Steam PC, Windows build, and current ARC Raiders portal status before checkout.',
       },
       {
         num: '02',
@@ -542,8 +509,8 @@ export const en: Translations = {
       },
       {
         num: '05',
-        q: 'What is Cloud DMA?',
-        a: 'Some setups use Cloud DMA hardware with a compatible PC. Requirements live in the portal — confirm before you buy.',
+        q: 'Do I need to reread portal notes after patches?',
+        a: 'Yes. After ARC Raiders client updates, check portal status and loader notes before you reuse the same overlay profile.',
       },
       {
         num: '06',
@@ -583,7 +550,7 @@ export const en: Translations = {
         {
           heading: 'What we publish',
           paragraphs: [
-            'Product pages, blog guides, FAQs, and forum samples explain setup and features. Content updates when builds or policies change.',
+            'Product pages, blog guides, FAQs, and forum threads explain setup and features. Content updates when builds or policies change.',
           ],
         },
         {

@@ -11,7 +11,7 @@ export const ABOUT_EXTRA_SECTIONS: { heading: string; paragraphs: string[] }[] =
   {
     heading: 'What we do not do',
     paragraphs: [
-      'We do not operate in-game accounts, impersonate players on the forum samples, or promise undetectable outcomes. Risk and compatibility notes stay on product and legal pages where you can review them before purchase.',
+      'We do not operate in-game accounts, promise undetectable outcomes, or sell access outside the ARC Raiders cheats scope on arccheats.org. Risk and compatibility notes stay on product and legal pages where you can review them before purchase.',
     ],
   },
   {

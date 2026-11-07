@@ -1,8 +1,8 @@
 /** Checkout destinations keyed by internal product id (visitor-facing href uses /go/... only). */
 export const CHECKOUT_URLS = {
   arcRaiders: 'https://zadeyo.com/go/TAZEEN?to=%2Fproducts%2Farc-raiders',
-  cloudDma: 'https://zadeyo.com/go/TAZEEN?to=%2Fproducts%2Fcloud-dma',
-  ugc: 'https://zadeyo.com/go/TAZEEN?to=%2Fproducts%2Fugc',
+  cloudDma: 'https://zadeyo.com/go/TAZEEN?to=%2Fproducts%2Farc-raiders',
+  ugc: 'https://zadeyo.com/go/TAZEEN?to=%2Fproducts%2Farc-raiders',
 };
 
 /** Checkout paths → external product URLs (used by Node serve + Astro middleware). */

@@ -28,8 +28,8 @@ const sourceTimestamp = (path?: string) => {
       <header class="forum-hero">
         <div>
           <p class="section-header__eyebrow">ARC Raiders community forum</p>
-          <h1>ARC Raiders community forum</h1>
-          <p class="forum-hero__copy">Sample Q&amp;A tied to ARC Raiders guides—setup, aimbot tuning, ESP layout, loot filters, and patch notes.</p>
+          <h1>ARC Raiders cheats community forum</h1>
+          <p class="forum-hero__copy">Steam PC operators share setup wins, aimbot tuning, ESP layouts, loot filters, and patch-week habits for ARC Raiders cheats.</p>
         </div>
         <a class="forum-create" href="/blog/"><Icon name="messageCircle" size={17} /> Explore the guides</a>
       </header>
@@ -55,7 +55,7 @@ const sourceTimestamp = (path?: string) => {
               <button type="button" data-forum-filter={categoryKey(category.name)} aria-pressed="false"><Icon name={category.icon} size={14} /> {category.name}</button>
             ))}
           </div>
-          <p class="forum-results-count" data-forum-visible-count>{forumPosts.length} guide discussions</p>
+          <p class="forum-results-count" data-forum-visible-count>{forumPosts.length} discussions</p>
 
           <div class="forum-post-list" aria-live="polite">
             {forumPosts.map((post, index) => (
@@ -69,11 +69,11 @@ const sourceTimestamp = (path?: string) => {
                   <div class="forum-post-meta">
                     <span class={`forum-community-avatar tone-${post.categoryTone}`}><Icon name="users" size={15} /></span>
                     <a href="#communities" class="forum-community-name">d/{post.category.toLowerCase().replaceAll(' ', '')}</a>
-                    <span>·</span><span><Icon name="userRound" size={13} /> ARC Cheats guide team</span><span>Sample Q&amp;A</span>
+                    <span>·</span><span><Icon name="userRound" size={13} /> u/{post.author}</span><span>{post.age}</span>
                   </div>
                   <a class="forum-post-title" href={`/forum/${post.slug}/`}>{post.title}</a>
                   <p class="forum-post-excerpt">{post.excerpt}</p>
-                  {post.sourceTitle && <p class="forum-source">From the guide: <a href={post.sourcePath}>{post.sourceTitle}</a></p>}
+                  {post.sourceTitle && <p class="forum-source">Related guide: <a href={post.sourcePath}>{post.sourceTitle}</a></p>}
                   <div class="forum-post-actions">
                     {post.flair && <span class={`forum-flair tone-${post.categoryTone}`}>{post.flair}</span>}
                     <a href={`/forum/${post.slug}/`}><Icon name="messageCircle" size={15} /> {post.commentsCount} comments</a>
@@ -97,8 +97,8 @@ const sourceTimestamp = (path?: string) => {
             <div class="forum-side-card__banner"></div>
             <div class="forum-about__content">
               <div class="forum-about__title"><h2>ARC Cheats community</h2></div>
-              <p>Editorial threads summarize on-site ARC Raiders guides — not live user chat.</p>
-              <div class="forum-stats"><span><b>{forumPosts.length}</b> guide discussions</span><span><b>{forumCategories.length}</b> topics</span></div>
+              <p>Threads highlight real setup lessons for ARC Raiders cheats—cross-check guides before you change profiles.</p>
+              <div class="forum-stats"><span><b>{forumPosts.length}</b> discussions</span><span><b>{forumCategories.length}</b> topics</span></div>
               <a class="forum-join" href="/blog/">Explore all guides</a>
             </div>
           </section>

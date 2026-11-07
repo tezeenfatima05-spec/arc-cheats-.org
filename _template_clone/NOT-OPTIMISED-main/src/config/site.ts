@@ -1,4 +1,4 @@
-/** Central site identity and asset paths — adjust these for each game conversion. */
+/** Central site identity and asset paths — ARC Raiders cheats (single-game). */
 const DEFAULT_SITE_URL = 'https://arccheats.org';
 
 function normalizeOrigin(url: string): string {

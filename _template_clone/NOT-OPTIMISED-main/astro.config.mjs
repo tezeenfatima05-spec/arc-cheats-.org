@@ -13,6 +13,8 @@ export default defineConfig({
   },
   trailingSlash: 'always',
   redirects: {
+    '/products/cloud-dma/': '/products/arc-raiders/',
+    '/products/ugc/': '/products/arc-raiders/',
     '/products/arc-raiders/arc-raiders/': '/products/arc-raiders/',
     '/cheats/': '/products/arc-raiders/',
     '/products/arc-raiders/utilities/': '/products/utilities/',
