@@ -29,6 +29,7 @@ import { SITE_DOMAIN } from '../../config/site';
 import { isAbsoluteImageUrl, webpSrc, CARD_IMAGE_WIDTHS } from '../../utils/responsiveImage';
 import SeoResponsiveHeadStyles from '../../components/SeoResponsiveHeadStyles.astro';
 import { blogArticleShareLabels } from '../../config/sharePageSeo';
+import { applyBreadcrumbSeo } from '../../config/breadcrumbSeo';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -42,11 +43,11 @@ if (!post) {
 }
 
 const postPath = `/blog/${post.slug}/`;
-const breadcrumbs = [
+const breadcrumbs = applyBreadcrumbSeo(postPath, [
   { name: 'Home', path: '/' },
   { name: 'Blog', path: '/blog/' },
   { name: post.title, path: postPath },
-];
+]);
 
 const related = getRelatedBlogPosts(post.slug, 3);
 
@@ -144,6 +145,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
 
           <header class="blog-article__header">
             <h1 class="blog-article__title">{articleH1}</h1>
+            <h2 class="sr-only">Guide lead and metadata</h2>
             <p class="blog-article__lead">{post.desc}</p>
             {
               post.author && (

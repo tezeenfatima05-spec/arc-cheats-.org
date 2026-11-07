@@ -13,6 +13,7 @@ interface Props {
   extraSections?: { heading: string; paragraphs: string[] }[];
   supportLinkLabel?: string;
   homeLinkLabel?: string;
+  homeCrumbAriaLabel?: string;
   pageHeading?: string;
   sectionHeadingTag?: 'h2' | 'h3';
   extraSectionHeadingTag?: 'h2' | 'h3';
@@ -26,6 +27,7 @@ const {
   extraSections = [],
   supportLinkLabel = 'Contact support',
   homeLinkLabel = 'Back to home',
+  homeCrumbAriaLabel,
   pageHeading,
   sectionHeadingTag = 'h2',
   extraSectionHeadingTag,
@@ -41,7 +43,7 @@ const ExtraSectionHeading = extraSectionHeadingTag ?? sectionHeadingTag;
     <div class="text-left">
     <Breadcrumbs
       items={[
-        { name: 'Home', path: '/' },
+        { name: 'Home', path: '/', linkAriaLabel: homeCrumbAriaLabel },
         { name: breadcrumbLabel, path: Astro.url.pathname },
       ]}
     />

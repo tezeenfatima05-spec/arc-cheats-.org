@@ -113,12 +113,21 @@ const statusBadgeIcon = (text: string): IconName => {
       size="sm"
       class="w-full min-w-0 sm:flex-1"
       aria-label={buyAriaLabel ?? buyLabel}
+      title={buyAriaLabel}
       {...(buyUrl.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
       <span class="truncate">{buyLabel}</span>
       <Icon name="arrowRight" size={17} />
     </Button>
-    <Button as="a" href={href} variant="outline" size="sm" class="w-full min-w-0 sm:flex-1" aria-label={viewAriaLabel ?? viewLabel}>
+    <Button
+      as="a"
+      href={href}
+      variant="outline"
+      size="sm"
+      class="w-full min-w-0 sm:flex-1"
+      aria-label={viewAriaLabel ?? viewLabel}
+      title={viewAriaLabel}
+    >
       <span class="truncate">{viewLabel}</span>
       <Icon name="arrowRight" size={17} />
     </Button>

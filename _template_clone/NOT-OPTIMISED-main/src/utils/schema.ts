@@ -5,6 +5,7 @@ import { SITE_ORIGIN, absoluteAssetUrl, canonicalUrl, getOrganizationSameAs } fr
 export interface BreadcrumbItem {
   name: string;
   path: string;
+  linkAriaLabel?: string;
 }
 
 export function breadcrumbSchema(items: BreadcrumbItem[]) {

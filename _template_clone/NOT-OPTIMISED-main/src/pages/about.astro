@@ -9,6 +9,7 @@ import LegalPage from '../components/LegalPage.astro';
 import SeoResponsiveHeadStyles from '../components/SeoResponsiveHeadStyles.astro';
 import { breadcrumbSchema, organizationSchema, webPageSchema } from '../utils/schema';
 import { ABOUT_SHARE_LABELS } from '../config/sharePageSeo';
+import { SITEMAP_ANCHOR_BY_PATH } from '../config/sitemapAnchorSeo';
 
 const shareUrl = canonicalUrl('/about/');
 const shareQuery = encodeURIComponent(shareUrl);
@@ -43,11 +44,13 @@ const content = t.legalPages.about;
     class="sr-only"
     loading="lazy"
   />
+  <h2 class="sr-only">Publisher policy outline</h2>
   <LegalPage
     title={content.title}
     pageHeading="About Arc Cheats — patch status notes for Raiders overview"
     description={content.description}
     breadcrumbLabel="About"
+    homeCrumbAriaLabel="Home — site root linked from about"
     sections={content.sections}
     extraSections={ABOUT_EXTRA_SECTIONS}
     sectionHeadingTag="h2"
@@ -68,7 +71,9 @@ const content = t.legalPages.about;
       <li><a href="/forum/">Community thread gallery</a></li>
       <li><a href="/blog/arc-raiders-setup-and-first-launch/">Portal enablement how-to</a></li>
       <li><a href="/go/arc-raiders/">One-click /go/ purchase hop</a></li>
-      <li><a href="/sitemap.xml">Machine-readable URL manifest</a></li>
+      <li><a href="/blog/arc-raiders-player-esp-layout/">ESP layout note from about sr-only</a></li>
+      <li><a href="/blog/arc-raiders-arc-threat-overlays/">Threat overlay note from about sr-only</a></li>
+      <li><a href="/sitemap.xml">{SITEMAP_ANCHOR_BY_PATH['/about/']}</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">

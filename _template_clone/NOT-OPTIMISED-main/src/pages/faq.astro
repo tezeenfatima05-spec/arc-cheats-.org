@@ -8,12 +8,14 @@ import SiteFaqSection from '../components/SiteFaqSection.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import SeoResponsiveHeadStyles from '../components/SeoResponsiveHeadStyles.astro';
 import { FAQ_SHARE_LABELS } from '../config/sharePageSeo';
+import { SITEMAP_ANCHOR_BY_PATH } from '../config/sitemapAnchorSeo';
+import { applyBreadcrumbSeo } from '../config/breadcrumbSeo';
 
 const seo = resolvePageSeo('/faq/');
-const breadcrumbs = [
+const breadcrumbs = applyBreadcrumbSeo('/faq/', [
   { name: 'Home', path: '/' },
   { name: 'FAQ', path: '/faq/' },
-];
+]);
 
 const faqs = getFaqPageFaqs();
 const shareUrl = canonicalUrl('/faq/');
@@ -82,7 +84,9 @@ const shareTitle = encodeURIComponent(seo.title);
       <li><a href="/forum/">Sample community forum threads</a></li>
       <li><a href="/go/arc-raiders/">Raiders checkout hop from FAQ</a></li>
       <li><a href="/products/">Multi-SKU storefront index</a></li>
-      <li><a href="/sitemap.xml">Machine-readable URL manifest</a></li>
+      <li><a href="/blog/arc-raiders-setup-and-first-launch/">Setup walkthrough hop from FAQ sr-only</a></li>
+      <li><a href="/blog/arc-raiders-aimbot-and-fov-settings/">FOV tuning hop from FAQ sr-only</a></li>
+      <li><a href="/sitemap.xml">{SITEMAP_ANCHOR_BY_PATH['/faq/']}</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">
