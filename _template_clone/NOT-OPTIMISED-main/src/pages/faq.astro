@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getAllFaqs } from '../data/faq';
+import { getFaqPageFaqs } from '../config/faqPageSeo';
 import { canonicalUrl, resolvePageSeo } from '../config/seo';
 import { breadcrumbSchema, faqPageSchema, webPageSchema } from '../utils/schema';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -14,7 +14,7 @@ const breadcrumbs = [
   { name: 'FAQ', path: '/faq/' },
 ];
 
-const faqs = getAllFaqs();
+const faqs = getFaqPageFaqs();
 const shareUrl = canonicalUrl('/faq/');
 const shareQuery = encodeURIComponent(shareUrl);
 const shareTitle = encodeURIComponent(seo.title);
@@ -55,18 +55,19 @@ const shareTitle = encodeURIComponent(seo.title);
           titleId="faq-page-title"
           titleTag="h1"
         />
-        <h2 class="sr-only">FAQ topics and answers</h2>
       </div>
     </div>
   </section>
 
+  <h2 id="faq-page-list" class="sr-only">Frequently asked questions</h2>
   <SiteFaqSection items={faqs} variant="full" titleId="faq-page-list" showHeader={false} />
 
   <nav class="sr-only" aria-label="Related FAQ destinations">
     <ul>
-      <li><a href="/support/">Email ARC Cheats support from FAQ</a></li>
-      <li><a href="/blog/">Browse setup guides linked from FAQ</a></li>
-      <li><a href="/products/arc-raiders/">Open ARC Raiders product from FAQ</a></li>
+      <li><a href="/support/">FAQ — contact support via email</a></li>
+      <li><a href="/blog/">FAQ — open setup guide index</a></li>
+      <li><a href="/products/arc-raiders/">FAQ — view Raiders product detail</a></li>
+      <li><a href="/products/cloud-dma/">FAQ — read Cloud DMA listing</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">

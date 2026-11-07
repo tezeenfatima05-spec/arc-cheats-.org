@@ -60,7 +60,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: KW.forum,
   },
   '/faq/': {
-    title: 'FAQ – ARC Raiders cheats, access and guides | ARC Cheats',
+    title: 'FAQ – ARC Raiders cheats, access and guides |',
     description:
       'FAQ for ARC Raiders cheats: Steam compatibility, ban risk, Cloud DMA, checkout, loader setup, and support at ARC Cheats.',
     keywords: KW.core,
