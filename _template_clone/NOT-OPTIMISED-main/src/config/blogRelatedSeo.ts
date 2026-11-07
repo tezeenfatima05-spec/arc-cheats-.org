@@ -47,6 +47,12 @@ const CURATED: Record<string, string> = {
     'Portal order before world ESP',
   'arc-raiders-loot-and-world-esp-filters|arc-raiders-extraction-and-threat-overlays':
     'Exit caps after loot filters',
+  'arc-raiders-misc-camera-and-crosshair|arc-raiders-setup-and-first-launch':
+    'Portal habits before misc profiles',
+  'arc-raiders-misc-camera-and-crosshair|arc-raiders-combat-routing-to-extract':
+    'Peel routing after crosshair tweaks',
+  'arc-raiders-misc-camera-and-crosshair|arc-raiders-raid-atmosphere-and-arc-zones':
+    'Zone atmosphere after misc tuning',
 };
 
 export function getBlogRelatedLinkLabel(fromSlug: string, toSlug: string): string {

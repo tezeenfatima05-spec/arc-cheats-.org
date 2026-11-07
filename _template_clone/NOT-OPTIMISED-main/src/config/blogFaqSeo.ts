@@ -24,6 +24,7 @@ const slugProductLabel: Record<string, string> = {
   'arc-raiders-extraction-and-threat-overlays': 'Exit icons on Raiders listing',
   'arc-raiders-combat-routing-to-extract': 'Combat overlays on Raiders listing',
   'arc-raiders-loot-and-world-esp-filters': 'Loot filters on Raiders listing',
+  'arc-raiders-misc-camera-and-crosshair': 'Misc toolkit on Raiders listing',
 };
 
 const slugProductsLabel: Record<string, string> = {
@@ -34,6 +35,7 @@ const slugProductsLabel: Record<string, string> = {
   'arc-raiders-extraction-and-threat-overlays': 'Multi-SKU hub for exit overlay readers',
   'arc-raiders-combat-routing-to-extract': 'Multi-SKU hub for routing readers',
   'arc-raiders-loot-and-world-esp-filters': 'Multi-SKU hub for loot filter readers',
+  'arc-raiders-misc-camera-and-crosshair': 'Multi-SKU hub for misc comfort readers',
 };
 
 const slugBlogLabel: Record<string, string> = {
@@ -44,6 +46,7 @@ const slugBlogLabel: Record<string, string> = {
   'arc-raiders-extraction-and-threat-overlays': 'Exit cap articles index',
   'arc-raiders-combat-routing-to-extract': 'Routing articles index',
   'arc-raiders-loot-and-world-esp-filters': 'Loot filter articles index',
+  'arc-raiders-misc-camera-and-crosshair': 'Misc comfort articles index',
 };
 
 /** Contextual FAQ block at the bottom of blog posts — unique internal anchors only. */

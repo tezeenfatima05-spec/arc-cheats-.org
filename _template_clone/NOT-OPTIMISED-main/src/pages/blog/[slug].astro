@@ -157,7 +157,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
             }
           </header>
 
-          <h2 class="sr-only">Article sections</h2>
+          <p class="sr-only">Article sections</p>
           <Prose class="blog-article__prose prose-headings:scroll-mt-24 max-w-none text-left">
             {post.body.map((block: BlogBlock) => {
               if (block.type === 'h2') {
