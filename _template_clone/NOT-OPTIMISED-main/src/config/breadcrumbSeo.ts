@@ -13,6 +13,7 @@ const BLOG_ARIA_BY_SLUG: Record<string, string> = {
   'arc-raiders-arc-threat-overlays': 'Blog index — from ARC threat overlay guide',
   'arc-raiders-extraction-and-threat-overlays': 'Blog index — from exit overlay guide',
   'arc-raiders-combat-routing-to-extract': 'Blog index — from combat routing guide',
+  'arc-raiders-loot-and-world-esp-filters': 'Blog index — from loot filter guide',
 };
 
 /** Unique accessible names on breadcrumb links (visible crumb text unchanged). */

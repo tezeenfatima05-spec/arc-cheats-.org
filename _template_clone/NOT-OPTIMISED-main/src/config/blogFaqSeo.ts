@@ -23,6 +23,7 @@ const slugProductLabel: Record<string, string> = {
   'arc-raiders-arc-threat-overlays': 'Threat markers on Raiders listing',
   'arc-raiders-extraction-and-threat-overlays': 'Exit icons on Raiders listing',
   'arc-raiders-combat-routing-to-extract': 'Combat overlays on Raiders listing',
+  'arc-raiders-loot-and-world-esp-filters': 'Loot filters on Raiders listing',
 };
 
 const slugProductsLabel: Record<string, string> = {
@@ -32,6 +33,7 @@ const slugProductsLabel: Record<string, string> = {
   'arc-raiders-arc-threat-overlays': 'Multi-SKU hub for threat readers',
   'arc-raiders-extraction-and-threat-overlays': 'Multi-SKU hub for exit overlay readers',
   'arc-raiders-combat-routing-to-extract': 'Multi-SKU hub for routing readers',
+  'arc-raiders-loot-and-world-esp-filters': 'Multi-SKU hub for loot filter readers',
 };
 
 const slugBlogLabel: Record<string, string> = {
@@ -41,6 +43,7 @@ const slugBlogLabel: Record<string, string> = {
   'arc-raiders-arc-threat-overlays': 'Threat overlay articles index',
   'arc-raiders-extraction-and-threat-overlays': 'Exit cap articles index',
   'arc-raiders-combat-routing-to-extract': 'Routing articles index',
+  'arc-raiders-loot-and-world-esp-filters': 'Loot filter articles index',
 };
 
 /** Contextual FAQ block at the bottom of blog posts — unique internal anchors only. */

@@ -39,6 +39,14 @@ const CURATED: Record<string, string> = {
     'ESP clutter control',
   'arc-raiders-aimbot-and-fov-settings|arc-raiders-combat-routing-to-extract':
     'Peel timing after FOV caps',
+  'arc-raiders-loot-and-world-esp-filters|arc-raiders-player-esp-layout':
+    'Player ESP stack before filters',
+  'arc-raiders-loot-and-world-esp-filters|arc-raiders-arc-threat-overlays':
+    'ARC threat spacing with loot icons',
+  'arc-raiders-loot-and-world-esp-filters|arc-raiders-setup-and-first-launch':
+    'Portal order before world ESP',
+  'arc-raiders-loot-and-world-esp-filters|arc-raiders-extraction-and-threat-overlays':
+    'Exit caps after loot filters',
 };
 
 export function getBlogRelatedLinkLabel(fromSlug: string, toSlug: string): string {
