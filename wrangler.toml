@@ -1,0 +1,11 @@
+name = "arc-cheats-org"
+compatibility_date = "2026-01-01"
+
+# Astro app lives under _template_clone/NOT-OPTIMISED-main — build before upload.
+[build]
+command = "npm ci --prefix _template_clone/NOT-OPTIMISED-main && npm run build --prefix _template_clone/NOT-OPTIMISED-main"
+
+[assets]
+directory = "_template_clone/NOT-OPTIMISED-main/dist"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
