@@ -4,6 +4,13 @@ export function isAbsoluteImageUrl(src: string): boolean {
   return src.startsWith('http://') || src.startsWith('https://');
 }
 
+/** Local mirrored assets: `/images/.../name` → `name-640.webp` (see mirror-* scripts). */
+export function isResponsiveImageBase(src: string): boolean {
+  if (isAbsoluteImageUrl(src)) return false;
+  if (RASTER_EXT.test(src)) return false;
+  return src.startsWith('/images/');
+}
+
 /** 400w covers ~330px card slots at 1x; 640w covers 2x retina. */
 export const CARD_IMAGE_WIDTHS = [400, 640] as const;
 export const CARD_IMAGE_SIZES = '(min-width: 1024px) 330px, (min-width: 640px) 50vw, 100vw';

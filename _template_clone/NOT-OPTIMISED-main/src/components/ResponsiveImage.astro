@@ -3,6 +3,7 @@ import {
   DEFAULT_IMAGE_WIDTHS,
   defaultWebpSrc,
   isAbsoluteImageUrl,
+  isResponsiveImageBase,
   responsiveSrcSet,
 } from '../utils/responsiveImage';
 
@@ -32,9 +33,12 @@ const {
   desktopOnly = false,
 } = Astro.props;
 
-const isRaster = /\.(png|jpe?g|webp)$/i.test(src);
+const isRasterFile = /\.(png|jpe?g|webp)$/i.test(src);
 const isRemote = isAbsoluteImageUrl(src);
-const srcSet = isRemote ? undefined : responsiveSrcSet(src, widths);
+const isFinalWebp = /-\d+\.webp$/i.test(src);
+const useResponsiveWebp =
+  !isRemote && (isResponsiveImageBase(src) || (isRasterFile && !isFinalWebp));
+const srcSet = useResponsiveWebp ? responsiveSrcSet(src, widths) : undefined;
 const imgSrc = desktopOnly
   ? 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
   : defaultWebpSrc(src, widths);
@@ -43,7 +47,7 @@ const pictureMedia = desktopOnly ? '(min-width: 1024px)' : undefined;
 ---
 
 {
-  isRaster && !isRemote ? (
+  useResponsiveWebp ? (
     <picture>
       <source type="image/webp" srcset={srcSet} sizes={pictureSizes} media={pictureMedia} />
       <img
@@ -59,7 +63,7 @@ const pictureMedia = desktopOnly ? '(min-width: 1024px)' : undefined;
         class={className}
       />
     </picture>
-  ) : isRaster && isRemote ? (
+  ) : isRasterFile && isRemote ? (
     <img
       src={src}
       alt={alt}
