@@ -228,19 +228,18 @@ const articleLcp = isAbsoluteImageUrl(post.image)
     </div>
   </article>
 
-  {
-    blogUi?.srOnlyAnchors && blogUi.srOnlyAnchors.length > 0 && (
-      <nav class="sr-only" aria-label="Related article destinations">
-        <ul>
-          {blogUi.srOnlyAnchors.map((item) => (
-            <li>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    )
-  }
+  <nav class="sr-only" aria-label="Related article destinations">
+    <ul>
+      {blogUi?.srOnlyAnchors?.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))}
+      <li>
+        <a href="/sitemap.xml">XML crawl index for {post.slug}</a>
+      </li>
+    </ul>
+  </nav>
   <h2 class="sr-only">Questions about this guide</h2>
   <SiteFaqSection
     items={getBlogArticleFaqs(post.tag, post.slug)}

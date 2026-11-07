@@ -45,6 +45,7 @@ function cardLabel(product: (typeof productPages)[number]) {
 
 <section id="products" class="py-16 md:py-24" aria-labelledby="products-title">
   <div class="mx-auto max-w-6xl px-5">
+    {uniqueAnchors ? <h2 class="sr-only">Carousel software listings</h2> : null}
     <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="products-title" />
 
     <div class="products-carousel" data-products-carousel>

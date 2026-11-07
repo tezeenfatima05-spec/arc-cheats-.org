@@ -39,9 +39,9 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     sidebarEliteLabel: 'Elite Raiders hub in ESP sidebar',
     sidebarHubLabel: 'Whole catalog in ESP layout sidebar',
     srOnlyAnchors: [
-      { href: '/support/', label: 'Loader tickets from ESP layout article' },
-      { href: '/faq/', label: 'Policy answers for ESP readers' },
-      { href: '/about/', label: 'Publisher notes for ESP readers' },
+      { href: '/support/', label: 'ESP layout: loader support tickets' },
+      { href: '/faq/', label: 'ESP layout: portal policy answers' },
+      { href: '/blog/arc-raiders-loot-and-world-esp-filters/', label: 'ESP layout: loot filter follow-up' },
     ],
   },
   'arc-raiders-aimbot-and-fov-settings': {
@@ -61,9 +61,9 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     sidebarEliteLabel: 'Raiders aimbot hub sidebar entry',
     sidebarHubLabel: 'Software listings sidebar on FOV guide',
     srOnlyAnchors: [
-      { href: '/blog/arc-raiders-setup-and-first-launch/', label: 'Portal setup before FOV tuning' },
-      { href: '/privacy/', label: 'Privacy policy from aimbot guide' },
-      { href: '/forum/', label: 'Forum sample from aimbot guide' },
+      { href: '/blog/arc-raiders-setup-and-first-launch/', label: 'FOV guide: portal enable order' },
+      { href: '/privacy/', label: 'FOV guide: analytics privacy policy' },
+      { href: '/blog/arc-raiders-player-esp-layout/', label: 'FOV guide: ESP clutter companion' },
     ],
   },
   'arc-raiders-setup-and-first-launch': {
@@ -82,9 +82,9 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     sidebarEliteLabel: 'Elite hub linked in setup sidebar',
     sidebarHubLabel: 'Full software catalog sidebar link',
     srOnlyAnchors: [
-      { href: '/support/', label: 'Install help tickets for setup readers' },
-      { href: '/terms/', label: 'Purchase terms linked from setup guide' },
-      { href: '/products/cloud-dma/', label: 'Cloud DMA hardware mentioned in setup' },
+      { href: '/support/', label: 'Setup walkthrough: install tickets' },
+      { href: '/terms/', label: 'Setup walkthrough: license terms' },
+      { href: '/blog/arc-raiders-misc-camera-and-crosshair/', label: 'Setup walkthrough: camera misc guide' },
     ],
   },
   'arc-raiders-arc-threat-overlays': {
@@ -103,9 +103,9 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     sidebarEliteLabel: 'Raiders hub sidebar on threat guide',
     sidebarHubLabel: 'Catalog sidebar on threat overlay guide',
     srOnlyAnchors: [
-      { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Extraction caps paired with threat markers' },
-      { href: '/forum/', label: 'Community forum sample for threat readers' },
-      { href: '/privacy/', label: 'Privacy policy from threat overlay guide' },
+      { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Threat guide: exit cap pairing' },
+      { href: '/forum/', label: 'Threat guide: forum thread samples' },
+      { href: '/about/', label: 'Threat guide: publisher background' },
     ],
   },
   'arc-raiders-extraction-and-threat-overlays': {
@@ -124,9 +124,9 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     sidebarEliteLabel: 'Raiders hub on extraction sidebar',
     sidebarHubLabel: 'Full catalog on extraction sidebar',
     srOnlyAnchors: [
-      { href: '/blog/arc-raiders-combat-routing-to-extract/', label: 'Combat peel routing sibling article' },
-      { href: '/products/cloud-dma/', label: 'Cloud DMA listing from extraction guide' },
-      { href: '/support/', label: 'Support desk from extraction guide' },
+      { href: '/blog/arc-raiders-combat-routing-to-extract/', label: 'Extraction guide: peel routing sibling' },
+      { href: '/products/cloud-dma/', label: 'Extraction guide: DMA hardware page' },
+      { href: '/terms/', label: 'Extraction guide: purchase terms' },
     ],
   },
   'arc-raiders-combat-routing-to-extract': {
@@ -145,9 +145,9 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     sidebarEliteLabel: 'Raiders hub in extract routing sidebar',
     sidebarHubLabel: 'Wider catalog in extract routing sidebar',
     srOnlyAnchors: [
-      { href: '/blog/arc-raiders-misc-camera-and-crosshair/', label: 'Misc camera follow-up after extract routing' },
-      { href: '/about/', label: 'Publisher about page from extract routing' },
-      { href: '/faq/', label: 'Checkout FAQ from extract routing article' },
+      { href: '/blog/arc-raiders-misc-camera-and-crosshair/', label: 'Extract routing: camera misc follow-up' },
+      { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Extract routing: exit overlay sibling' },
+      { href: '/products/arc-raiders/', label: 'Extract routing: elite product hub' },
     ],
   },
 };

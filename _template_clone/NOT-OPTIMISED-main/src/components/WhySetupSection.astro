@@ -14,9 +14,10 @@ import {
 interface Props {
   setupCtaPrimaryLabel?: string;
   setupCtaSecondaryLabel?: string;
+  outlineH2?: boolean;
 }
 
-const { setupCtaPrimaryLabel, setupCtaSecondaryLabel } = Astro.props;
+const { setupCtaPrimaryLabel, setupCtaSecondaryLabel, outlineH2 = false } = Astro.props;
 
 const why = t.whyUs;
 const lastRowIndex = why.rows.length - 1;
@@ -24,6 +25,7 @@ const lastRowIndex = why.rows.length - 1;
 
 <section id="why-us" class="py-16 md:py-24" aria-labelledby="why-title">
   <div class="mx-auto max-w-6xl px-5">
+    {outlineH2 ? <h2 class="sr-only">Provider comparison overview</h2> : null}
     <header class="section-header section-header--wide">
       <p class="section-header__eyebrow">{why.eyebrow}</p>
       <h2 id="why-title" class="section-header__title">{why.title}</h2>

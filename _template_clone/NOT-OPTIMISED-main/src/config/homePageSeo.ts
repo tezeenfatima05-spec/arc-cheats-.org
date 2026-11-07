@@ -1,12 +1,12 @@
 /** Homepage-only SEO anchors (not i18n). */
 
-export const HOME_H1_SEO_SUFFIX = ' – extraction markers — Arc Cheats';
+export const HOME_H1_SEO_SUFFIX = ' – extraction markers with setup — Arc Cheats';
 
 export function homeProductBuyLabel(slug: string): string {
-  if (slug === 'arc-raiders') return 'Start ARC Raiders software checkout';
-  if (slug === 'cloud-dma') return 'Cloud DMA hardware checkout';
-  if (slug === 'ugc') return 'UGC utility tool checkout';
-  return `Buy access — ${slug}`;
+  if (slug === 'arc-raiders') return 'Begin Raiders software purchase';
+  if (slug === 'cloud-dma') return 'Request Cloud DMA hardware access';
+  if (slug === 'ugc') return 'Unlock UGC utility license';
+  return `Purchase access — ${slug}`;
 }
 
 export function homeProductViewLabel(slug: string): string {
