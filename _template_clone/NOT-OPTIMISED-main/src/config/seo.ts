@@ -2,6 +2,7 @@ import { t } from '../i18n';
 import { DEFAULT_OG_IMAGE_PATH, SITE_DOMAIN as INDEXNOW_HOST_NAME, SITE_URL } from './site';
 import { getBlogPost } from '../data/blog';
 import { getForumPost } from '../data/forum';
+import { getBlogSeoOverride } from './blogSeo';
 import { getPageSeoEntry, getPageKeywords, normalizeSeoPath } from './pageSeo';
 
 export { getPageKeywords };
@@ -55,6 +56,14 @@ export function resolvePageSeo(pathname: string): {
   if (blogMatch) {
     const post = getBlogPost(blogMatch[1]);
     if (post) {
+      const override = getBlogSeoOverride(post.slug);
+      if (override) {
+        return {
+          title: override.title,
+          description: override.description,
+          keywords: override.keywords,
+        };
+      }
       return {
         title: pageTitle(post.title),
         description: post.desc,

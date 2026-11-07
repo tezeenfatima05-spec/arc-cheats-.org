@@ -3,7 +3,8 @@ import '../../styles/blog-pages.css';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { t } from '../../i18n';
 import { getAllBlogSlugs, getBlogPost, getRelatedBlogPosts } from '../../data/blog';
-import { resolvePageSeo, resolveSocialImage } from '../../config/seo';
+import { getBlogSeoOverride } from '../../config/blogSeo';
+import { canonicalUrl, resolvePageSeo, resolveSocialImage } from '../../config/seo';
 import {
   articleSchema,
   breadcrumbSchema,
@@ -70,6 +71,12 @@ function slugify(text: string): string {
 }
 const published = parseBlogDate(post.date);
 const seo = resolvePageSeo(postPath);
+const blogSeo = getBlogSeoOverride(post.slug);
+const articleH1 = blogSeo?.h1 ?? post.title;
+const shareUrl = canonicalUrl(postPath);
+const shareQuery = encodeURIComponent(shareUrl);
+const shareTitle = encodeURIComponent(seo.title);
+const playerEspArticle = post.slug === 'arc-raiders-player-esp-layout';
 ---
 
 <BaseLayout
@@ -84,7 +91,7 @@ const seo = resolvePageSeo(postPath);
   jsonLd={[
     articleSchema({
       name: post.title,
-      description: post.desc,
+      description: seo.description,
       url: postPath,
       image: resolveSocialImage(post.image),
       datePublished: published,
@@ -99,7 +106,13 @@ const seo = resolvePageSeo(postPath);
       <BlogPostTopBar post={post} class="mt-6" />
 
       <div class="blog-article__layout mt-4 grid gap-6 lg:grid-cols-[minmax(14rem,16.5rem)_minmax(0,1fr)] lg:items-start lg:gap-8 xl:grid-cols-[17.5rem_minmax(0,1fr)]">
-        <BlogSidebar post={post} related={related} class="order-2 lg:order-1" />
+        <BlogSidebar
+          post={post}
+          related={related}
+          class="order-2 lg:order-1"
+          sidebarHeadingsAsParagraphs={playerEspArticle}
+          checkoutLinkLabel={playerEspArticle ? 'Player ESP guide checkout' : undefined}
+        />
 
         <div class="order-1 min-w-0 lg:order-2">
           <figure class="blog-article__hero">
@@ -116,7 +129,7 @@ const seo = resolvePageSeo(postPath);
           </figure>
 
           <header class="blog-article__header">
-            <h1 class="blog-article__title">{post.title}</h1>
+            <h1 class="blog-article__title">{articleH1}</h1>
             <p class="blog-article__lead">{post.desc}</p>
             {
               post.author && (
@@ -177,6 +190,7 @@ const seo = resolvePageSeo(postPath);
                     title={block.title}
                     html={linkify(block.text)}
                     href={resolveCheckoutHref(block.href)}
+                    buttonLabel={playerEspArticle ? 'Open ARC Raiders product map' : undefined}
                   />
                 );
               }
@@ -186,14 +200,14 @@ const seo = resolvePageSeo(postPath);
 
           <nav class="blog-article__actions" aria-label="Continue reading">
             <Button as="a" href={checkoutPath()} variant="primary" aria-label={t.ui.checkoutAria}>
-              Get access
+              {playerEspArticle ? 'Checkout from this ESP guide' : 'Get access'}
               <Icon name="arrowRight" size={17} />
             </Button>
             <Button as="a" href={ROUTES.products} variant="outline">
-              View products
+              {playerEspArticle ? 'Browse ARC Raiders products' : 'View products'}
             </Button>
             <Button as="a" href={ROUTES.blog} variant="outline">
-              More articles
+              {playerEspArticle ? 'Return to guides index' : 'More articles'}
               <Icon name="arrowRight" size={17} />
             </Button>
           </nav>
@@ -207,4 +221,17 @@ const seo = resolvePageSeo(postPath);
     titleId={`blog-faq-${post.slug}`}
     class="border-t border-border bg-muted/20"
   />
+  <nav class="sr-only" aria-label="Share this article">
+    <ul>
+      <li>
+        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>Share on X</a>
+      </li>
+      <li>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>Share on Facebook</a>
+      </li>
+      <li>
+        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>Share on Telegram</a>
+      </li>
+    </ul>
+  </nav>
 </BaseLayout>

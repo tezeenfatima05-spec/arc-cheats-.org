@@ -106,7 +106,7 @@ export const blogPosts: BlogPostFull[] = [
       },
       {
         type: 'cta',
-        title: 'Get access',
+        title: 'ARC Raiders ESP features',
         text: 'See grouped features on the product hub.',
         href: '/go/arc-raiders/',
       },

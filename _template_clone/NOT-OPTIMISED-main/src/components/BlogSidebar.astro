@@ -13,9 +13,21 @@ interface Props {
   post: BlogPostFull;
   related: BlogPostFull[];
   class?: string;
+  /** Keeps sidebar labels styled but avoids H2-before-H1 in document outline */
+  sidebarHeadingsAsParagraphs?: boolean;
+  checkoutLinkLabel?: string;
 }
 
-const { post, related, class: className } = Astro.props;
+const {
+  post,
+  related,
+  class: className,
+  sidebarHeadingsAsParagraphs = false,
+  checkoutLinkLabel,
+} = Astro.props;
+
+const SidebarHeadingTag = sidebarHeadingsAsParagraphs ? 'p' : 'h2';
+const sidebarCheckoutText = checkoutLinkLabel ?? 'Get access';
 
 const tocCount = post.body.filter((b) => b.type === 'h2').length;
 
@@ -50,7 +62,7 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
   {
     toc.length > 0 && (
       <section class="blog-sidebar__block" aria-labelledby="blog-sidebar-toc-title">
-        <h2 id="blog-sidebar-toc-title" class="blog-sidebar__heading">
+        <SidebarHeadingTag id="blog-sidebar-toc-title" class="blog-sidebar__heading">
           <Icon name="layers" size={14} class="text-primary" aria-hidden="true" />
           <span class="blog-sidebar__heading-text">In this article</span>
           {tocCount > 0 && (
@@ -58,7 +70,7 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
               {tocCount}
             </Badge>
           )}
-        </h2>
+        </SidebarHeadingTag>
         <nav aria-label="Table of contents">
           <ul class="blog-sidebar__toc-list" data-blog-toc>
             {toc.map((item) => (
@@ -82,10 +94,10 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
   {
     related.length > 0 && (
       <section class="blog-sidebar__block" aria-labelledby="blog-sidebar-related-title">
-        <h2 id="blog-sidebar-related-title" class="blog-sidebar__heading">
+        <SidebarHeadingTag id="blog-sidebar-related-title" class="blog-sidebar__heading">
           <Icon name="navBlog" size={14} class="text-primary" aria-hidden="true" />
           Related guides
-        </h2>
+        </SidebarHeadingTag>
         <ul class="blog-sidebar__list">
           {related.map((item) => (
             <li>
@@ -101,10 +113,10 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
   }
 
   <section class="blog-sidebar__block blog-sidebar__block--shop" aria-labelledby="blog-sidebar-products-title">
-    <h2 id="blog-sidebar-products-title" class="blog-sidebar__heading">
+    <SidebarHeadingTag id="blog-sidebar-products-title" class="blog-sidebar__heading">
       <Icon name="navProducts" size={14} class="text-primary" aria-hidden="true" />
       Our products
-    </h2>
+    </SidebarHeadingTag>
     <ul class="blog-sidebar__list">
       {productLinks.map((link) => (
         <li>
@@ -123,7 +135,7 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
       class="blog-sidebar__cta mt-2.5 w-full min-w-0 justify-start"
       aria-label={t.ui.checkoutAria}
     >
-      <span class="truncate">Get access</span>
+      <span class="truncate">{sidebarCheckoutText}</span>
       <Icon name="arrowRight" size={16} class="shrink-0" />
     </Button>
   </section>
