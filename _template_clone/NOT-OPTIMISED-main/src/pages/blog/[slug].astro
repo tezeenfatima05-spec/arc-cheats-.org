@@ -3,7 +3,7 @@ import '../../styles/blog-pages.css';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { t } from '../../i18n';
 import { getAllBlogSlugs, getBlogPost, getRelatedBlogPosts } from '../../data/blog';
-import { pageTitle } from '../../config/seo';
+import { resolvePageSeo, resolveSocialImage } from '../../config/seo';
 import {
   articleSchema,
   breadcrumbSchema,
@@ -69,14 +69,15 @@ function slugify(text: string): string {
     .replace(/^-|-$/g, '');
 }
 const published = parseBlogDate(post.date);
+const seo = resolvePageSeo(postPath);
 ---
 
 <BaseLayout
-  title={pageTitle(post.title)}
-  description={post.desc}
-  keywords={`arc raiders cheats, ${post.tag.toLowerCase()}, ${post.slug.replace(/-/g, ' ')}`}
+  title={seo.title}
+  description={seo.description}
+  keywords={seo.keywords}
   ogType="article"
-  ogImage={post.image}
+  ogImage={resolveSocialImage(post.image)}
   ogImageAlt={post.title}
   articlePublishedTime={published}
   articleModifiedTime={published}
@@ -85,7 +86,7 @@ const published = parseBlogDate(post.date);
       name: post.title,
       description: post.desc,
       url: postPath,
-      image: post.image,
+      image: resolveSocialImage(post.image),
       datePublished: published,
     }),
     breadcrumbSchema(breadcrumbs),

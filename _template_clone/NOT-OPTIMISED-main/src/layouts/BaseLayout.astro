@@ -11,6 +11,8 @@ import {
   DEFAULT_OG_IMAGE_WIDTH,
   GA_MEASUREMENT_ID,
   absoluteAssetUrl,
+  resolveSocialImage,
+  rssFeedUrl,
 } from '../config/seo';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -45,7 +47,7 @@ const {
 
 const canonical = canonicalUrl(Astro.url.pathname);
 const pageKeywords = keywordsProp ?? getPageKeywords(Astro.url.pathname);
-const ogImageUrl = absoluteAssetUrl(ogImage);
+const ogImageUrl = resolveSocialImage(ogImage);
 const robotsContent = noindex
   ? 'noindex, nofollow'
   : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
@@ -80,7 +82,7 @@ const robotsContent = noindex
       rel="alternate"
       type="application/rss+xml"
       title={`${t.site.name} Blog RSS`}
-      href={RSS_FEED_PATH}
+      href={rssFeedUrl()}
     />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="manifest" href="/site.webmanifest" />

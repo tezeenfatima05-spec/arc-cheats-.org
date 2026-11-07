@@ -1,13 +1,13 @@
 import type { Translations } from './types';
 import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
-import { PRODUCT_BASE } from '../config/site';
+import { PRODUCT_BASE, SITE_DOMAIN } from '../config/site';
 
 const productBase = PRODUCT_BASE;
 
 export const en: Translations = {
   site: {
     name: 'ARC Cheats',
-    domain: 'arccheats.org',
+    domain: SITE_DOMAIN,
     title: 'ARC Raiders Cheats | Aimbot & ESP PC',
     description:
       'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Features, guides, and secure checkout.',

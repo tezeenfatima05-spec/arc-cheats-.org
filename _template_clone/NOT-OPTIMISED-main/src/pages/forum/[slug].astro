@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Icon from '../../components/icons/Icon.astro';
 import { forumPosts, getForumPost } from '../../data/forum';
-import { pageTitle } from '../../config/seo';
+import { resolvePageSeo } from '../../config/seo';
 import { breadcrumbSchema, discussionForumPostingSchema } from '../../utils/schema';
 
 export function getStaticPaths() {
@@ -15,13 +15,14 @@ const post = getForumPost(Astro.params.slug!);
 if (!post) return Astro.redirect('/forum/');
 const path = `/forum/${post.slug}/`;
 const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Forum', path: '/forum/' }, { name: post.category, path: '/forum/' }, { name: post.title, path }];
+const seo = resolvePageSeo(path);
 const relatedPosts = [
   ...forumPosts.filter((item) => item.slug !== post.slug && item.category === post.category),
   ...forumPosts.filter((item) => item.slug !== post.slug && item.category !== post.category),
 ].slice(0, 3);
 ---
 
-<BaseLayout title={pageTitle(post.title)} description={post.excerpt} jsonLd={[
+<BaseLayout title={seo.title} description={seo.description} keywords={seo.keywords} jsonLd={[
   discussionForumPostingSchema({ name: post.title, text: post.body.join('\n\n'), url: path, author: post.author, comments: post.commentsCount }),
   breadcrumbSchema(breadcrumbs),
 ]}>

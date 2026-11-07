@@ -1,6 +1,8 @@
 import { t } from '../i18n';
 import { DEFAULT_OG_IMAGE_PATH, SITE_DOMAIN as INDEXNOW_HOST_NAME, SITE_URL } from './site';
-import { getPageSeoEntry, getPageKeywords } from './pageSeo';
+import { getBlogPost } from '../data/blog';
+import { getForumPost } from '../data/forum';
+import { getPageSeoEntry, getPageKeywords, normalizeSeoPath } from './pageSeo';
 
 export { getPageKeywords };
 
@@ -47,6 +49,32 @@ export function resolvePageSeo(pathname: string): {
 } {
   const entry = getPageSeoEntry(pathname);
   if (entry) return entry;
+
+  const path = normalizeSeoPath(pathname);
+  const blogMatch = path.match(/^\/blog\/([^/]+)\/$/);
+  if (blogMatch) {
+    const post = getBlogPost(blogMatch[1]);
+    if (post) {
+      return {
+        title: pageTitle(post.title),
+        description: post.desc,
+        keywords: `arc raiders cheats, arc cheat, ${post.tag.toLowerCase()}, steam pc`,
+      };
+    }
+  }
+
+  const forumMatch = path.match(/^\/forum\/([^/]+)\/$/);
+  if (forumMatch) {
+    const post = getForumPost(forumMatch[1]);
+    if (post) {
+      return {
+        title: pageTitle(post.title),
+        description: post.excerpt,
+        keywords: 'arc raiders cheats, arc raiders forum, arc cheat, steam pc',
+      };
+    }
+  }
+
   return { title: t.site.title, description: t.site.description, keywords: getPageKeywords('/') };
 }
 
@@ -58,10 +86,29 @@ export function pageTitle(keyword: string, brand = t.site.name): string {
   return `${trimmed}${suffix}`;
 }
 
-export const DEFAULT_OG_IMAGE_WIDTH = 1200;
-export const DEFAULT_OG_IMAGE_HEIGHT = 630;
+export const DEFAULT_OG_IMAGE_WIDTH = 180;
+export const DEFAULT_OG_IMAGE_HEIGHT = 180;
 
 export const RSS_FEED_PATH = '/rss.xml';
+
+export function rssFeedUrl(): string {
+  return `${SITE_ORIGIN}${RSS_FEED_PATH}`;
+}
+
+/** Prefer on-site images for OG/Twitter so audits match the crawled hostname. */
+export function resolveSocialImage(image?: string): string {
+  const candidate = (image ?? DEFAULT_OG_IMAGE).trim();
+  if (!candidate) return DEFAULT_OG_IMAGE;
+  if (candidate.startsWith('/')) return absoluteAssetUrl(candidate);
+  try {
+    const parsed = new URL(candidate);
+    const origin = new URL(SITE_ORIGIN);
+    if (parsed.origin === origin.origin) return candidate;
+  } catch {
+    return absoluteAssetUrl(DEFAULT_OG_IMAGE);
+  }
+  return absoluteAssetUrl(DEFAULT_OG_IMAGE);
+}
 
 /** Used by IndexNow postbuild script. */
 export const INDEXNOW_HOST = INDEXNOW_HOST_NAME;

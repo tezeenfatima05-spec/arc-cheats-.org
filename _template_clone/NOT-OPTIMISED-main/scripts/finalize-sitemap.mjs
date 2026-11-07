@@ -79,8 +79,29 @@ Sitemap: ${siteOrigin}/sitemap.xml
 `;
 fs.writeFileSync(path.join(dist, 'robots.txt'), `${robots.trim()}\n`, 'utf8');
 
+function rewriteBareDomainInTree(dir, fromDomain, toDomain) {
+  if (fromDomain === toDomain) return;
+  const escaped = fromDomain.replace(/\./g, '\\.');
+  const re = new RegExp(`\\b${escaped}\\b`, 'g');
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const target = path.join(dir, ent.name);
+    if (ent.isDirectory()) rewriteBareDomainInTree(target, fromDomain, toDomain);
+    else if (/\.html$/i.test(ent.name)) {
+      const text = fs.readFileSync(target, 'utf8');
+      if (!text.includes(fromDomain)) continue;
+      const next = text.replace(re, (match, offset, full) => {
+        if (full[offset - 1] === '@') return match;
+        return toDomain;
+      });
+      fs.writeFileSync(target, next);
+    }
+  }
+}
+
 if (siteOrigin !== DEFAULT_ORIGIN) {
   rewriteOriginInTree(dist, DEFAULT_ORIGIN, siteOrigin);
+  const liveHost = new URL(siteOrigin).hostname;
+  rewriteBareDomainInTree(dist, 'arccheats.org', liveHost);
 }
 
 console.log(`Sitemap finalized: ${urlCount} URLs → dist/sitemap.xml (origin: ${siteOrigin})`);

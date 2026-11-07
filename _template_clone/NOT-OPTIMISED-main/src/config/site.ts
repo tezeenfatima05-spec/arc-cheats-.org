@@ -18,9 +18,8 @@ export const PRODUCT_BASE = '/products/';
 
 export const TITLE_PREFIX = 'ARC Raiders Cheats & ESP';
 
-/** Default Open Graph / social preview (HTTPS URL). */
-export const DEFAULT_OG_IMAGE_PATH =
-  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/arc-raiders/c7f7b806-cb3e-4eea-8fa1-eca85c479073/1793197687507-jc9xf6-arcraidersimage1.webp';
+/** Default Open Graph / social preview (same host as the site — audit tools reject third-party OG URLs). */
+export const DEFAULT_OG_IMAGE_PATH = '/apple-touch-icon.png';
 
 export const SUPPORT_EMAIL = `support@${SITE_DOMAIN}`;
 

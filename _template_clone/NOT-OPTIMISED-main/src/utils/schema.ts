@@ -28,7 +28,7 @@ export function websiteSchema() {
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'ARC Raiders cheats for PC on Steam: aimbot, player ESP, world overlays, and extraction tools — ARC Cheats at arccheats.org.',
+      'ARC Raiders cheats for Steam PC: aimbot, player ESP, world overlays, and extraction tools from ARC Cheats.',
   };
 }
 
