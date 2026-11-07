@@ -23,6 +23,11 @@ const heroLcpImage = isAbsoluteImageUrl(firstHeroSrc) ? firstHeroSrc : webpSrc(f
   description={seo.description}
   jsonLd={[websiteSchema(), organizationSchema(), faqPageSchema(homeFaqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') })))]}
 >
+  <meta
+    slot="head"
+    name="keywords"
+    content="arc cheat, arc raiders cheats, arc raiders aimbot, arc raiders esp, steam pc cheats, arccheats"
+  />
   <link
     slot="head"
     rel="preload"

@@ -6,7 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "build": "npm ci --prefix _template_clone/NOT-OPTIMISED-main && npm run build --prefix _template_clone/NOT-OPTIMISED-main",
+    "build": "node scripts/cloudflare-build.mjs",
     "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {

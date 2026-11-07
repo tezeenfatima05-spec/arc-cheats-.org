@@ -10,7 +10,7 @@ export const en: Translations = {
     domain: 'arccheats.org',
     title: 'ARC Raiders Cheats — Aimbot & ESP | ARC Cheats',
     description:
-      'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Guides and checkout at ARC Cheats.',
+      'ARC cheat for Steam PC: Raiders aimbot, player ESP, loot overlays, extraction markers, and misc tools. Guides, features, and secure checkout.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [

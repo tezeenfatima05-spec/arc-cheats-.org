@@ -5,7 +5,21 @@ const root = process.cwd();
 const dist = path.join(root, 'dist');
 const source = path.join(dist, 'sitemap-0.xml');
 
-const siteOrigin = (process.env.PUBLIC_SITE_URL || 'https://arccheats.org').replace(/\/+$/, '');
+const DEFAULT_ORIGIN = 'https://arccheats.org';
+const siteOrigin = (process.env.PUBLIC_SITE_URL || DEFAULT_ORIGIN).replace(/\/+$/, '');
+
+function rewriteOriginInTree(dir, from, to) {
+  if (from === to) return;
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const target = path.join(dir, ent.name);
+    if (ent.isDirectory()) rewriteOriginInTree(target, from, to);
+    else if (/\.(html|xml|txt|js|css)$/i.test(ent.name)) {
+      const text = fs.readFileSync(target, 'utf8');
+      if (!text.includes(from)) continue;
+      fs.writeFileSync(target, text.split(from).join(to));
+    }
+  }
+}
 
 if (!fs.existsSync(source)) {
   console.error('finalize-sitemap: dist/sitemap-0.xml not found — run astro build first.');
@@ -37,7 +51,12 @@ function formatUrlset(xml) {
     .replace(/<\/priority>/g, '</priority>\n');
 }
 
-const formatted = formatUrlset(raw);
+let xml = raw;
+if (siteOrigin !== DEFAULT_ORIGIN) {
+  xml = xml.split(DEFAULT_ORIGIN).join(siteOrigin);
+}
+
+const formatted = formatUrlset(xml);
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), formatted, 'utf8');
 
 const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -59,5 +78,9 @@ Disallow: /go/
 Sitemap: ${siteOrigin}/sitemap.xml
 `;
 fs.writeFileSync(path.join(dist, 'robots.txt'), `${robots.trim()}\n`, 'utf8');
+
+if (siteOrigin !== DEFAULT_ORIGIN) {
+  rewriteOriginInTree(dist, DEFAULT_ORIGIN, siteOrigin);
+}
 
 console.log(`Sitemap finalized: ${urlCount} URLs → dist/sitemap.xml (origin: ${siteOrigin})`);
