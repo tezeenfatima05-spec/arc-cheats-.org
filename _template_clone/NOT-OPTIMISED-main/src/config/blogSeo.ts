@@ -32,7 +32,7 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     ctaButtonLabel: 'Open ARC Raiders product map',
   },
   'arc-raiders-arc-threat-overlays': {
-    title: 'ARC threat overlays on your route | ARC Cheats',
+    title: 'ARC threat overlays when units are on your rou | Cheats',
     description:
       'Threat markers, corpses, and distance context on Steam PC — know when to break contact with ARC Raiders ARC unit overlays.',
     keywords: 'threat, arc raiders esp, arc threat overlays, arc raiders cheats',
