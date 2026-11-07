@@ -45,10 +45,10 @@ const SectionHeading = sectionHeadingTag;
     </div>
     <header class="mt-4 space-y-4 text-center">
       <h1 class="text-3xl font-bold normal-case md:text-4xl">{heading}</h1>
-      <h2 class="sr-only">About page sections</h2>
       <p class="text-lg leading-relaxed text-muted-foreground">{description}</p>
     </header>
 
+    <h2 class="sr-only">Editorial and policy sections</h2>
     <Prose class="mt-10 max-w-none text-left">
       {sections.map((section) => (
         <section class="mt-8">
