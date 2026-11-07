@@ -8,7 +8,7 @@ export const en: Translations = {
   site: {
     name: 'ARC Cheats',
     domain: SITE_DOMAIN,
-    title: 'ARC Raiders Cheats | Aimbot & ESP PC',
+    title: 'Arc Raiders Cheats – extraction markers | ARC Cheats',
     description:
       'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Features, guides, and secure checkout.',
     discord: PRIMARY_CHECKOUT_PATH,
@@ -42,7 +42,7 @@ export const en: Translations = {
   },
   features: {
     eyebrow: 'Features',
-    title: 'ARC Raiders cheats — feature overview',
+    title: 'Everything you need for ARC Raiders',
     subtitle:
       'Aimbot, player and world ESP, loot filters, extraction markers, and misc tools — grouped the way the software is organized.',
     items: [
@@ -254,7 +254,7 @@ export const en: Translations = {
   },
   products: {
     eyebrow: 'Products',
-    title: 'ARC Raiders cheats & products',
+    title: 'ARC Raiders software',
     subtitle:
       'ARC Raiders cheats plus Cloud DMA hardware access and the UGC tool — each listing links to its own product page and checkout.',
     viewAll: 'View product',
@@ -297,10 +297,9 @@ export const en: Translations = {
   },
   blog: {
     eyebrow: 'Blog',
-    title: 'ARC Raiders cheats guides',
-    subtitle:
-      'Setup, aimbot tuning, ESP layout, and loot filters — ARC Raiders cheats guides for Steam PC.',
-    latestTitle: 'ARC Raiders cheats guides',
+    title: 'Guides and updates',
+    subtitle: 'Setup, aimbot tuning, ESP layout, loot filters, and patch-day notes for ARC Raiders on Steam PC.',
+    latestTitle: 'Latest articles',
     latestSubtitle: 'Filter by topic or sort to find setup walkthroughs and feature explanations.',
     filterAll: 'All articles',
     sortLabel: 'Sort by',
@@ -477,7 +476,7 @@ export const en: Translations = {
   },
   support: {
     eyebrow: 'Support',
-    title: 'ARC Raiders cheats support',
+    title: 'ARC Cheats support',
     subtitle: 'Tell us what blocked you.',
     channels: [
       {

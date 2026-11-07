@@ -6,8 +6,6 @@ import { breadcrumbSchema, faqPageSchema, webPageSchema } from '../utils/schema'
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SiteFaqSection from '../components/SiteFaqSection.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import { SITE_DOMAIN } from '../config/site';
-
 const seo = resolvePageSeo('/faq/');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
@@ -37,8 +35,8 @@ const faqs = getAllFaqs();
       <div class="mt-6">
         <SectionHeader
           eyebrow="Help center"
-          title="ARC Raiders cheats FAQ"
-          desc={`ARC Raiders cheats, aimbot, ESP, Steam PC setup, checkout, and Cloud DMA — answers in one place on ${SITE_DOMAIN}.`}
+          title="FAQ for ARC Raiders, access & guides"
+          desc="ARC Raiders features, Steam PC compatibility, checkout, risk, and blog topics—in one place."
           titleId="faq-page-title"
           titleTag="h1"
         />
