@@ -37,6 +37,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
 <BaseLayout
   title={seo.title}
   description={seo.description}
+  keywords={seo.keywords}
   jsonLd={[
     collectionPageSchema({
       name: t.blog.title,

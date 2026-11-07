@@ -74,6 +74,7 @@ const published = parseBlogDate(post.date);
 <BaseLayout
   title={pageTitle(post.title)}
   description={post.desc}
+  keywords={`arc raiders cheats, ${post.tag.toLowerCase()}, ${post.slug.replace(/-/g, ' ')}`}
   ogType="article"
   ogImage={post.image}
   ogImageAlt={post.title}

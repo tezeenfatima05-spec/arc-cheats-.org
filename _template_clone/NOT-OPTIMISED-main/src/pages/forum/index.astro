@@ -18,7 +18,7 @@ const sourceTimestamp = (path?: string) => {
 };
 ---
 
-<BaseLayout title={seo.title} description={seo.description} jsonLd={[
+<BaseLayout title={seo.title} description={seo.description} keywords={seo.keywords} jsonLd={[
   collectionPageSchema({ name: 'ARC Cheats Community Forum', description: seo.description, url: '/forum/' }),
   breadcrumbSchema(breadcrumbs),
 ]}>
@@ -96,7 +96,7 @@ const sourceTimestamp = (path?: string) => {
           <section class="forum-side-card forum-about" id="community-guidelines">
             <div class="forum-side-card__banner"></div>
             <div class="forum-about__content">
-              <div class="forum-about__title"><span class="forum-community-avatar forum-community-avatar--brand"><img src="/logo.svg" alt="" width="34" height="34" /></span><h2>ARC Cheats community</h2></div>
+              <div class="forum-about__title"><h2>ARC Cheats community</h2></div>
               <p>Editorial threads summarize on-site ARC Raiders guides — not live user chat.</p>
               <div class="forum-stats"><span><b>{forumPosts.length}</b> guide discussions</span><span><b>{forumCategories.length}</b> topics</span></div>
               <a class="forum-join" href="/blog/">Explore all guides</a>

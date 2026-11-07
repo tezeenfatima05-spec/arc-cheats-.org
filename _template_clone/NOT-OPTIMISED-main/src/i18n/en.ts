@@ -8,9 +8,9 @@ export const en: Translations = {
   site: {
     name: 'ARC Cheats',
     domain: 'arccheats.org',
-    title: 'ARC Raiders Cheats — Aimbot & ESP | ARC Cheats',
+    title: 'ARC Raiders Cheats | Aimbot & ESP PC',
     description:
-      'ARC cheat for Steam PC: Raiders aimbot, player ESP, loot overlays, extraction markers, and misc tools. Guides, features, and secure checkout.',
+      'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Features, guides, and secure checkout.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
@@ -25,10 +25,10 @@ export const en: Translations = {
     eyebrow: 'Private build · Steam',
     titleAccessible:
       'ARC Raiders cheats for Steam PC with aimbot, player ESP, loot overlays, and extraction tools.',
-    titleLine1: 'ARC',
-    titleLine2: 'Cheats, Aimbot & ESP',
+    titleLine1: 'ARC Raiders',
+    titleLine2: 'Cheats',
     subtitle:
-      'Steam PC aimbot, ESP, and raid overlays — clean menus, sharp reads, updates when patches drop.',
+      'ARC Raiders cheats for Steam PC: aimbot, ESP, and raid overlays with clean menus and patch-aware updates.',
     ctaPrimary: 'View product',
     ctaDiscord: 'Get access',
     modesLabel: 'Platform',

@@ -1,73 +1,93 @@
 /**
  * Central titles/descriptions for high-traffic routes.
- * Title target: ≤60 characters. Description target: 120–160 characters.
+ * Title target: <=60 characters. Description target: 120-160 characters.
  */
 
 export interface PageSeoEntry {
   title: string;
   description: string;
+  keywords?: string;
 }
+
+const KW = {
+  core: 'arc raiders cheats, arc raiders aimbot, arc raiders esp, steam pc cheats',
+  products: 'arc raiders cheats, arc raiders software, cloud dma, ugc tool',
+  blog: 'arc raiders guides, arc raiders setup, arc raiders aimbot settings',
+  forum: 'arc raiders forum, arc raiders cheats help, arc raiders esp tips',
+};
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'ARC Raiders Cheats — Aimbot & ESP | ARC Cheats',
+    title: 'ARC Raiders Cheats | Aimbot & ESP PC',
     description:
-      'ARC cheat for Steam PC: Raiders aimbot, player ESP, loot overlays, extraction markers, and misc tools. Guides, features, and secure checkout.',
+      'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Features, guides, and secure checkout.',
+    keywords: KW.core,
   },
   '/products/': {
-    title: 'ARC Raiders Products & Checkout | ARC Cheats',
+    title: 'ARC Raiders Products & Checkout',
     description:
-      'Browse ARC Raiders cheats, Cloud DMA access, and the UGC tool — feature lists, setup notes, and secure checkout links.',
+      'ARC Raiders cheats, Cloud DMA access, and UGC tool listings with feature summaries, setup notes, and secure checkout for Steam PC.',
+    keywords: KW.products,
   },
   '/products/arc-raiders/': {
-    title: 'ARC Raiders Aimbot & ESP Build | ARC Cheats',
+    title: 'ARC Raiders Cheats | Full Feature List',
     description:
-      'Full ARC Raiders cheat feature list for Steam PC: aimbot tuning, player ESP, world and loot overlays, extraction markers, and misc options.',
+      'ARC Raiders cheats for Steam: aimbot, player ESP, world and loot overlays, extraction markers, and misc options. Full feature breakdown.',
+    keywords: 'arc raiders cheats, arc raiders aimbot, arc raiders wallhack, steam pc',
   },
   '/products/cloud-dma/': {
-    title: 'Cloud DMA Access | ARC Cheats',
+    title: 'Cloud DMA Access for ARC Raiders',
     description:
-      'Cloud DMA hardware access on supported Windows rigs — compatibility notes, portal setup, and secure checkout for ARC Raiders operators.',
+      'Cloud DMA hardware access for supported Windows rigs. Compatibility checklist, portal notes, and checkout for ARC Raiders operators.',
+    keywords: 'cloud dma, arc raiders cheats, arc raiders hardware, steam pc',
   },
   '/products/ugc/': {
     title: 'UGC Tool Access | ARC Cheats',
     description:
-      'UGC utility tool for Windows — overview, one-time access pricing, portal download steps, and secure checkout through ARC Cheats.',
+      'UGC utility tool for Windows with one-time access, portal download steps, and secure checkout through ARC Cheats.',
+    keywords: 'ugc tool, arc raiders utilities, arc cheats access',
   },
   '/blog/': {
-    title: 'ARC Raiders Setup & Feature Guides | ARC Cheats',
+    title: 'ARC Raiders Cheats Guides & Setup',
     description:
-      'Setup walkthroughs, aimbot tuning, ESP layout tips, loot filters, and patch-day notes for ARC Raiders cheats on Steam PC.',
+      'ARC Raiders cheats setup guides, aimbot tuning, ESP layout tips, loot filters, and patch-day notes for Steam PC players.',
+    keywords: KW.blog,
   },
   '/forum/': {
-    title: 'ARC Raiders Forum & Q&A | ARC Cheats',
+    title: 'ARC Raiders Cheats Forum & Q&A',
     description:
-      'Community-style threads on setup, ESP layout, combat mode, loot filters, and Cloud DMA — sample Q&A for ARC Raiders on PC.',
+      'Sample community threads on ARC Raiders cheats setup, ESP layout, combat mode, loot filters, and Cloud DMA on Steam PC.',
+    keywords: KW.forum,
   },
   '/faq/': {
-    title: 'ARC Raiders Cheats FAQ | ARC Cheats',
+    title: 'ARC Raiders Cheats FAQ',
     description:
-      'FAQ on ARC Raiders features, Steam compatibility, ban risk, Cloud DMA, checkout, loader setup, and support at ARC Cheats.',
+      'FAQ for ARC Raiders cheats: Steam compatibility, ban risk, Cloud DMA, checkout, loader setup, and support at ARC Cheats.',
+    keywords: KW.core,
   },
   '/terms/': {
     title: 'Terms & Conditions | ARC Cheats',
     description:
-      'Terms of use, license scope, refunds, and checkout policy for ARC Cheats product listings and partner storefront links.',
+      'Terms of use, license scope, refunds, and checkout policy for ARC Cheats and ARC Raiders product listings.',
+    keywords: 'arc cheats terms, arc raiders checkout policy',
   },
   '/privacy/': {
     title: 'Privacy Policy | ARC Cheats',
     description:
-      'How ARC Cheats handles analytics, cookies, and contact data when you browse arccheats.org or open a support request.',
+      'How ARC Cheats handles analytics, cookies, and contact data when you browse or request support.',
+    keywords: 'arc cheats privacy policy',
   },
   '/about/': {
     title: 'About ARC Cheats',
     description:
-      'What ARC Cheats publishes: ARC Raiders PC software overview, honest limitations, guides, and status notes for Steam players.',
+      'ARC Cheats publishes ARC Raiders PC software overviews, honest limitations, guides, and status notes for Steam players.',
+    keywords: 'about arc cheats, arc raiders cheats site',
   },
   '/support/': {
-    title: 'Support & Setup Help | ARC Cheats',
+    title: 'ARC Raiders Cheats Support',
     description:
-      'Get help with portal login, loader setup, checkout, and Windows compatibility for ARC Raiders cheats on Steam PC.',
+      'Support for ARC Raiders cheats: portal login, loader setup, checkout help, and Windows compatibility on Steam PC.',
+    keywords: 'arc raiders cheats support, arc cheats setup help',
   },
 };
 
@@ -80,4 +100,8 @@ export function normalizeSeoPath(pathname: string): string {
 
 export function getPageSeoEntry(pathname: string): PageSeoEntry | undefined {
   return PAGE_SEO[normalizeSeoPath(pathname)];
+}
+
+export function getPageKeywords(pathname: string): string | undefined {
+  return getPageSeoEntry(pathname)?.keywords;
 }

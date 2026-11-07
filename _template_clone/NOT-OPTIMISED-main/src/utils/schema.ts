@@ -40,7 +40,7 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: SITE_NAME,
     url: `${SITE_ORIGIN}/`,
-    logo: `${SITE_ORIGIN}/logo.svg`,
+    logo: `${SITE_ORIGIN}/favicon-32.png`,
     email: SUPPORT_EMAIL,
     ...(sameAs.length > 0 ? { sameAs } : {}),
     contactPoint: [
@@ -147,7 +147,14 @@ export function productSchema(input: {
   offerUrl: string;
   image?: string;
   sku?: string;
+  priceUsd?: number;
 }) {
+  const image = input.image
+    ? input.image.startsWith('http')
+      ? input.image
+      : absoluteAssetUrl(input.image)
+    : undefined;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -158,11 +165,12 @@ export function productSchema(input: {
       '@type': 'Brand',
       name: SITE_NAME,
     },
-    ...(input.image ? { image: absoluteAssetUrl(input.image) } : {}),
+    ...(image ? { image } : {}),
     offers: {
       '@type': 'Offer',
       url: offerUrl(input.offerUrl),
       priceCurrency: 'USD',
+      ...(input.priceUsd != null ? { price: String(input.priceUsd) } : {}),
       availability: 'https://schema.org/InStock',
       seller: {
         '@type': 'Organization',
@@ -216,7 +224,7 @@ export function articleSchema(input: {
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_ORIGIN}/logo.svg`,
+        url: `${SITE_ORIGIN}/favicon-32.png`,
       },
     },
     mainEntityOfPage: {
