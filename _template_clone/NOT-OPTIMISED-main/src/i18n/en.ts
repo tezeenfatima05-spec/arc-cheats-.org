@@ -25,8 +25,8 @@ export const en: Translations = {
     eyebrow: 'Private build · Steam',
     titleAccessible:
       'ARC Raiders cheats for Steam PC with aimbot, player ESP, loot overlays, and extraction tools.',
-    titleLine1: 'ARC Raiders Cheats',
-    titleLine2: 'Steam PC',
+    titleLine1: 'ARC Raiders',
+    titleLine2: 'Cheats',
     subtitle:
       'ARC Raiders cheats for Steam PC: aimbot, ESP, and raid overlays with clean menus and patch-aware updates.',
     ctaPrimary: 'View product',
