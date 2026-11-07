@@ -4,7 +4,7 @@ const CURATED: Record<string, string> = {
   'arc-raiders-combat-routing-to-extract|arc-raiders-extraction-and-threat-overlays':
     'Exit marker caps companion',
   'arc-raiders-combat-routing-to-extract|arc-raiders-arc-threat-overlays':
-    'ARC unit threat overlays note',
+    'Unit pressure overlays note',
   'arc-raiders-combat-routing-to-extract|arc-raiders-setup-and-first-launch':
     'Portal-first setup reference',
   'arc-raiders-combat-routing-to-extract|arc-raiders-misc-camera-and-crosshair':
@@ -53,6 +53,12 @@ const CURATED: Record<string, string> = {
     'Peel routing after crosshair tweaks',
   'arc-raiders-misc-camera-and-crosshair|arc-raiders-raid-atmosphere-and-arc-zones':
     'Zone atmosphere after misc tuning',
+  'arc-raiders-arc-threat-overlays|arc-raiders-extraction-and-threat-overlays':
+    'Exit marker follow-up from unit guide',
+  'arc-raiders-arc-threat-overlays|arc-raiders-combat-routing-to-extract':
+    'Peel routing when markers spike',
+  'arc-raiders-arc-threat-overlays|arc-raiders-loot-and-world-esp-filters':
+    'Loot filters after unit caps',
 };
 
 export function getBlogRelatedLinkLabel(fromSlug: string, toSlug: string): string {

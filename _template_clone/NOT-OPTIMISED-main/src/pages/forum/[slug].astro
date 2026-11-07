@@ -78,6 +78,17 @@ const relatedPosts = [
       </div>
     </div>
   </section>
+  <nav class="sr-only" aria-label="Forum thread crawl destinations">
+    <ul>
+      <li><a href="/sitemap.xml">Sitemap URL list — forum thread sr-only hop</a></li>
+      {post.sourcePath && (
+        <li>
+          <a href={post.sourcePath}>Related guide hop — {post.slug}</a>
+        </li>
+      )}
+      <li><a href="/blog/arc-raiders-misc-camera-and-crosshair/">Misc comfort hop from forum thread</a></li>
+    </ul>
+  </nav>
 </BaseLayout>
 <script>
   import { initForumVotes } from '../../scripts/forum-votes.ts';

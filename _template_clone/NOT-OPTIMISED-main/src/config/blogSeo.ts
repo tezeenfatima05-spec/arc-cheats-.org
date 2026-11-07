@@ -55,6 +55,7 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
       { href: '/privacy/', label: 'Analytics privacy on ESP layout guide' },
       { href: '/forum/skeleton-or-box-esp/', label: 'Forum box-vs-skeleton thread from layout' },
       { href: '/blog/arc-raiders-misc-camera-and-crosshair/', label: 'Misc crosshair hop from player layout' },
+      { href: '/terms/', label: 'License hop from player ESP layout' },
     ],
   },
   'arc-raiders-loot-and-world-esp-filters': {
@@ -84,6 +85,7 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
       { href: '/go/arc-raiders/', label: 'Checkout hop after loot filter tuning' },
       { href: '/privacy/', label: 'Cookie policy hop from loot filters' },
       { href: '/forum/loot-filters-vs-visual-noise/', label: 'Forum loot strictness from filter guide' },
+      { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Exit caps hop from loot filter guide' },
     ],
   },
   'arc-raiders-aimbot-and-fov-settings': {
@@ -146,7 +148,7 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
   'arc-raiders-arc-threat-overlays': {
     title: 'Threat – know when to break contact on Raiders | Cheats',
     description:
-      'Threat cues on Steam PC—unit markers, corpses, and distance bands so you know when to push or peel with Raiders ESP overlays.',
+      'Unit markers on Steam PC—corpses and distance bands so you know when to push or peel; Raiders ESP overlays without HUD clutter.',
     keywords: 'threat, arc raiders esp, unit overlays, arc raiders cheats',
     h1: 'Know when to break contact: overlays on your route — ARC Raiders cheats',
     sidebarHeadingsAsParagraphs: true,
@@ -166,7 +168,9 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
       { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Exit distance sibling for unit markers' },
       { href: '/forum/extraction-icons-under-fire/', label: 'Forum extract icons under pressure' },
       { href: '/about/', label: 'Publisher background from unit marker guide' },
-      { href: '/go/arc-raiders/', label: 'Checkout hop after threat overlay article' },
+      { href: '/go/arc-raiders/', label: 'Buy access hop after unit marker article' },
+      { href: '/blog/arc-raiders-raid-atmosphere-and-arc-zones/', label: 'Zone scouting hop from unit marker guide' },
+      { href: '/support/', label: 'Loader support hop from unit marker guide' },
       { href: '/privacy/', label: 'Privacy hop on threat marker guide' },
     ],
   },
@@ -188,7 +192,7 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     checkoutSidebarAria: 'Checkout after exit caps sidebar',
     checkoutNavAria: 'Checkout after exit caps action bar',
     faqSectionHeading: 'Questions after exit distance caps',
-    sitemapLinkLabel: 'Sitemap row — exit overlay threat guide',
+    sitemapLinkLabel: 'Sitemap row — exit overlay distance guide',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-combat-routing-to-extract/', label: 'Peel routing walkthrough after exit caps' },
       { href: '/products/arc-raiders/', label: 'Raiders SKU hub from exit overlay guide' },
@@ -196,12 +200,13 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
       { href: '/privacy/', label: 'Privacy statement on exit cap guide' },
       { href: '/go/arc-raiders/', label: 'Buy access after extraction ESP article' },
       { href: '/forum/what-does-combat-mode-hide/', label: 'Forum combat-mode thread from exit guide' },
+      { href: '/blog/arc-raiders-arc-threat-overlays/', label: 'Unit markers hop from exit overlay guide' },
     ],
   },
   'arc-raiders-combat-routing-to-extract': {
     title: 'Extract – balance combat overlays with exit icons | Cheats',
     description:
-      'Extract under pressure on Steam PC—balance combat overlays with exit icons so you peel without guessing the route out on raids.',
+      'Extract under pressure on Steam PC—balance combat overlays with exit icons so you peel without guessing the route out on Steam raids.',
     keywords: 'extract, arc raiders esp, extraction routing, arc raiders cheats',
     h1: 'Extract clean: balance combat overlays and exit icons — ARC Raiders cheats',
     sidebarHeadingsAsParagraphs: true,
@@ -224,10 +229,12 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
       { href: '/go/arc-raiders/', label: 'Secure checkout after combat peel article' },
       { href: '/privacy/', label: 'Analytics privacy on peel routing guide' },
       { href: '/support/', label: 'Ticket desk from extract routing article' },
+      { href: '/forum/extraction-icons-under-fire/', label: 'Forum peel-icons thread from extract guide' },
+      { href: '/faq/', label: 'Access FAQ hop from extract routing article' },
     ],
   },
   'arc-raiders-misc-camera-and-crosshair': {
-    title: 'Arc Raiders – comfort profiles that pair with farm | Cheats',
+    title: 'Arc Raiders – comfort profiles that pair with combat | Cheats',
     description:
       'Arc Raiders misc camera, crosshair, and flashlight comfort profiles on Steam PC—pair farm, fight, and night sessions with your Raiders cheats build.',
     keywords: 'arc raiders fov, arc raiders crosshair, arc raiders cheats misc, steam pc',
@@ -279,7 +286,7 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     faqSectionHeading: 'Questions after ARC zone overlays',
     sitemapLinkLabel: 'Sitemap row — ARC zone atmosphere guide',
     srOnlyAnchors: [
-      { href: '/blog/arc-raiders-arc-threat-overlays/', label: 'Threat overlays after zone caps' },
+      { href: '/blog/arc-raiders-arc-threat-overlays/', label: 'Unit markers after zone caps' },
       { href: '/blog/arc-raiders-loot-and-world-esp-filters/', label: 'Loot filters after zone reads' },
       { href: '/go/arc-raiders/', label: 'Checkout hop after ARC zone guide' },
     ],
