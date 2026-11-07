@@ -22,6 +22,8 @@ interface Props {
   variant?: 'essential' | 'popular' | 'limited';
   buyLabel?: string;
   viewLabel?: string;
+  buyAriaLabel?: string;
+  viewAriaLabel?: string;
   maxFeatures?: number;
   class?: string;
 }
@@ -38,6 +40,8 @@ const {
   variant,
   buyLabel = 'Buy now',
   viewLabel = 'View details',
+  buyAriaLabel,
+  viewAriaLabel,
   maxFeatures = 10,
   class: className,
 } = Astro.props;
@@ -107,14 +111,15 @@ const statusBadgeIcon = (text: string): IconName => {
       href={buyUrl}
       variant="primary"
       size="sm"
-      class="w-full sm:flex-1"
+      class="w-full min-w-0 sm:flex-1"
+      aria-label={buyAriaLabel ?? buyLabel}
       {...(buyUrl.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
-      {buyLabel}
+      <span class="truncate">{buyLabel}</span>
       <Icon name="arrowRight" size={17} />
     </Button>
-    <Button as="a" href={href} variant="outline" size="sm" class="w-full sm:flex-1">
-      {viewLabel}
+    <Button as="a" href={href} variant="outline" size="sm" class="w-full min-w-0 sm:flex-1" aria-label={viewAriaLabel ?? viewLabel}>
+      <span class="truncate">{viewLabel}</span>
       <Icon name="arrowRight" size={17} />
     </Button>
   </CardFooter>

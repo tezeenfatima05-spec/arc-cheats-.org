@@ -8,6 +8,7 @@ const seo = resolvePageSeo('/about/');
 import LegalPage from '../components/LegalPage.astro';
 import SeoResponsiveHeadStyles from '../components/SeoResponsiveHeadStyles.astro';
 import { breadcrumbSchema, organizationSchema, webPageSchema } from '../utils/schema';
+import { ABOUT_SHARE_LABELS } from '../config/sharePageSeo';
 
 const shareUrl = canonicalUrl('/about/');
 const shareQuery = encodeURIComponent(shareUrl);
@@ -67,19 +68,19 @@ const content = t.legalPages.about;
       <li><a href="/forum/">Community thread gallery</a></li>
       <li><a href="/blog/arc-raiders-setup-and-first-launch/">Portal enablement how-to</a></li>
       <li><a href="/go/arc-raiders/">One-click /go/ purchase hop</a></li>
-      <li><a href="/sitemap.xml">Machine-readable URL manifest</a></li>
+      <li><a href="/sitemap.xml">Crawl manifest from about sr-only nav</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">
     <ul>
       <li>
-        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>Share on X</a>
+        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>{ABOUT_SHARE_LABELS.x}</a>
       </li>
       <li>
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>Share on Facebook</a>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>{ABOUT_SHARE_LABELS.facebook}</a>
       </li>
       <li>
-        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>Share on Telegram</a>
+        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>{ABOUT_SHARE_LABELS.telegram}</a>
       </li>
     </ul>
   </nav>

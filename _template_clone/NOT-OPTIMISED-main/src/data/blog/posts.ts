@@ -140,16 +140,16 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: 'Features',
-    title: 'Extraction overlays and combat mode',
+    title: 'Exit overlays and combat mode',
     slug: 'arc-raiders-extraction-and-threat-overlays',
     image: blogCover('arc-raiders-extraction-and-threat-overlays'),
-    desc: 'Using extraction icons with distance caps and switching combat mode for quieter world ESP.',
+    desc: 'Using exit icons with distance caps and switching combat mode for quieter world ESP.',
     date: 'Nov 2, 2025',
     readTime: '5 min read',
     body: [
       {
         type: 'p',
-        text: '**Extraction** markers belong in your rotation muscle memory. Cap distance so only relevant exits stay lit mid-fight. Pair with **ARC threat** when you need a fast “leave now” signal.',
+        text: '**Exit** markers belong in your rotation muscle memory. Cap distance so only relevant evac points stay lit mid-fight. Pair with **ARC threat** when you need a fast “leave now” signal.',
       },
       { type: 'h2', text: 'Combat mode vs full world ESP' },
       {
@@ -181,7 +181,7 @@ export const blogPosts: BlogPostFull[] = [
       },
       {
         type: 'cta',
-        title: 'ARC Raiders extraction access',
+        title: 'ARC Raiders overlay access',
         text: 'Checkout when you are ready for the full build.',
         href: '/go/arc-raiders/',
       },

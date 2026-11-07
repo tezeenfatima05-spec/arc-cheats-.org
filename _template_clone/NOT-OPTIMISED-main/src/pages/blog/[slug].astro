@@ -28,6 +28,7 @@ import { normalizeInternalPath, ROUTES } from '../../utils/path';
 import { SITE_DOMAIN } from '../../config/site';
 import { isAbsoluteImageUrl, webpSrc, CARD_IMAGE_WIDTHS } from '../../utils/responsiveImage';
 import SeoResponsiveHeadStyles from '../../components/SeoResponsiveHeadStyles.astro';
+import { blogArticleShareLabels } from '../../config/sharePageSeo';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -80,6 +81,7 @@ const shareUrl = canonicalUrl(postPath);
 const shareQuery = encodeURIComponent(shareUrl);
 const shareTitle = encodeURIComponent(seo.title);
 const blogUi = blogSeo;
+const shareLabels = blogArticleShareLabels(post.slug);
 const articleLcp = isAbsoluteImageUrl(post.image)
   ? post.image
   : webpSrc(post.image, CARD_IMAGE_WIDTHS[0]);
@@ -237,7 +239,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
         </li>
       ))}
       <li>
-        <a href="/sitemap.xml">Sitemap entry list ({post.slug})</a>
+        <a href="/sitemap.xml">{blogUi?.sitemapLinkLabel ?? `Sitemap entry list (${post.slug})`}</a>
       </li>
     </ul>
   </nav>
@@ -254,13 +256,13 @@ const articleLcp = isAbsoluteImageUrl(post.image)
   <nav class="sr-only" aria-label="Share this article">
     <ul>
       <li>
-        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>Share on X</a>
+        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>{shareLabels.x}</a>
       </li>
       <li>
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>Share on Facebook</a>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>{shareLabels.facebook}</a>
       </li>
       <li>
-        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>Share on Telegram</a>
+        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>{shareLabels.telegram}</a>
       </li>
     </ul>
   </nav>

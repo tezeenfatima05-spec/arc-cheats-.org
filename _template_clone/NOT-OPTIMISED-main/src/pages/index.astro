@@ -11,6 +11,7 @@ import { organizationSchema, webPageSchema, websiteSchema } from '../utils/schem
 import { heroSlides } from '../data/products';
 import { isAbsoluteImageUrl, webpSrc } from '../utils/responsiveImage';
 import { HOME_H1_SEO_SUFFIX } from '../config/homePageSeo';
+import { HOME_SHARE_LABELS } from '../config/sharePageSeo';
 import SeoResponsiveHeadStyles from '../components/SeoResponsiveHeadStyles.astro';
 
 const seo = resolvePageSeo('/');
@@ -42,6 +43,7 @@ const shareTitle = encodeURIComponent('Arc Raiders Cheats');
   />
   <SeoResponsiveHeadStyles />
   <HeroSection h1SeoSuffix={HOME_H1_SEO_SUFFIX} showOutlineH2 />
+  <h2 class="sr-only">Below-hero landing sections</h2>
   <FeaturesSection showOutlineH2 />
   <ProductsSection uniqueAnchors />
   <WhySetupSection outlineH2 />
@@ -61,19 +63,19 @@ const shareTitle = encodeURIComponent('Arc Raiders Cheats');
       <li><a href="/products/">Multi-SKU storefront roll-up</a></li>
       <li><a href="/forum/">Threaded community samples</a></li>
       <li><a href="/privacy/">Cookie analytics notice</a></li>
-      <li><a href="/sitemap.xml">Machine-readable URL manifest</a></li>
+      <li><a href="/sitemap.xml">Crawl manifest from landing sr-only nav</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">
     <ul>
       <li>
-        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>Share on X</a>
+        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>{HOME_SHARE_LABELS.x}</a>
       </li>
       <li>
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>Share on Facebook</a>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>{HOME_SHARE_LABELS.facebook}</a>
       </li>
       <li>
-        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>Share on Telegram</a>
+        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>{HOME_SHARE_LABELS.telegram}</a>
       </li>
     </ul>
   </nav>

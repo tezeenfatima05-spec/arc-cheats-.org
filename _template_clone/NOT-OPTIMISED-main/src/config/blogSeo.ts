@@ -23,6 +23,7 @@ export interface BlogSeoOverride {
   checkoutSidebarAria?: string;
   checkoutNavAria?: string;
   faqSectionHeading?: string;
+  sitemapLinkLabel?: string;
   srOnlyAnchors?: { href: string; label: string }[];
 }
 
@@ -45,10 +46,13 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     checkoutSidebarAria: 'Checkout after ESP layout sidebar',
     checkoutNavAria: 'Checkout after ESP layout actions',
     faqSectionHeading: 'Questions after ESP layout caps',
+    sitemapLinkLabel: 'Sitemap row — player ESP layout guide',
     srOnlyAnchors: [
       { href: '/support/', label: 'Loader tickets beside ESP layout' },
       { href: '/faq/', label: 'Portal policies for layout readers' },
       { href: '/blog/arc-raiders-loot-and-world-esp-filters/', label: 'Loot filters after box caps' },
+      { href: '/go/arc-raiders/', label: 'Checkout hop after ESP layout guide' },
+      { href: '/privacy/', label: 'Privacy note for ESP layout readers' },
     ],
   },
   'arc-raiders-aimbot-and-fov-settings': {
@@ -70,10 +74,12 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     checkoutSidebarAria: 'Checkout after FOV tuning sidebar',
     checkoutNavAria: 'Checkout after FOV tuning actions',
     faqSectionHeading: 'Questions after aimbot FOV tuning',
+    sitemapLinkLabel: 'Sitemap row — aimbot FOV settings guide',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-setup-and-first-launch/', label: 'Portal enable order before FOV' },
       { href: '/privacy/', label: 'Analytics privacy for FOV readers' },
       { href: '/blog/arc-raiders-player-esp-layout/', label: 'ESP clutter companion to FOV' },
+      { href: '/go/arc-raiders/', label: 'Checkout hop after FOV tuning guide' },
     ],
   },
   'arc-raiders-setup-and-first-launch': {
@@ -94,10 +100,13 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     checkoutSidebarAria: 'Checkout after setup launch sidebar',
     checkoutNavAria: 'Checkout after setup launch actions',
     faqSectionHeading: 'Questions after portal-first setup',
+    sitemapLinkLabel: 'Sitemap row — portal first launch guide',
     srOnlyAnchors: [
       { href: '/support/', label: 'Install tickets after setup steps' },
       { href: '/terms/', label: 'License wording for setup readers' },
       { href: '/blog/arc-raiders-misc-camera-and-crosshair/', label: 'Camera misc notes post-setup' },
+      { href: '/go/arc-raiders/', label: 'Checkout hop after setup launch guide' },
+      { href: '/privacy/', label: 'Privacy note for setup launch readers' },
     ],
   },
   'arc-raiders-arc-threat-overlays': {
@@ -118,34 +127,40 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     checkoutSidebarAria: 'Checkout after threat overlay sidebar',
     checkoutNavAria: 'Checkout after threat overlay actions',
     faqSectionHeading: 'Questions after ARC threat overlays',
+    sitemapLinkLabel: 'Sitemap row — ARC threat overlay guide',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Exit cap pairing with threat' },
       { href: '/forum/', label: 'Forum thread samples (threat)' },
       { href: '/about/', label: 'Publisher background (threat)' },
+      { href: '/go/arc-raiders/', label: 'Checkout hop after threat overlay guide' },
+      { href: '/privacy/', label: 'Privacy note for threat overlay readers' },
     ],
   },
   'arc-raiders-extraction-and-threat-overlays': {
     title: 'Extraction – Cap distance so only relevant | ARC Cheats',
     description:
       'Using extraction icons with distance caps and switching combat mode for quieter world ESP on Steam PC—relevant exits stay visible under pressure.',
-    keywords: 'extraction, arc raiders esp, extraction overlays, arc raiders cheats',
+    keywords: 'extraction, arc raiders esp, exit overlays, arc raiders cheats',
     h1: 'Extraction – cap distance so only relevant exits — ARC Raiders cheats',
     sidebarHeadingsAsParagraphs: true,
-    toolbarBackLabel: 'Return from extraction overlay article',
-    checkoutLinkLabel: 'Extraction overlay purchase',
-    navCheckoutLabel: 'Portal purchase (extraction)',
-    navProductsLabel: 'Extraction overlay listing',
-    navBlogLabel: 'Extraction/ESP siblings',
-    ctaButtonLabel: 'Overlay map (extraction)',
-    sidebarEliteLabel: 'Extraction overlay SKU map',
+    toolbarBackLabel: 'Return from exit overlay article',
+    checkoutLinkLabel: 'Exit overlay sidebar purchase',
+    navCheckoutLabel: 'Portal purchase after exit caps',
+    navProductsLabel: 'Exit marker product listing',
+    navBlogLabel: 'ESP sibling walkthroughs',
+    ctaButtonLabel: 'Overlay map for exit routes',
+    sidebarEliteLabel: 'Exit overlay SKU map',
     sidebarHubLabel: 'Inventory-wide download index',
-    checkoutSidebarAria: 'Checkout after extraction caps sidebar',
-    checkoutNavAria: 'Checkout after extraction caps actions',
-    faqSectionHeading: 'Questions after extraction distance caps',
+    checkoutSidebarAria: 'Checkout after exit caps sidebar',
+    checkoutNavAria: 'Checkout after exit caps action bar',
+    faqSectionHeading: 'Questions after exit distance caps',
+    sitemapLinkLabel: 'Sitemap row — exit overlay threat guide',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-combat-routing-to-extract/', label: 'Peel routing sibling piece' },
       { href: '/products/cloud-dma/', label: 'DMA hardware reference page' },
-      { href: '/terms/', label: 'Purchase terms for extraction readers' },
+      { href: '/terms/', label: 'License wording for exit readers' },
+      { href: '/privacy/', label: 'Privacy notice for exit overlay guide' },
+      { href: '/go/arc-raiders/', label: 'Secure hop after exit cap article' },
     ],
   },
   'arc-raiders-combat-routing-to-extract': {
@@ -166,10 +181,14 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
     checkoutSidebarAria: 'Checkout after extract routing sidebar',
     checkoutNavAria: 'Checkout after extract routing actions',
     faqSectionHeading: 'Questions after combat peel routing',
+    sitemapLinkLabel: 'Sitemap row — combat routing to extract guide',
     srOnlyAnchors: [
       { href: '/blog/arc-raiders-misc-camera-and-crosshair/', label: 'Camera misc after extract routing' },
       { href: '/blog/arc-raiders-extraction-and-threat-overlays/', label: 'Exit overlay sibling article' },
       { href: '/products/arc-raiders/', label: 'Elite product breakdown page' },
+      { href: '/go/arc-raiders/', label: 'Checkout hop after peel routing guide' },
+      { href: '/privacy/', label: 'Privacy note for peel routing readers' },
+      { href: '/support/', label: 'Support mailbox after peel routing guide' },
     ],
   },
 };

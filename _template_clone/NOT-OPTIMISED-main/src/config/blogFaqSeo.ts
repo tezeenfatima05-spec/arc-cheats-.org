@@ -30,7 +30,7 @@ const slugProductsLabel: Record<string, string> = {
   'arc-raiders-aimbot-and-fov-settings': 'Multi-SKU hub for FOV readers',
   'arc-raiders-setup-and-first-launch': 'Multi-SKU hub for setup readers',
   'arc-raiders-arc-threat-overlays': 'Multi-SKU hub for threat readers',
-  'arc-raiders-extraction-and-threat-overlays': 'Multi-SKU hub for extraction readers',
+  'arc-raiders-extraction-and-threat-overlays': 'Multi-SKU hub for exit overlay readers',
   'arc-raiders-combat-routing-to-extract': 'Multi-SKU hub for routing readers',
 };
 
@@ -39,7 +39,7 @@ const slugBlogLabel: Record<string, string> = {
   'arc-raiders-aimbot-and-fov-settings': 'Aim tuning articles index',
   'arc-raiders-setup-and-first-launch': 'Setup walkthroughs index',
   'arc-raiders-arc-threat-overlays': 'Threat overlay articles index',
-  'arc-raiders-extraction-and-threat-overlays': 'Extraction articles index',
+  'arc-raiders-extraction-and-threat-overlays': 'Exit cap articles index',
   'arc-raiders-combat-routing-to-extract': 'Routing articles index',
 };
 

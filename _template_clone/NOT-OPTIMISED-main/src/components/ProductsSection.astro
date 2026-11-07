@@ -72,8 +72,10 @@ function cardLabel(product: (typeof productPages)[number]) {
                       icon={cardIcon(product)}
                       badge={product.badge}
                       variant={product.variant}
-                      buyLabel={uniqueAnchors ? homeProductBuyLabel(product.slug) : 'Buy now'}
-                      viewLabel={uniqueAnchors ? homeProductViewLabel(product.slug) : 'View details'}
+                      buyLabel="Buy now"
+                      viewLabel="View details"
+                      buyAriaLabel={uniqueAnchors ? homeProductBuyLabel(product.slug) : undefined}
+                      viewAriaLabel={uniqueAnchors ? homeProductViewLabel(product.slug) : undefined}
                       maxFeatures={5}
                     />
                   </CarouselItem>
@@ -84,6 +86,20 @@ function cardLabel(product: (typeof productPages)[number]) {
         </div>
       </Carousel>
     </div>
+    {uniqueAnchors && (
+      <nav class="sr-only" aria-label="Product carousel destinations">
+        <ul>
+          {productPages.map((product) => (
+            <li>
+              <a href={product.buyUrl}>{homeProductBuyLabel(product.slug)}</a>
+            </li>
+            <li>
+              <a href={productPath(product.slug)}>{homeProductViewLabel(product.slug)}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
   </div>
 </section>
 

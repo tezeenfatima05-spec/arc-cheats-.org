@@ -7,6 +7,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SiteFaqSection from '../components/SiteFaqSection.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import SeoResponsiveHeadStyles from '../components/SeoResponsiveHeadStyles.astro';
+import { FAQ_SHARE_LABELS } from '../config/sharePageSeo';
 
 const seo = resolvePageSeo('/faq/');
 const breadcrumbs = [
@@ -81,19 +82,19 @@ const shareTitle = encodeURIComponent(seo.title);
       <li><a href="/forum/">Sample community forum threads</a></li>
       <li><a href="/go/arc-raiders/">Raiders checkout hop from FAQ</a></li>
       <li><a href="/products/">Multi-SKU storefront index</a></li>
-      <li><a href="/sitemap.xml">Machine-readable URL manifest</a></li>
+      <li><a href="/sitemap.xml">Crawl manifest from FAQ sr-only nav</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">
     <ul>
       <li>
-        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>Share on X</a>
+        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>{FAQ_SHARE_LABELS.x}</a>
       </li>
       <li>
-        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>Share on Facebook</a>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>{FAQ_SHARE_LABELS.facebook}</a>
       </li>
       <li>
-        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>Share on Telegram</a>
+        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>{FAQ_SHARE_LABELS.telegram}</a>
       </li>
     </ul>
   </nav>
