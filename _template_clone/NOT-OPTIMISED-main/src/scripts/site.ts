@@ -8,12 +8,9 @@ function initFonts() {
     root.classList.add('fonts-ready');
   };
 
-  if (!document.fonts?.ready) {
+  requestAnimationFrame(() => {
     markReady();
-    return;
-  }
-
-  document.fonts.ready.then(markReady).catch(markReady);
+  });
 }
 
 function initNavHighlight() {

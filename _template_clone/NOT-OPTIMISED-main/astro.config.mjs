@@ -45,6 +45,7 @@ export default defineConfig({
     },
   },
   build: {
-    inlineStylesheets: 'auto',
+    /** External CSS = smaller HTML (audit Performance); assets cached via public/_headers. */
+    inlineStylesheets: 'never',
   },
 });
