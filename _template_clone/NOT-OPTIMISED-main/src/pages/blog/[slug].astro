@@ -90,7 +90,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
   keywords={seo.keywords}
   ogType="article"
   ogImage={resolveSocialImage(post.image)}
-  ogImageAlt={post.title}
+  ogImageAlt={blogSeo?.imageAlt ?? post.title}
   articlePublishedTime={published}
   articleModifiedTime={published}
   jsonLd={[
@@ -119,13 +119,15 @@ const articleLcp = isAbsoluteImageUrl(post.image)
           class="order-2 lg:order-1"
           sidebarHeadingsAsParagraphs={blogUi?.sidebarHeadingsAsParagraphs}
           checkoutLinkLabel={blogUi?.checkoutLinkLabel}
+          sidebarEliteLabel={blogUi?.sidebarEliteLabel}
+          sidebarHubLabel={blogUi?.sidebarHubLabel}
         />
 
         <div class="order-1 min-w-0 lg:order-2">
           <figure class="blog-article__hero">
             <ResponsiveImage
               src={post.image}
-              alt={post.title}
+              alt={blogSeo?.imageAlt ?? post.title}
               width={960}
               height={540}
               loading="eager"
@@ -223,6 +225,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
     </div>
   </article>
 
+  <h2 class="sr-only">Questions about this guide</h2>
   <SiteFaqSection
     items={getBlogFaqs(post.tag, post.slug)}
     titleId={`blog-faq-${post.slug}`}

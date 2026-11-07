@@ -52,7 +52,7 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: 'Features',
-    title: 'ARC Raiders aimbot: FOV, smooth, and filters explained',
+    title: 'ARC Raiders aimbot: smooth and filters explained',
     slug: 'arc-raiders-aimbot-and-fov-settings',
     image: blogCover('arc-raiders-aimbot-and-fov-settings'),
     desc: 'What each aim slider does, when to tighten the aim cone, and how visible check and bones interact.',

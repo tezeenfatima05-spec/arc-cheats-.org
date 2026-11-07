@@ -248,7 +248,15 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       a: `Start with player ESP layout, then cross-check distance caps on ${productPage}.`,
     });
   }
-  if (slug.includes('aimbot') || slug.includes('fov')) {
+  if (slug === 'arc-raiders-aimbot-and-fov-settings') {
+    slugHints.push({
+      id: 'blog-slug-aim',
+      topic: 'scripts',
+      icon: 'faqBlogSlugScripts',
+      q: 'Where is aim tuning explained?',
+      a: a('The aimbot guide walks through smooth, filters, and cone defaults with conservative settings.'),
+    });
+  } else if (slug.includes('aimbot') || slug.includes('fov')) {
     slugHints.push({
       id: 'blog-slug-aim',
       topic: 'scripts',

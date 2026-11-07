@@ -16,6 +16,8 @@ interface Props {
   /** Keeps sidebar labels styled but avoids H2-before-H1 in document outline */
   sidebarHeadingsAsParagraphs?: boolean;
   checkoutLinkLabel?: string;
+  sidebarEliteLabel?: string;
+  sidebarHubLabel?: string;
 }
 
 const {
@@ -24,6 +26,8 @@ const {
   class: className,
   sidebarHeadingsAsParagraphs = false,
   checkoutLinkLabel,
+  sidebarEliteLabel,
+  sidebarHubLabel,
 } = Astro.props;
 
 const SidebarHeadingTag = sidebarHeadingsAsParagraphs ? 'p' : 'h2';
@@ -47,8 +51,12 @@ const toc = post.body
   }));
 
 const productLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'ARC Raiders product', href: ROUTES.productsElite, icon: 'sidebarElite' },
-  { label: 'All products', href: ROUTES.products, icon: 'sidebarHub' },
+  {
+    label: sidebarEliteLabel ?? 'ARC Raiders product',
+    href: ROUTES.productsElite,
+    icon: 'sidebarElite',
+  },
+  { label: sidebarHubLabel ?? 'All products', href: ROUTES.products, icon: 'sidebarHub' },
 ];
 ---
 

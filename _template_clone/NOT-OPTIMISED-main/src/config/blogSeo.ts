@@ -15,6 +15,9 @@ export interface BlogSeoOverride {
   navProductsLabel?: string;
   navBlogLabel?: string;
   ctaButtonLabel?: string;
+  imageAlt?: string;
+  sidebarEliteLabel?: string;
+  sidebarHubLabel?: string;
 }
 
 export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
@@ -34,15 +37,18 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
   'arc-raiders-aimbot-and-fov-settings': {
     title: 'ARC Raiders aimbot: FOV, smooth, and filters e | Cheats',
     description:
-      'FOV and smooth settings for ARC Raiders aimbot on Steam PC — visible check, bone picks, filters, and when to tighten the aim cone before raids.',
+      'What each aim slider does, when to tighten FOV, and how visible check and bones interact on Steam PC ARC Raiders aimbot guides.',
     keywords: 'fov, arc raiders aimbot, arc raiders cheats, steam pc',
     h1: 'ARC Raiders aimbot: FOV, smooth, and filters explained — cheats',
+    imageAlt: 'ARC Raiders aimbot and smoothing settings reference',
     sidebarHeadingsAsParagraphs: true,
-    checkoutLinkLabel: 'Aimbot FOV guide checkout',
+    checkoutLinkLabel: 'Aimbot settings guide checkout',
     navCheckoutLabel: 'Checkout from aimbot settings guide',
     navProductsLabel: 'Browse aimbot product listing',
     navBlogLabel: 'More aim and ESP guides',
     ctaButtonLabel: 'Open aimbot feature map',
+    sidebarEliteLabel: 'ARC Raiders aimbot product page',
+    sidebarHubLabel: 'All ARC Raiders software listings',
   },
   'arc-raiders-setup-and-first-launch': {
     title: 'How to set up ARC Raiders cheats on PC (portal |',
