@@ -10,6 +10,7 @@ import { canonicalUrl, resolvePageSeo } from '../config/seo';
 import { organizationSchema, webPageSchema, websiteSchema } from '../utils/schema';
 import { heroSlides } from '../data/products';
 import { isAbsoluteImageUrl, webpSrc } from '../utils/responsiveImage';
+import { HOME_H1_SEO_SUFFIX } from '../config/homePageSeo';
 
 const seo = resolvePageSeo('/');
 const firstHeroSrc = heroSlides[0]?.src ?? '/logo.svg';
@@ -38,11 +39,19 @@ const shareTitle = encodeURIComponent('Arc Raiders Cheats');
     media="(min-width: 1024px)"
     fetchpriority="high"
   />
-  <HeroSection />
-  <FeaturesSection />
-  <ProductsSection />
-  <WhySetupSection />
-  <ContentSections />
+  <HeroSection
+    h1SeoSuffix={HOME_H1_SEO_SUFFIX}
+    showOutlineH2
+    ctaProductsLabel="Browse ARC Raiders cheat products from home"
+    ctaDiscordLabel="Join ARC Cheats Discord from home"
+  />
+  <FeaturesSection showOutlineH2 />
+  <ProductsSection uniqueAnchors />
+  <WhySetupSection
+    setupCtaPrimaryLabel="Open portal from homepage setup section"
+    setupCtaSecondaryLabel="Read setup FAQ from homepage"
+  />
+  <ContentSections uniqueAnchors />
   <nav class="sr-only" aria-label="Share this page">
     <ul>
       <li>

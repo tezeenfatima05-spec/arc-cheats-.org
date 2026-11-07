@@ -11,6 +11,13 @@ import {
   CardTitle,
 } from "@/components/starwind/card";
 
+interface Props {
+  setupCtaPrimaryLabel?: string;
+  setupCtaSecondaryLabel?: string;
+}
+
+const { setupCtaPrimaryLabel, setupCtaSecondaryLabel } = Astro.props;
+
 const why = t.whyUs;
 const lastRowIndex = why.rows.length - 1;
 ---
@@ -240,7 +247,7 @@ const lastRowIndex = why.rows.length - 1;
         size="lg"
         class="deployment-cta-primary w-full rounded-xl sm:w-auto"
       >
-        {t.setup.ctaPrimary}
+        {setupCtaPrimaryLabel ?? t.setup.ctaPrimary}
       </Button>
       <Button
         as="a"
@@ -249,7 +256,7 @@ const lastRowIndex = why.rows.length - 1;
         size="lg"
         class="deployment-cta-secondary w-full rounded-xl sm:w-auto"
       >
-        {t.setup.ctaSecondary}
+        {setupCtaSecondaryLabel ?? t.setup.ctaSecondary}
       </Button>
     </div>
   </div>

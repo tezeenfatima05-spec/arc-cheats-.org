@@ -10,12 +10,23 @@ import SiteFaqSection from './SiteFaqSection.astro';
 import { getLandingFaqs } from '../data/faq';
 import { Button } from '@/components/starwind/button';
 
+import { homeBlogReadLabel } from '../config/homePageSeo';
+
+interface Props {
+  uniqueAnchors?: boolean;
+}
+
+const { uniqueAnchors = false } = Astro.props;
+
 const homeFaqs = getLandingFaqs();
 const featuredPosts = getFeaturedBlogPosts(3);
 
 ---
 
-<WorkflowSection />
+<WorkflowSection
+  ctaPrimaryLabel={uniqueAnchors ? 'Start checkout workflow from homepage' : undefined}
+  ctaSecondaryLabel={uniqueAnchors ? 'Read deployment steps on support' : undefined}
+/>
 
 <section id="blog" class="border-y border-border bg-muted/20 py-16 md:py-24" aria-labelledby="blog-title">
   <div class="mx-auto max-w-6xl px-5">
@@ -23,13 +34,17 @@ const featuredPosts = getFeaturedBlogPosts(3);
 
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-10">
       {featuredPosts.map((post, i) => (
-        <BlogCard post={post} index={i} />
+        <BlogCard
+          post={post}
+          index={i}
+          readLabel={uniqueAnchors ? homeBlogReadLabel(post.slug) : undefined}
+        />
       ))}
     </div>
 
     <div class="mt-10 flex justify-start lg:justify-center">
       <Button as="a" href={ROUTES.blog} variant="outline">
-        {t.blog.viewAll}
+        {uniqueAnchors ? 'Browse all ARC Raiders setup guides' : t.blog.viewAll}
         <Icon name="arrowRight" size={17} />
       </Button>
     </div>

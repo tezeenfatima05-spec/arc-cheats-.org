@@ -14,6 +14,17 @@ import {
   CarouselPrevious,
 } from '@/components/starwind/carousel';
 
+import {
+  homeProductBuyLabel,
+  homeProductViewLabel,
+} from '../config/homePageSeo';
+
+interface Props {
+  uniqueAnchors?: boolean;
+}
+
+const { uniqueAnchors = false } = Astro.props;
+
 const s = t.products;
 
 function cardIcon(product: (typeof productPages)[number]) {
@@ -61,8 +72,8 @@ function cardLabel(product: (typeof productPages)[number]) {
                       icon={cardIcon(product)}
                       badge={product.badge}
                       variant={product.variant}
-                      buyLabel="Buy now"
-                      viewLabel="View details"
+                      buyLabel={uniqueAnchors ? homeProductBuyLabel(product.slug) : 'Buy now'}
+                      viewLabel={uniqueAnchors ? homeProductViewLabel(product.slug) : 'View details'}
                       maxFeatures={5}
                     />
                   </CarouselItem>
