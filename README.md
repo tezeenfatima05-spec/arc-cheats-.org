@@ -39,4 +39,6 @@ Or in the Cloudflare dashboard:
 
 Wrangler runs the Astro build via `[build].command` in `wrangler.toml` and uploads `dist` from `[assets].directory`.
 
+**SEO / audit:** set `PUBLIC_SITE_URL` (in `wrangler.toml` `[build.environment]` or Cloudflare build variables) to the exact hostname you test—e.g. your `*.workers.dev` URL or `https://arccheats.org` after custom domain. This keeps canonical tags, sitemap, and `robots.txt` in sync (required for 90%+ site-health scores).
+
 **Node:** 22+ (see `engines` in nested `package.json`).

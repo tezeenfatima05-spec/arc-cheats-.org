@@ -8,9 +8,9 @@ export const en: Translations = {
   site: {
     name: 'ARC Cheats',
     domain: 'arccheats.org',
-    title: 'ARC Raiders Cheats — Aimbot, ESP & Wallhack | ARC Cheats',
+    title: 'ARC Raiders Cheats — Aimbot & ESP | ARC Cheats',
     description:
-      'ARC Raiders cheats for PC on Steam: aimbot, player ESP, wallhack, loot and container overlays, extraction markers, and misc tools — features and access at arccheats.org.',
+      'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Guides and checkout at ARC Cheats.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
@@ -24,7 +24,7 @@ export const en: Translations = {
     status: 'ARC Raiders — Steam PC',
     eyebrow: 'Private build · Steam',
     titleAccessible:
-      'ARC Raiders cheats for PC on Steam deliver aimbot tuning, player ESP and wallhack-style readouts, ARC and loot overlays with filters, extraction markers, and misc options like FOV and combat mode so you can configure overlays for raids without bloating the HUD.',
+      'ARC Raiders cheats for Steam PC with aimbot, player ESP, loot overlays, and extraction tools.',
     titleLine1: 'ARC',
     titleLine2: 'Cheats, Aimbot & ESP',
     subtitle:

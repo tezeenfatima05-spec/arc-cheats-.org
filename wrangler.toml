@@ -5,6 +5,10 @@ compatibility_date = "2026-01-01"
 [build]
 command = "npm ci --prefix _template_clone/NOT-OPTIMISED-main && npm run build --prefix _template_clone/NOT-OPTIMISED-main"
 
+# Must match the URL you audit (Workers *.workers.dev or custom domain). Override in Cloudflare dashboard if needed.
+[build.environment]
+PUBLIC_SITE_URL = "https://arc-cheats--org.tazeenrooziroti.workers.dev"
+
 [assets]
 directory = "_template_clone/NOT-OPTIMISED-main/dist"
 html_handling = "auto-trailing-slash"

@@ -1,6 +1,16 @@
 /** Central site identity and asset paths — adjust these for each game conversion. */
-export const SITE_DOMAIN = 'arccheats.org';
-export const SITE_URL = `https://${SITE_DOMAIN}`;
+const DEFAULT_SITE_URL = 'https://arccheats.org';
+
+function normalizeOrigin(url: string): string {
+  return url.trim().replace(/\/+$/, '');
+}
+
+/** Set `PUBLIC_SITE_URL` at build time (Cloudflare env) so canonicals match the live host. */
+export const SITE_URL = normalizeOrigin(
+  (import.meta.env.PUBLIC_SITE_URL as string | undefined)?.trim() || DEFAULT_SITE_URL,
+);
+
+export const SITE_DOMAIN = new URL(SITE_URL).hostname;
 export const SITE_NAME = 'ARC Cheats';
 
 /** Primary product hub and detail pages live under this path (trailing slash in routes). */

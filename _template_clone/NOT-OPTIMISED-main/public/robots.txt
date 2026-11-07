@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /go/
-
-Sitemap: https://arccheats.org/sitemap.xml
-
-# RSS: https://arccheats.org/rss.xml

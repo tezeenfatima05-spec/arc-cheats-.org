@@ -5,6 +5,8 @@ const root = process.cwd();
 const dist = path.join(root, 'dist');
 const source = path.join(dist, 'sitemap-0.xml');
 
+const siteOrigin = (process.env.PUBLIC_SITE_URL || 'https://arccheats.org').replace(/\/+$/, '');
+
 if (!fs.existsSync(source)) {
   console.error('finalize-sitemap: dist/sitemap-0.xml not found — run astro build first.');
   process.exit(1);
@@ -41,7 +43,7 @@ fs.writeFileSync(path.join(dist, 'sitemap.xml'), formatted, 'utf8');
 const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://arccheats.org/sitemap.xml</loc>
+    <loc>${siteOrigin}/sitemap.xml</loc>
     <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>
   </sitemap>
 </sitemapindex>
@@ -49,4 +51,13 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
 fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), formatted, 'utf8');
 
-console.log(`Sitemap finalized: ${urlCount} URLs → dist/sitemap.xml`);
+const robots = `User-agent: *
+Allow: /
+
+Disallow: /go/
+
+Sitemap: ${siteOrigin}/sitemap.xml
+`;
+fs.writeFileSync(path.join(dist, 'robots.txt'), `${robots.trim()}\n`, 'utf8');
+
+console.log(`Sitemap finalized: ${urlCount} URLs → dist/sitemap.xml (origin: ${siteOrigin})`);

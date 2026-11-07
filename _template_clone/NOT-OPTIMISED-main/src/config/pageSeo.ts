@@ -1,6 +1,6 @@
 /**
  * Central titles/descriptions for high-traffic routes.
- * After Search Console shows impressions, edit the matching path here and redeploy.
+ * Title target: ≤60 characters. Description target: 120–160 characters.
  */
 
 export interface PageSeoEntry {
@@ -10,69 +10,64 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'ARC Raiders Cheats — Aimbot, ESP & Wallhack | ARC Cheats',
+    title: 'ARC Raiders Cheats — Aimbot & ESP | ARC Cheats',
     description:
-      'ARC Raiders cheats for PC on Steam: aimbot, player ESP, wallhack, loot and world visuals, extraction markers, and misc tools — learn features and access at arccheats.org.',
+      'ARC Raiders cheats for Steam PC: aimbot, player ESP, loot overlays, extraction markers, and misc tools. Guides and checkout at ARC Cheats.',
   },
   '/products/': {
-    title: 'ARC Raiders Software & Access | ARC Cheats',
+    title: 'ARC Raiders Products & Checkout | ARC Cheats',
     description:
-      'ARC Raiders cheats for PC on Steam — product overview, feature groups, and secure checkout links at arccheats.org.',
+      'Browse ARC Raiders cheats, Cloud DMA access, and the UGC tool — feature lists, setup notes, and secure checkout links.',
   },
   '/products/arc-raiders/': {
-    title: 'ARC Raiders Cheats — Aimbot, ESP & Wallhack | ARC Cheats',
+    title: 'ARC Raiders Aimbot & ESP Build | ARC Cheats',
     description:
-      'Discover ARC Raiders cheats for PC featuring aimbot, player ESP, wallhack, loot ESP, container tracking, extraction markers, and customizable settings at ARC Cheats.',
+      'Full ARC Raiders cheat feature list for Steam PC: aimbot tuning, player ESP, world and loot overlays, extraction markers, and misc options.',
   },
   '/products/cloud-dma/': {
     title: 'Cloud DMA Access | ARC Cheats',
     description:
-      'Cloud DMA hardware-assisted setups on supported Windows rigs — portal requirements, overview, and secure checkout at arccheats.org.',
+      'Cloud DMA hardware access on supported Windows rigs — compatibility notes, portal setup, and secure checkout for ARC Raiders operators.',
   },
   '/products/ugc/': {
     title: 'UGC Tool Access | ARC Cheats',
     description:
-      'UGC tool utility access for Windows — product overview, pricing options, and secure checkout through ARC Cheats.',
-  },
-  '/products/utilities/': {
-    title: 'ARC Raiders Product & Checkout | ARC Cheats',
-    description:
-      'ARC Raiders for PC: feature overview, Steam-only compatibility, and secure access through our partner checkout.',
+      'UGC utility tool for Windows — overview, one-time access pricing, portal download steps, and secure checkout through ARC Cheats.',
   },
   '/blog/': {
-    title: 'ARC Raiders Guides & Setup | ARC Cheats',
+    title: 'ARC Raiders Setup & Feature Guides | ARC Cheats',
     description:
-      'Setup guides, feature tips, and patch notes for ARC Raiders cheats — aimbot, ESP, loot overlays, and configuration at arccheats.org.',
+      'Setup walkthroughs, aimbot tuning, ESP layout tips, loot filters, and patch-day notes for ARC Raiders cheats on Steam PC.',
   },
   '/forum/': {
-    title: 'ARC Raiders Community Forum | ARC Cheats',
+    title: 'ARC Raiders Forum & Q&A | ARC Cheats',
     description:
-      'Discuss ARC Raiders cheat setup, features, troubleshooting, and configuration with other PC players.',
+      'Community-style threads on setup, ESP layout, combat mode, loot filters, and Cloud DMA — sample Q&A for ARC Raiders on PC.',
   },
   '/faq/': {
-    title: 'FAQ | ARC Raiders Cheats & Access | ARC Cheats',
+    title: 'ARC Raiders Cheats FAQ | ARC Cheats',
     description:
-      'Answers on ARC Raiders features, Steam PC compatibility, checkout, loader setup, and support at arccheats.org.',
+      'FAQ on ARC Raiders features, Steam compatibility, ban risk, Cloud DMA, checkout, loader setup, and support at ARC Cheats.',
   },
   '/terms/': {
     title: 'Terms & Conditions | ARC Cheats',
     description:
-      'Purchase terms, license use, and refund policy for ARC Cheats listings and checkout links used on arccheats.org.',
+      'Terms of use, license scope, refunds, and checkout policy for ARC Cheats product listings and partner storefront links.',
   },
   '/privacy/': {
     title: 'Privacy Policy | ARC Cheats',
     description:
-      'How arccheats.org uses analytics, cookies, and contact data when you browse or request support.',
+      'How ARC Cheats handles analytics, cookies, and contact data when you browse arccheats.org or open a support request.',
   },
   '/about/': {
     title: 'About ARC Cheats',
     description:
-      'What ARC Cheats publishes: ARC Raiders PC tools, guides, and status notes at arccheats.org.',
+      'What ARC Cheats publishes: ARC Raiders PC software overview, honest limitations, guides, and status notes for Steam players.',
   },
   '/support/': {
-    title: 'Support | ARC Cheats',
+    title: 'Support & Setup Help | ARC Cheats',
     description:
-      'Get help with loader setup, access, and checkout for ARC Raiders on Steam PC.',
+      'Get help with portal login, loader setup, checkout, and Windows compatibility for ARC Raiders cheats on Steam PC.',
   },
 };
 

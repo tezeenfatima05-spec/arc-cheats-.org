@@ -1,8 +1,8 @@
 import { t } from '../i18n';
-import { DEFAULT_OG_IMAGE_PATH, SITE_DOMAIN as INDEXNOW_HOST_NAME } from './site';
+import { DEFAULT_OG_IMAGE_PATH, SITE_DOMAIN as INDEXNOW_HOST_NAME, SITE_URL } from './site';
 import { getPageSeoEntry } from './pageSeo';
 
-export const SITE_ORIGIN = `https://${t.site.domain}`;
+export const SITE_ORIGIN = SITE_URL;
 
 export const DEFAULT_OG_IMAGE = DEFAULT_OG_IMAGE_PATH;
 

@@ -3,8 +3,10 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import { sitemapSerialize } from './src/config/sitemap.ts';
 
+const site = (process.env.PUBLIC_SITE_URL || 'https://arccheats.org').replace(/\/+$/, '');
+
 export default defineConfig({
-  site: 'https://arccheats.org',
+  site,
   server: {
     host: '127.0.0.1',
     port: 5173,
@@ -26,7 +28,10 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404') && !page.includes('/go/'),
+      filter: (page) => {
+        const skip = ['/404', '/go/', '/products/utilities/', '/cheats/', '/contact/'];
+        return !skip.some((part) => page.includes(part));
+      },
       serialize: sitemapSerialize,
     }),
   ],
