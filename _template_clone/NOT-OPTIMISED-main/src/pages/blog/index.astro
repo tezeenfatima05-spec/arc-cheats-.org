@@ -89,7 +89,6 @@ function blogCardReadLabel(slug: string): string {
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
       <h1 class="sr-only">{blogIndexH1}</h1>
-      <h2 class="sr-only">Featured guide spotlight</h2>
       <p class="sr-only">Featured ARC Raiders guide</p>
       {featured && (
         <BlogCard
@@ -183,7 +182,7 @@ function blogCardReadLabel(slug: string): string {
       <li><a href="/products/">Multi-product catalog hub</a></li>
       <li><a href="/privacy/">Cookie privacy reference</a></li>
       <li><a href="/go/arc-raiders/">Raiders checkout hop from guides</a></li>
-      <li><a href="/sitemap.xml">Crawl manifest from guides sr-only nav</a></li>
+      <li><a href="/sitemap.xml">Machine-readable URL manifest</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">
