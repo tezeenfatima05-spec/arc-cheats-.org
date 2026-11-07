@@ -23,6 +23,8 @@ interface Props {
   layout?: 'default' | 'featured';
   class?: string;
   readLabel?: string;
+  /** Featured index card uses a non-heading title so the page H1 leads the outline. */
+  titleAsParagraph?: boolean;
 }
 
 const {
@@ -33,6 +35,7 @@ const {
   layout = 'default',
   class: className,
   readLabel,
+  titleAsParagraph = false,
 } = Astro.props;
 const articleReadLabel = readLabel ?? t.blog.read;
 const isFeatured = layout === 'featured';
@@ -118,14 +121,27 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
         isFeatured && 'justify-center border-t border-border p-5 sm:p-6 lg:border-t-0 lg:py-6 lg:pl-8 lg:pr-6',
       ]}
     >
-      <h3 class="text-base font-semibold normal-case leading-snug tracking-tight md:text-[1.0625rem]">
-        <a
-          href={href}
-          class="text-foreground decoration-primary/0 underline-offset-4 transition-colors hover:text-primary hover:underline"
-        >
-          {post.title}
-        </a>
-      </h3>
+      {
+        titleAsParagraph ? (
+          <p class="text-base font-semibold normal-case leading-snug tracking-tight md:text-[1.0625rem]">
+            <a
+              href={href}
+              class="text-foreground decoration-primary/0 underline-offset-4 transition-colors hover:text-primary hover:underline"
+            >
+              {post.title}
+            </a>
+          </p>
+        ) : (
+          <h3 class="text-base font-semibold normal-case leading-snug tracking-tight md:text-[1.0625rem]">
+            <a
+              href={href}
+              class="text-foreground decoration-primary/0 underline-offset-4 transition-colors hover:text-primary hover:underline"
+            >
+              {post.title}
+            </a>
+          </h3>
+        )
+      }
 
       <p
         class:list={[

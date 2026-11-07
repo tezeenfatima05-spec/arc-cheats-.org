@@ -48,7 +48,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: 'ugc tool, arc raiders utilities, arc cheats access',
   },
   '/blog/': {
-    title: 'ARC Raiders Cheats Guides & Setup',
+    title: 'Setup – and patch-day notes for Steam PC | ARC Cheats',
     description:
       'ARC Raiders cheats setup guides, aimbot tuning, ESP layout tips, loot filters, and patch-day notes for Steam PC players.',
     keywords: KW.blog,
