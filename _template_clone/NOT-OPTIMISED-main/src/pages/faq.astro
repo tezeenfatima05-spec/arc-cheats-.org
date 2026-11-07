@@ -59,15 +59,24 @@ const shareTitle = encodeURIComponent(seo.title);
     </div>
   </section>
 
-  <h2 id="faq-page-list" class="sr-only">Frequently asked questions</h2>
-  <SiteFaqSection items={faqs} variant="full" titleId="faq-page-list" showHeader={false} />
+  <SiteFaqSection
+    items={faqs}
+    variant="full"
+    titleId="faq-page-title"
+    showHeader={false}
+    questionHeadingTag="h2"
+  />
 
   <nav class="sr-only" aria-label="Related FAQ destinations">
     <ul>
-      <li><a href="/support/">FAQ — contact support via email</a></li>
-      <li><a href="/blog/">FAQ — open setup guide index</a></li>
-      <li><a href="/products/arc-raiders/">FAQ — view Raiders product detail</a></li>
-      <li><a href="/products/cloud-dma/">FAQ — read Cloud DMA listing</a></li>
+      <li><a href="/support/">Email support for loader issues</a></li>
+      <li><a href="/blog/">Setup articles on blog hub</a></li>
+      <li><a href="/products/arc-raiders/">Raiders software product page</a></li>
+      <li><a href="/products/cloud-dma/">Cloud DMA hardware listing</a></li>
+      <li><a href="/about/">Publisher about overview</a></li>
+      <li><a href="/terms/">Checkout terms of use</a></li>
+      <li><a href="/blog/arc-raiders-setup-and-first-launch/">First launch setup walkthrough</a></li>
+      <li><a href="/sitemap.xml">FAQ XML sitemap for crawlers</a></li>
     </ul>
   </nav>
   <nav class="sr-only" aria-label="Share this page">

@@ -9,16 +9,17 @@ import { Badge } from '@/components/starwind/badge';
 interface Props {
   post: BlogPost;
   class?: string;
+  backLabel?: string;
 }
 
-const { post, class: className } = Astro.props;
+const { post, class: className, backLabel = 'All articles' } = Astro.props;
 const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
 ---
 
 <div class:list={['blog-article__toolbar', className]}>
   <a href={ROUTES.blog} class="blog-article__toolbar-back shrink-0">
     <Icon name="chevronLeft" size={15} aria-hidden="true" />
-    All articles
+    {backLabel}
   </a>
   <div class="blog-article__toolbar-meta">
     <Badge variant="secondary" size="sm" class="blog-article__toolbar-badge max-w-[9rem] gap-1 rounded-full" title={post.tag}>

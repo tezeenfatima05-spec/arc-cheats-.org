@@ -14,9 +14,10 @@ import { homeBlogReadLabel } from '../config/homePageSeo';
 
 interface Props {
   uniqueAnchors?: boolean;
+  faqQuestionHeadingTag?: 'h2' | 'h3';
 }
 
-const { uniqueAnchors = false } = Astro.props;
+const { uniqueAnchors = false, faqQuestionHeadingTag } = Astro.props;
 
 const homeFaqs = getLandingFaqs();
 const featuredPosts = getFeaturedBlogPosts(3);
@@ -26,9 +27,9 @@ const featuredPosts = getFeaturedBlogPosts(3);
 <WorkflowSection />
 {uniqueAnchors && (
   <nav class="sr-only" aria-label="Workflow section destinations">
-    <a href="/go/arc-raiders/">Start checkout workflow from homepage</a>
-    <a href="/support/">Read deployment steps on support</a>
-    <a href="/faq/">Open workflow FAQ from homepage</a>
+    <a href="/go/arc-raiders/">Secure checkout entry for Raiders</a>
+    <a href="/support/">Portal deployment support email</a>
+    <a href="/faq/">Pre-checkout policy answers</a>
   </nav>
 )}
 
@@ -55,4 +56,9 @@ const featuredPosts = getFeaturedBlogPosts(3);
   </div>
 </section>
 
-<SiteFaqSection id="faq" titleId="faq-title" items={homeFaqs} />
+<SiteFaqSection
+  id="faq"
+  titleId="faq-title"
+  items={homeFaqs}
+  questionHeadingTag={faqQuestionHeadingTag}
+/>

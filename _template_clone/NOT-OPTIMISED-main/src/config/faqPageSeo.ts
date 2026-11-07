@@ -1,5 +1,5 @@
 import { getAllFaqs, type SiteFaqItem } from '../data/faq';
-import { normalizeInternalPath, productPath } from '../utils/path';
+import { normalizeInternalPath, productPath, ROUTES } from '../utils/path';
 
 function faqLink(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
@@ -7,6 +7,11 @@ function faqLink(text: string, href: string): string {
 
 const productHref = normalizeInternalPath(productPath('arc-raiders'));
 const defaultProductAnchor = 'ARC Raiders product';
+const productNeedle = `<a href="${productHref}">${defaultProductAnchor}</a>`;
+
+const blogHref = normalizeInternalPath(ROUTES.blog);
+const defaultBlogAnchor = 'blog guides';
+const blogNeedle = `<a href="${blogHref}">${defaultBlogAnchor}</a>`;
 
 /** FAQ index only — unique product anchors per answer (no global i18n/nav change). */
 const productAnchorByFaqId: Record<string, string> = {
@@ -16,14 +21,39 @@ const productAnchorByFaqId: Record<string, string> = {
   'blog-vs-product': 'Authoritative product feature list',
 };
 
+const blogAnchorByFaqId: Record<string, string> = {
+  'blog-vs-product': 'Setup walkthroughs on blog index',
+};
+
+const supportHref = normalizeInternalPath(ROUTES.support);
+
+/** Per-answer extra internal links (FAQ page only). */
+const supportAnchorByFaqId: Record<string, string> = {
+  'support-ticket': 'Open install help ticket',
+};
+
 export function getFaqPageFaqs(): SiteFaqItem[] {
-  const needle = `<a href="${productHref}">${defaultProductAnchor}</a>`;
   return getAllFaqs().map((item) => {
-    const label = productAnchorByFaqId[item.id];
-    if (!label || !item.a.includes(needle)) return item;
-    return {
-      ...item,
-      a: item.a.replace(needle, faqLink(label, productPath('arc-raiders'))),
-    };
+    let a = item.a;
+
+    const productLabel = productAnchorByFaqId[item.id];
+    if (productLabel && a.includes(productNeedle)) {
+      a = a.replace(productNeedle, faqLink(productLabel, productPath('arc-raiders')));
+    }
+
+    const blogLabel = blogAnchorByFaqId[item.id];
+    if (blogLabel && a.includes(blogNeedle)) {
+      a = a.replace(blogNeedle, faqLink(blogLabel, ROUTES.blog));
+    }
+
+    const supportLabel = supportAnchorByFaqId[item.id];
+    if (supportLabel && item.id === 'support-ticket' && !a.includes(supportHref)) {
+      a = a.replace(
+        'through the Support page',
+        `through the ${faqLink(supportLabel, ROUTES.support)}`,
+      );
+    }
+
+    return a === item.a ? item : { ...item, a };
   });
 }

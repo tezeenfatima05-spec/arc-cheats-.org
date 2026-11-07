@@ -4,6 +4,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { t } from '../../i18n';
 import { getAllBlogSlugs, getBlogPost, getRelatedBlogPosts } from '../../data/blog';
 import { getBlogSeoOverride } from '../../config/blogSeo';
+import { getBlogArticleFaqs } from '../../config/blogFaqSeo';
+import { getBlogRelatedLinkLabel } from '../../config/blogRelatedSeo';
 import { canonicalUrl, resolvePageSeo, resolveSocialImage } from '../../config/seo';
 import {
   articleSchema,
@@ -15,7 +17,6 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ResponsiveImage from '../../components/ResponsiveImage.astro';
 import BlogSidebar from '../../components/BlogSidebar.astro';
 import BlogPostTopBar from '../../components/BlogPostTopBar.astro';
-import { getBlogFaqs } from '../../data/faq';
 import SiteFaqSection from '../../components/SiteFaqSection.astro';
 import Icon from '../../components/icons/Icon.astro';
 import type { BlogBlock } from '../../data/blog';
@@ -110,7 +111,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
 
-      <BlogPostTopBar post={post} class="mt-6" />
+      <BlogPostTopBar post={post} class="mt-6" backLabel={blogUi?.toolbarBackLabel} />
 
       <div class="blog-article__layout mt-4 grid gap-6 lg:grid-cols-[minmax(14rem,16.5rem)_minmax(0,1fr)] lg:items-start lg:gap-8 xl:grid-cols-[17.5rem_minmax(0,1fr)]">
         <BlogSidebar
@@ -121,6 +122,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
           checkoutLinkLabel={blogUi?.checkoutLinkLabel}
           sidebarEliteLabel={blogUi?.sidebarEliteLabel}
           sidebarHubLabel={blogUi?.sidebarHubLabel}
+          relatedLinkLabel={(relatedSlug) => getBlogRelatedLinkLabel(post.slug, relatedSlug)}
         />
 
         <div class="order-1 min-w-0 lg:order-2">
@@ -150,6 +152,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
             }
           </header>
 
+          <h2 class="sr-only">Article sections</h2>
           <Prose class="blog-article__prose prose-headings:scroll-mt-24 max-w-none text-left">
             {post.body.map((block: BlogBlock) => {
               if (block.type === 'h2') {
@@ -225,10 +228,25 @@ const articleLcp = isAbsoluteImageUrl(post.image)
     </div>
   </article>
 
+  {
+    blogUi?.srOnlyAnchors && blogUi.srOnlyAnchors.length > 0 && (
+      <nav class="sr-only" aria-label="Related article destinations">
+        <ul>
+          {blogUi.srOnlyAnchors.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )
+  }
   <h2 class="sr-only">Questions about this guide</h2>
   <SiteFaqSection
-    items={getBlogFaqs(post.tag, post.slug)}
+    items={getBlogArticleFaqs(post.tag, post.slug)}
     titleId={`blog-faq-${post.slug}`}
+    titleTag="h2"
+    questionHeadingTag="h3"
     class="border-t border-border bg-muted/20"
   />
   <nav class="sr-only" aria-label="Share this article">

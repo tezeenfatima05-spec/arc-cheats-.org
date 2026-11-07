@@ -18,6 +18,7 @@ interface Props {
   checkoutLinkLabel?: string;
   sidebarEliteLabel?: string;
   sidebarHubLabel?: string;
+  relatedLinkLabel?: (relatedSlug: string) => string;
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   checkoutLinkLabel,
   sidebarEliteLabel,
   sidebarHubLabel,
+  relatedLinkLabel,
 } = Astro.props;
 
 const SidebarHeadingTag = sidebarHeadingsAsParagraphs ? 'p' : 'h2';
@@ -111,7 +113,7 @@ const productLinks: { label: string; href: string; icon: IconName }[] = [
             <li>
               <a href={blogPostPath(item.slug)} class="blog-sidebar__link" title={item.title}>
                 <Icon name="arrowUpRight" size={13} class="shrink-0 opacity-70" aria-hidden="true" />
-                <span class="blog-sidebar__truncate">{item.title}</span>
+                <span class="blog-sidebar__truncate">{relatedLinkLabel?.(item.slug) ?? item.title}</span>
               </a>
             </li>
           ))}

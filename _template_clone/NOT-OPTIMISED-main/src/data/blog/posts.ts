@@ -169,6 +169,16 @@ export const blogPosts: BlogPostFull[] = [
         type: 'p',
         text: 'Review portal patch notes when combat mode behavior changes—distance caps that worked last build may need one click, not a full profile rebuild.',
       },
+      { type: 'h3', text: 'After you test exit caps' },
+      {
+        type: 'p',
+        text: 'Log one successful raid where combat mode toggles matched your peel timing. Reuse that profile instead of re-tuning every lobby when only minor UI clutter was the problem.',
+      },
+      { type: 'h3', text: 'Threat icons when exits spike' },
+      {
+        type: 'p',
+        text: 'If unit markers flood the same screen edge as exits, drop threat distance first and keep exit caps fixed. Restore threat range only after you have a clean peel path logged.',
+      },
       {
         type: 'cta',
         title: 'ARC Raiders extraction access',

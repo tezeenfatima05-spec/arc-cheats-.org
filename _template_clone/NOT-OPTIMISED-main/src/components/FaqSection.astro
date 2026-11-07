@@ -24,6 +24,8 @@ interface Props {
   class?: string;
   showHeader?: boolean;
   titleTag?: 'h1' | 'h2';
+  /** Question rows: h2 when the page already has an h1 (e.g. /faq/). */
+  questionHeadingTag?: 'h2' | 'h3';
 }
 
 const {
@@ -40,7 +42,10 @@ const {
   class: className,
   showHeader = true,
   titleTag = 'h2',
+  questionHeadingTag = 'h3',
 } = Astro.props;
+
+const QuestionHeadingTag = questionHeadingTag;
 
 const topicLabels: Record<FaqTopic, string> = {
   all: 'All',
@@ -107,10 +112,10 @@ const filters = filterTopics ?? (['all', 'plans', 'esp', 'scripts', 'safety', 'p
         <div data-faq-topic={faq.topic}>
           <AccordionItem value={`faq-${i}`}>
             <AccordionTrigger class="text-left">
-              <h3 class="m-0 flex items-center gap-2 text-base font-medium normal-case">
+              <QuestionHeadingTag class="m-0 flex items-center gap-2 text-base font-medium normal-case">
                 <Icon name={faq.icon} size={16} class="shrink-0" />
                 <span>{faq.q}</span>
-              </h3>
+              </QuestionHeadingTag>
             </AccordionTrigger>
             <AccordionContent>
               <div class="prose prose-sm dark:prose-invert max-w-none text-muted-foreground" set:html={faq.aHtml ?? faq.a} />
