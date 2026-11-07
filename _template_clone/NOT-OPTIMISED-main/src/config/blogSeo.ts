@@ -9,6 +9,12 @@ export interface BlogSeoOverride {
   keywords?: string;
   /** Visible article H1 when audit requires title alignment */
   h1?: string;
+  sidebarHeadingsAsParagraphs?: boolean;
+  checkoutLinkLabel?: string;
+  navCheckoutLabel?: string;
+  navProductsLabel?: string;
+  navBlogLabel?: string;
+  ctaButtonLabel?: string;
 }
 
 export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
@@ -18,6 +24,25 @@ export const BLOG_SEO_BY_SLUG: Record<string, BlogSeoOverride> = {
       'Player esp layout: boxes, skeletons, squad tags, and distance caps — pick a minimal stack before you add more overlays for Steam PC raids.',
     keywords: 'player esp layout, arc raiders esp, arc raiders cheats, steam pc',
     h1: 'Player ESP layout that stays readable in ARC Raiders cheats',
+    sidebarHeadingsAsParagraphs: true,
+    checkoutLinkLabel: 'Player ESP guide checkout',
+    navCheckoutLabel: 'Checkout from this ESP guide',
+    navProductsLabel: 'Browse ARC Raiders products',
+    navBlogLabel: 'Return to guides index',
+    ctaButtonLabel: 'Open ARC Raiders product map',
+  },
+  'arc-raiders-arc-threat-overlays': {
+    title: 'ARC threat overlays on your route | ARC Cheats',
+    description:
+      'Threat markers, corpses, and distance context on Steam PC — know when to break contact with ARC Raiders ARC unit overlays.',
+    keywords: 'threat, arc raiders esp, arc threat overlays, arc raiders cheats',
+    h1: 'ARC threat overlays on your route — ARC Raiders cheats',
+    sidebarHeadingsAsParagraphs: true,
+    checkoutLinkLabel: 'Threat overlay guide checkout',
+    navCheckoutLabel: 'Checkout from threat overlay guide',
+    navProductsLabel: 'Browse ARC Raiders cheat products',
+    navBlogLabel: 'More ARC Raiders guides',
+    ctaButtonLabel: 'Open threat overlay product map',
   },
 };
 

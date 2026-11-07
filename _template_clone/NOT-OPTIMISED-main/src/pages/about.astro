@@ -1,11 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { t } from '../i18n';
-import { resolvePageSeo } from '../config/seo';
+import { canonicalUrl, resolvePageSeo } from '../config/seo';
+import { ABOUT_EXTRA_SECTIONS } from '../config/aboutExtra';
 
 const seo = resolvePageSeo('/about/');
 import LegalPage from '../components/LegalPage.astro';
 import { breadcrumbSchema, organizationSchema, webPageSchema } from '../utils/schema';
+
+const shareUrl = canonicalUrl('/about/');
+const shareQuery = encodeURIComponent(shareUrl);
+const shareTitle = encodeURIComponent(seo.title);
 
 const content = t.legalPages.about;
 ---
@@ -17,8 +22,8 @@ const content = t.legalPages.about;
   jsonLd={[
     organizationSchema(),
     webPageSchema({
-      name: content.title,
-      description: content.description,
+      name: seo.title,
+      description: seo.description,
       url: '/about/',
     }),
     breadcrumbSchema([
@@ -32,5 +37,21 @@ const content = t.legalPages.about;
     description={content.description}
     breadcrumbLabel="About"
     sections={content.sections}
+    extraSections={ABOUT_EXTRA_SECTIONS}
+    supportLinkLabel="About page — email support"
+    homeLinkLabel="Return to ARC Cheats home"
   />
+  <nav class="sr-only" aria-label="Share this page">
+    <ul>
+      <li>
+        <a href={`https://twitter.com/intent/tweet?url=${shareQuery}&text=${shareTitle}`}>Share on X</a>
+      </li>
+      <li>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareQuery}`}>Share on Facebook</a>
+      </li>
+      <li>
+        <a href={`https://t.me/share/url?url=${shareQuery}&text=${shareTitle}`}>Share on Telegram</a>
+      </li>
+    </ul>
+  </nav>
 </BaseLayout>

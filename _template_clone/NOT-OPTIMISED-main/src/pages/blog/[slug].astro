@@ -77,7 +77,7 @@ const articleH1 = blogSeo?.h1 ?? post.title;
 const shareUrl = canonicalUrl(postPath);
 const shareQuery = encodeURIComponent(shareUrl);
 const shareTitle = encodeURIComponent(seo.title);
-const playerEspArticle = post.slug === 'arc-raiders-player-esp-layout';
+const blogUi = blogSeo;
 const articleLcp = isAbsoluteImageUrl(post.image)
   ? post.image
   : webpSrc(post.image, CARD_IMAGE_WIDTHS[0]);
@@ -115,8 +115,8 @@ const articleLcp = isAbsoluteImageUrl(post.image)
           post={post}
           related={related}
           class="order-2 lg:order-1"
-          sidebarHeadingsAsParagraphs={playerEspArticle}
-          checkoutLinkLabel={playerEspArticle ? 'Player ESP guide checkout' : undefined}
+          sidebarHeadingsAsParagraphs={blogUi?.sidebarHeadingsAsParagraphs}
+          checkoutLinkLabel={blogUi?.checkoutLinkLabel}
         />
 
         <div class="order-1 min-w-0 lg:order-2">
@@ -195,7 +195,7 @@ const articleLcp = isAbsoluteImageUrl(post.image)
                     title={block.title}
                     html={linkify(block.text)}
                     href={resolveCheckoutHref(block.href)}
-                    buttonLabel={playerEspArticle ? 'Open ARC Raiders product map' : undefined}
+                    buttonLabel={blogUi?.ctaButtonLabel}
                   />
                 );
               }
@@ -205,14 +205,14 @@ const articleLcp = isAbsoluteImageUrl(post.image)
 
           <nav class="blog-article__actions" aria-label="Continue reading">
             <Button as="a" href={checkoutPath()} variant="primary" aria-label={t.ui.checkoutAria}>
-              {playerEspArticle ? 'Checkout from this ESP guide' : 'Get access'}
+              {blogUi?.navCheckoutLabel ?? 'Get access'}
               <Icon name="arrowRight" size={17} />
             </Button>
             <Button as="a" href={ROUTES.products} variant="outline">
-              {playerEspArticle ? 'Browse ARC Raiders products' : 'View products'}
+              {blogUi?.navProductsLabel ?? 'View products'}
             </Button>
             <Button as="a" href={ROUTES.blog} variant="outline">
-              {playerEspArticle ? 'Return to guides index' : 'More articles'}
+              {blogUi?.navBlogLabel ?? 'More articles'}
               <Icon name="arrowRight" size={17} />
             </Button>
           </nav>

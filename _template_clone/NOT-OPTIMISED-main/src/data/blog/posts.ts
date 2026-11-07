@@ -223,26 +223,35 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: 'Features',
-    title: 'ARC threat overlays when units are on your route',
+    title: 'ARC threat overlays on your route',
     slug: 'arc-raiders-arc-threat-overlays',
     image: blogCover('arc-raiders-arc-threat-overlays'),
-    desc: 'Threat markers, corpses, and distance context so you know when to break contact.',
+    desc: 'Markers, corpses, and distance context so you know when to break contact.',
     date: 'Nov 7, 2025',
     readTime: '5 min read',
     body: [
       {
         type: 'p',
-        text: '**ARC threat** and **corpse** markers are navigation tools. They should answer one question: is it safer to push or peel? Keep threat readouts inside a distance band you can actually react to.',
+        text: '**ARC unit** and **corpse** markers are navigation tools. They should answer one question: is it safer to push or peel? Keep readouts inside a distance band you can actually react to.',
       },
       { type: 'h2', text: 'Do not mirror PvP ESP settings' },
       {
         type: 'p',
         text: 'Player ESP wants longer ranges; ARC cues often work better shorter so icons cluster only near your path. Save profiles for “ARC-heavy” maps if you swap often.',
       },
+      { type: 'h3', text: 'Distance bands that stay readable' },
+      {
+        type: 'p',
+        text: 'Start with a conservative max distance on world icons, then widen only after you confirm frame time and map density stay stable. Pair corpse cues with extraction markers only when your route is already set—adding both at max range creates the same clutter PvP ESP avoids.',
+      },
+      {
+        type: 'p',
+        text: 'When pressure spikes, toggle combat mode so player and squad layers stay primary while secondary world icons pause. That habit keeps contact decisions fast without deleting your tuned profile.',
+      },
       {
         type: 'cta',
-        title: 'Get access',
-        text: 'Compare threat and world groups before checkout.',
+        title: 'ARC Raiders overlay access',
+        text: 'Compare world and unit groups before checkout.',
         href: '/go/arc-raiders/',
       },
     ],

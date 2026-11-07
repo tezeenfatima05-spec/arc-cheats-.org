@@ -78,9 +78,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: 'arc cheats privacy policy',
   },
   '/about/': {
-    title: 'About ARC Cheats',
+    title: 'About Arc Cheats – ARC Cheats publishes ARC Raiders PC',
     description:
-      'ARC Cheats publishes ARC Raiders PC software overviews, honest limitations, guides, and status notes for Steam players.',
+      'About arc cheats: ARC Cheats publishes ARC Raiders PC software overviews, honest limitations, guides, and status notes for Steam players.',
     keywords: 'about arc cheats, arc raiders cheats site',
   },
   '/support/': {

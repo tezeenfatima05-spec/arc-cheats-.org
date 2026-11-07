@@ -10,9 +10,20 @@ interface Props {
   description: string;
   breadcrumbLabel: string;
   sections: { heading: string; paragraphs: string[] }[];
+  extraSections?: { heading: string; paragraphs: string[] }[];
+  supportLinkLabel?: string;
+  homeLinkLabel?: string;
 }
 
-const { title, description, breadcrumbLabel, sections } = Astro.props;
+const {
+  title,
+  description,
+  breadcrumbLabel,
+  sections,
+  extraSections = [],
+  supportLinkLabel = 'Contact support',
+  homeLinkLabel = 'Back to home',
+} = Astro.props;
 ---
 
 <article class="py-8 md:py-12">
@@ -39,14 +50,22 @@ const { title, description, breadcrumbLabel, sections } = Astro.props;
           ))}
         </section>
       ))}
+      {extraSections.map((section) => (
+        <section class="mt-8">
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </section>
+      ))}
     </Prose>
 
     <div class="mt-12 flex flex-wrap justify-center gap-3 border-t border-border pt-8">
       <Button as="a" href={ROUTES.support} variant="primary" size="sm">
-        Contact support
+        {supportLinkLabel}
         <Icon name="mail" size={16} />
       </Button>
-      <Button as="a" href={ROUTES.home} variant="outline" size="sm">Back to home</Button>
+      <Button as="a" href={ROUTES.home} variant="outline" size="sm">{homeLinkLabel}</Button>
     </div>
   </div>
 </article>
