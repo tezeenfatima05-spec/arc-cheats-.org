@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import { sitemapSerialize } from './src/config/sitemap.ts';
+import { shouldIncludeInSitemap, sitemapSerialize } from './src/config/sitemap.ts';
 
 const site = (process.env.PUBLIC_SITE_URL || 'https://arccheats.org').replace(/\/+$/, '');
 
@@ -30,10 +30,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => {
-        const skip = ['/404', '/go/', '/products/utilities/', '/cheats/', '/contact/'];
-        return !skip.some((part) => page.includes(part));
-      },
+      filter: (page) => shouldIncludeInSitemap(page),
       serialize: sitemapSerialize,
     }),
   ],

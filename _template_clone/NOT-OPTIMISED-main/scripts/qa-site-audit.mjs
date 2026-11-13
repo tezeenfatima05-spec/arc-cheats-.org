@@ -52,9 +52,14 @@ if (!fs.existsSync(dist)) {
 }
 
 const robots = path.join(dist, 'robots.txt');
-const sitemap = path.join(dist, 'sitemap-index.xml');
+const sitemapIndex = path.join(dist, 'sitemap-index.xml');
+const sitemapUrlset = path.join(dist, 'sitemap.xml');
 if (!fs.existsSync(robots)) errors.push('robots.txt missing in dist');
-if (!fs.existsSync(sitemap)) errors.push('sitemap-index.xml missing in dist');
+if (!fs.existsSync(sitemapUrlset)) errors.push('sitemap.xml missing in dist');
+if (!fs.existsSync(sitemapIndex)) errors.push('sitemap-index.xml missing in dist');
+if (fs.existsSync(path.join(dist, 'sitemap-0.xml'))) {
+  errors.push('sitemap-0.xml should be removed after finalize-sitemap (duplicate urlset)');
+}
 
 const htmlFiles = walkHtml(dist);
 const pathsSeen = new Set();
@@ -90,29 +95,82 @@ for (const file of htmlFiles) {
   }
 }
 
-// Sitemap should list key routes (parse child sitemap if present)
-const sitemapBody = fs.existsSync(sitemap) ? fs.readFileSync(sitemap, 'utf8') : '';
-const childMatch = sitemapBody.match(/<loc>([^<]+sitemap-\d+\.xml)<\/loc>/);
-if (childMatch) {
-  const childPath = childMatch[1];
-  const childFile = childPath.includes('://')
-    ? path.join(dist, path.basename(childPath))
-    : path.join(dist, path.basename(childPath));
-  if (fs.existsSync(childFile)) {
-    const childXml = fs.readFileSync(childFile, 'utf8');
-    const locs = [...childXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => {
-      try {
-        return new URL(m[1]).pathname;
-      } catch {
-        return m[1];
-      }
-    });
-    for (const must of ['/blog/', '/forum/', '/products/arc-raiders/']) {
-      if (!locs.some((p) => p === must || p.startsWith(must))) {
-        warnings.push(`sitemap: expected path like ${must}`);
-      }
+const SITEMAP_EXCLUDE = [
+  '/go/',
+  '/products/cloud-dma/',
+  '/products/ugc/',
+  '/products/utilities/',
+];
+
+function distHtmlForPathname(pathname) {
+  const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`;
+  const rel = normalized === '/' ? 'index.html' : `${normalized.slice(1)}index.html`;
+  return path.join(dist, rel);
+}
+
+const sitemapBody = fs.existsSync(sitemapUrlset) ? fs.readFileSync(sitemapUrlset, 'utf8') : '';
+const sitemapLocs = [...sitemapBody.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+const sitemapOrigins = new Set();
+
+for (const loc of sitemapLocs) {
+  try {
+    const u = new URL(loc);
+    sitemapOrigins.add(u.origin);
+    const p = u.pathname.endsWith('/') ? u.pathname : `${u.pathname}/`;
+    if (SITEMAP_EXCLUDE.some((part) => p.includes(part))) {
+      errors.push(`sitemap.xml: disallowed path ${p}`);
     }
+    if (!fs.existsSync(distHtmlForPathname(p))) {
+      errors.push(`sitemap.xml: no HTML for ${p}`);
+    }
+  } catch {
+    errors.push(`sitemap.xml: invalid loc ${loc}`);
   }
+}
+
+if (sitemapOrigins.size > 1) {
+  errors.push(`sitemap.xml: mixed hosts ${[...sitemapOrigins].join(', ')}`);
+}
+if (sitemapBody.includes('workers.dev')) {
+  errors.push('sitemap.xml: workers.dev URLs must not appear when canonical host is arccheats.org');
+}
+const sitemapLocCount = sitemapLocs.length;
+const uniqueLocs = new Set(
+  sitemapLocs.map((loc) => {
+    try {
+      const u = new URL(loc);
+      const p = u.pathname.endsWith('/') ? u.pathname : `${u.pathname}/`;
+      return `${u.origin}${p}`;
+    } catch {
+      return loc;
+    }
+  }),
+);
+if (uniqueLocs.size !== sitemapLocCount) {
+  errors.push(`sitemap.xml: duplicate URLs (${sitemapLocCount} locs, ${uniqueLocs.size} unique)`);
+}
+
+for (const must of ['/blog/', '/forum/', '/products/arc-raiders/']) {
+  if (!sitemapLocs.some((loc) => {
+    try {
+      const p = new URL(loc).pathname;
+      return p === must || p.startsWith(must);
+    } catch {
+      return false;
+    }
+  })) {
+    warnings.push(`sitemap: expected path like ${must}`);
+  }
+}
+
+const robotsBody = fs.existsSync(robots) ? fs.readFileSync(robots, 'utf8') : '';
+const robotsSitemap = robotsBody.match(/^Sitemap:\s*(.+)$/m)?.[1]?.trim();
+if (robotsSitemap && sitemapLocs.length && !robotsSitemap.endsWith('/sitemap.xml')) {
+  warnings.push('robots.txt: Sitemap line should end with /sitemap.xml');
+}
+const indexBody = fs.existsSync(sitemapIndex) ? fs.readFileSync(sitemapIndex, 'utf8') : '';
+if (!indexBody.includes('/sitemap.xml')) {
+  errors.push('sitemap-index.xml must reference /sitemap.xml');
 }
 
 console.log(`QA scanned ${htmlFiles.length} HTML files`);

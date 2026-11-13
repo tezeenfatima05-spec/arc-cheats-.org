@@ -5,12 +5,11 @@ import { fileURLToPath } from 'node:url';
 const repoRoot = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const appRoot = path.join(repoRoot, '_template_clone', 'NOT-OPTIMISED-main');
 
-/** Default Workers hostname — override in Cloudflare with PUBLIC_SITE_URL for custom domain. */
-const DEFAULT_WORKERS_ORIGIN =
-  'https://arc-cheats--org.tazeenrooziroti.workers.dev';
+/** Production canonical host — override only for Workers preview builds. */
+const DEFAULT_SITE_ORIGIN = 'https://arccheats.org';
 
 const siteUrl = (
-  process.env.PUBLIC_SITE_URL?.trim() || DEFAULT_WORKERS_ORIGIN
+  process.env.PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_ORIGIN
 ).replace(/\/+$/, '');
 
 const env = {

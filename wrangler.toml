@@ -5,6 +5,9 @@ compatibility_date = "2026-01-01"
 [build]
 command = "node scripts/cloudflare-build.mjs"
 
+[build.environment]
+PUBLIC_SITE_URL = "https://arccheats.org"
+
 [assets]
 directory = "_template_clone/NOT-OPTIMISED-main/dist"
 html_handling = "auto-trailing-slash"
